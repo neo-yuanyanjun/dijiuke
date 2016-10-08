@@ -1,0 +1,7 @@
+*/node_modules/*
+
+nohup.out
+
+*bundle.js
+
+demo-1/dist/*
