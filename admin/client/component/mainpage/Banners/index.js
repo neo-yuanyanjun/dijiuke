@@ -9,6 +9,7 @@ import style from './style.css';
 import Loading from '../../Loading';
 import service from './service';
 import columns from './column.config';
+import AddBanner from './AddBanner';
 
 // 不要用import的方式，会报错，请用require
 // import Button from 'antd';
@@ -22,7 +23,10 @@ export default class Banners extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            banners: null
+            banners: null,
+            addModalVisible: false,
+            actionType: null,
+            modifyRecord: null
         };
     }
 
@@ -43,11 +47,30 @@ export default class Banners extends Component {
             bordered: true
         };
 
+        let modalProps = {
+            width: 900,
+            closable: false,
+            title: (
+                    <div>
+                        {this.state.actionType == 'add' ? '新建Banner' : '修改Banner'}
+                    </div>
+                ),
+            visible: this.state.addModalVisible,
+            onOk: this.onModalOk.bind(this),
+            onCancel: this.onModalCancel.bind(this),
+            okText: '保存',
+            cancelText: '关闭'
+        };
+
+        let addBannerProps = {
+            record: this.state.actionType === 'modify' ? this.state.modifyRecord : null
+        };
+
         return (
             <div>
                 <header className={style.header}>首页-头部banner图配置</header>
                 <div className={style['wrapper-btn']}>
-                    <Button type='primary'>新建</Button>
+                    <Button type='primary' onClick={this.onAdd.bind(this)}>新建</Button>
                 </div>
                 {
                     this.state.banners
@@ -56,7 +79,9 @@ export default class Banners extends Component {
                     </div>
                     : <Loading/>
                 }
-                
+                <Modal {...modalProps}>
+                    <AddBanner {...addBannerProps}></AddBanner>
+                </Modal>
             </div>
         );
     }
@@ -137,7 +162,35 @@ export default class Banners extends Component {
         });
     }
 
-    onModify() {
+    onModify(record) {
+        this.setState({
+            actionType: 'modify',
+            addModalVisible: true,
+            modifyRecord: record
+        });
+    }
 
+    onAdd() {
+        this.setState({
+            actionType: 'add',
+            addModalVisible: true,
+            modifyRecord: null
+        });
+    }
+
+    onModalCancel() {
+        this.setState({
+            actionType: null,
+            addModalVisible: false,
+            modifyRecord: null
+        });
+    }
+
+    onModalOk() {
+        this.setState({
+            actionType: null,
+            addModalVisible: false,
+            modifyRecord: null
+        });
     }
 }
