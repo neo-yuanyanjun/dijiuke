@@ -27,4 +27,5 @@ ul, li {
 }
 .main {
     min-height: 400px;
+    margin: 0 20px;
 }
