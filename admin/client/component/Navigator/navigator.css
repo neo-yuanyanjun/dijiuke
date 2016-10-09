@@ -1,0 +1,27 @@
+.navigator {
+    width: 100px;
+    height: 100%;
+    /*min-height: 400px;*/
+    background-color: #eee;
+    position: absolute 0 0 0 0;
+}
+.section {
+}
+.navigator .section .title {
+    background-color: red;
+    font-size: 16px;
+    color: blue;
+    line-height: 1.5;
+    padding: 10px;
+}
+.navigator .section ul li {
+    list-style: none;
+}
+.navigator .section ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+.navigator .section ul li a.active {
+    color: #999;
+}
