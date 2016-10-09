@@ -12,6 +12,9 @@ import Footer from '../Footer';
 import Navigator from '../Navigator';
 import style from './style.css';
 
+// 引入"ant-design"的样式
+import 'antd/dist/antd.css';
+
 export default class App extends Component {
     render() {
         return (

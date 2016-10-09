@@ -6,12 +6,16 @@
 
 import React, {Component} from 'react';
 import style from './style.css';
+// import Button from 'antd';
+
+const Button = require('antd').Button;
 
 export default class Banners extends Component {
     render() {
         return (
-            <div className='test'>
-                『首页-轮播图』配置页面
+            <div>
+                <header>『首页-轮播图』配置页面</header>
+                <Button type='primary'>新建</Button>
             </div>
         );
     }
