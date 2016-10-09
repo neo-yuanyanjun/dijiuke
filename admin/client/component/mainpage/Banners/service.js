@@ -30,18 +30,24 @@ export default {
                                 pic: 'http://img0.bdstatic.com/img/image/shouye/xinshouye/weimei111.jpg',
                                 link: 'http://www.baidu.com',
                                 id: 3
-                            },
-                            {
-                                position: 4,
-                                pic: 'http://img0.bdstatic.com/img/image/shouye/xinshouye/weimei111.jpg',
-                                link: 'http://www.baidu.com',
-                                id: 4
                             }
                         ]
                     }
                 };
                 resolve(response);
             }, 1000);
+        });
+    },
+    deleteBanner(item) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                var response = {
+                    code: 0,
+                    message: '',
+                    data: null
+                };
+                resolve(response);
+            }, 50);
         });
     }
 };
