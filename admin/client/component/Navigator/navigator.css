@@ -1,27 +1,25 @@
 .navigator {
-    width: 100px;
+    width: 220px;
     height: 100%;
-    /*min-height: 400px;*/
-    background-color: #eee;
-    position: absolute 0 0 0 0;
+    float: left;
+    margin-left: -220px;
 }
-.section {
+.navigator ul {
+    padding: 20px 0;
 }
-.navigator .section .title {
-    background-color: red;
-    font-size: 16px;
-    color: blue;
-    line-height: 1.5;
-    padding: 10px;
+.menu-group-label {
+    padding: 5px 20px;
+    font-size: 12px;
+    color: #aaa;
 }
-.navigator .section ul li {
-    list-style: none;
-}
-.navigator .section ul li a {
+.menu-link {
+    padding: 5px 20px 5px 30px;
+    color: #777;
     display: block;
     text-decoration: none;
-    color: #333;
+    white-space: nowrap;
 }
-.navigator .section ul li a.active {
-    color: #999;
+.menu-link.active {
+    color: #1f8dd6;
+    background-color: #fff;
 }

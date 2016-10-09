@@ -15,11 +15,11 @@ import style from './style.css';
 export default class App extends Component {
     render() {
         return (
-            <div className={style.wrapper}>
+            <div>
                 <Header/>
-                <div className={style.main}>
+                <div className={style.wrapper}>
                     <Navigator></Navigator>
-                    <div className={style.content}>{ this.props.children }</div>
+                    <div className={style.main}>{ this.props.children }</div>
                 </div>
                 <Footer/>
             </div>

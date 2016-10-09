@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import style from './banners.css';
+import style from './style.css';
 
 export default class Banners extends Component {
     render() {
