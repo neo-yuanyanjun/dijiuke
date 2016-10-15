@@ -7,3 +7,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.image-preview-wrapper {
+    width: 400px;
+    height: 200px;
+    background-color: #eee;
+    margin-top: 24px;
+}
