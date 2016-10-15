@@ -12,6 +12,10 @@ export default class Banners extends Component {
         return (
             <div>
                 <h2 className={style.welcome}>欢迎进入『第九课堂』后台管理系统</h2>
+                <div style={ {
+                    textAlign: 'center',
+                    color: 'red'
+                } }>此处应有鲜花和掌声</div>
             </div>
         );
     }

@@ -8,7 +8,6 @@ import React, {Component} from 'react';
 import style from './style.css';
 import Loading from '../../Loading';
 import service from './service';
-import columns from './column.config';
 import AddBanner from './AddBanner';
 
 // 不要用import的方式，会报错，请用require
@@ -30,12 +29,6 @@ export default class Banners extends Component {
         };
     }
 
-    // getInitialState() {
-    //     return {
-    //         banners: null
-    //     };
-    // }
-    
     componentDidMount() {
         this.loadData();
     }
@@ -52,7 +45,7 @@ export default class Banners extends Component {
             closable: false,
             title: (
                     <div>
-                        {this.state.actionType == 'add' ? '新建Banner' : '修改Banner'}
+                        {this.state.actionType === 'add' ? '新建Banner' : '修改Banner'}
                     </div>
                 ),
             visible: this.state.addModalVisible,
@@ -87,7 +80,7 @@ export default class Banners extends Component {
     }
 
     loadData() {
-        console.log('load data');
+        // console.log('load data');
         let me = this;
         service.getBannerList().then(function (response) {
             me.setState({
@@ -110,7 +103,7 @@ export default class Banners extends Component {
                 title: 'banner图',
                 dataIndex: 'pic',
                 key: 'pic',
-                render: function (text, record, index) {
+                render(text, record, index) {
                     return (
                         <div>
                             <img src={text}/>
@@ -127,7 +120,7 @@ export default class Banners extends Component {
             {
                 width: 200,
                 title: '操作',
-                render: function (text, record, index) {
+                render(text, record, index) {
                     return (
                         <div style={{
                             textAlign: 'right'
@@ -151,12 +144,12 @@ export default class Banners extends Component {
         Modal.confirm({
             title: '确认',
             content: '确定删除该数据？',
-            onOk: function () {
+            onOk() {
                 service.deleteBanner(record).then(function (response) {
                     me.loadData();
                 });
             },
-            onCancel: function () {
+            onCancel() {
                 // do nothing
             }
         });
