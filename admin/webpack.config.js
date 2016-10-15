@@ -7,6 +7,7 @@
 var rucksack = require('rucksack-css');
 var webpack = require('webpack');
 var path = require('path');
+var proxyConfig = require('./client/mockserver/proxyConfig.js');
 
 module.exports = {
     context: path.join(__dirname, './client'),
@@ -70,6 +71,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: './client',
-        hot: true
+        hot: true,
+        proxy: proxyConfig
     }
 };

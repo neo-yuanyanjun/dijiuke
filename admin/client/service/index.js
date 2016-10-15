@@ -11,6 +11,9 @@
 // export default service;
 
 
+
+// TODO 已经引入了 webpack-dev-server 的proxy
+// 是不是可以不用 Promise 和 setTimeout 来模拟数据了？
 if (process.env.NODE_ENV === 'production') {
     module.exports = require('./service.pro');
 }
