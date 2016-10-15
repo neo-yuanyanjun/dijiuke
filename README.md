@@ -10,9 +10,14 @@ jquery
 npm start
 ```
 
-### 编译成生产环境代码
+### 编译测试环境代码
 ```shell
-npm run build
+npm run build-dev
+```
+
+### 编译生产环境代码
+```shell
+npm run build-pro
 ```
 
 样式和ui库请参考[react-ui](http://lobos.github.io/react-ui/0.6/#/home, "react-ui")
