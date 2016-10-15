@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server -d --hot --inline --progress --colors --port 3000",
-    "build": "NODE_ENV=production webpack --progress --colors"
+    "build-dev": "NODE_ENV=devlopment webpack --progress --colors",
+    "build-pro": "NODE_ENV=production webpack --progress --colors"
   },
   "license": "",
   "devDependencies": {

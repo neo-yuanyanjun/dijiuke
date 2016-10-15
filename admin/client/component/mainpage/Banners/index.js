@@ -7,7 +7,8 @@
 import React, {Component} from 'react';
 import style from './style.css';
 import Loading from '../../Loading';
-import service from './service';
+// import service from './service';
+import service from '../../../service';
 import AddBanner from './AddBanner';
 
 // 不要用import的方式，会报错，请用require
@@ -30,7 +31,15 @@ export default class Banners extends Component {
     }
 
     componentDidMount() {
+        // 管理本地需要缓存的内容
+        this.caches = {};
         this.loadData();
+    }
+
+    componentWillUnmount() {
+        this.caches.loadDataRequest
+        && this.caches.loadDataRequest.abort
+        && this.caches.loadDataRequest.abort();
     }
 
     render() {
@@ -82,7 +91,7 @@ export default class Banners extends Component {
     loadData() {
         // console.log('load data');
         let me = this;
-        service.getBannerList().then(function (response) {
+        this.caches.loadDataRequest = service.getBannerList().then(function (response) {
             me.setState({
                 banners: response.data.banners
             });
