@@ -9,6 +9,7 @@ import $ from 'jquery';
 export default {
     // 首页配置 - 获取Banner列表
     getBannerList() {
+        console.log('service.pro.js getBannerList');
         return $.get('/path/to/be/determilate').then(function (res) {
             let response = JSON.stringify(res);
             return response;
@@ -16,6 +17,7 @@ export default {
     },
     // 首页配置 - 删除Banner图片
     deleteBanner(item) {
+        console.log('service.pro.js deleteBanner');
         return $.get('/path/to/be/determilate').then(function (res) {
             let response = JSON.stringify(res);
             return response;
