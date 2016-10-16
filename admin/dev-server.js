@@ -30,6 +30,7 @@ app.use(webpackHotMiddleware(compiler));
 // 用“advanced restful client” 测试能转发到mock-server那边
 // 但是在页面上有问题
 // 好像又没有这个bug了
+// 找到问题原因了，是因为我本地开了green vpn的问题
 // app.use('/file/upload', function (req, res) {
 //     var response = {
 //         code: 0,
