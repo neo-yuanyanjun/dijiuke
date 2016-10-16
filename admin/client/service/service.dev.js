@@ -1,4 +1,5 @@
 /**
+ * 这个文件不需要了，已经配置了mock-server
  * @file 开发环境的虚拟数据接口
  * @author Yuan Yanjun
  * @date 2016.10.15

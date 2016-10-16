@@ -10,8 +10,8 @@ export default {
     // 首页配置 - 获取Banner列表
     getBannerList() {
         console.log('service.pro.js getBannerList');
-        return $.get('/path/to/be/determilate').then(function (res) {
-            let response = JSON.stringify(res);
+        return $.get('/banner/get').then(function (res) {
+            let response = JSON.parse(res);
             return response;
         });
     },

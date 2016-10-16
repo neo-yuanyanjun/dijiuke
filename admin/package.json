@@ -20,10 +20,13 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.5.0",
+    "body-parser": "^1.15.2",
     "classnames": "^2.2.3",
     "css-loader": "^0.23.1",
+    "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "http-proxy-middleware": "^0.17.2",
     "jquery": "^3.1.1",
     "postcss-loader": "^0.8.1",
     "rctui": "^0.6.8",
@@ -38,6 +41,7 @@
     "rucksack-css": "^0.8.5",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.7.1"
   }
