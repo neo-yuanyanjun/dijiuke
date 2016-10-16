@@ -6,13 +6,13 @@ var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var proxyMiddleware = require('http-proxy-middleware');
 
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser');
 
 var devConfig = webpackConfig.devServer;
 var app = express();
 var compiler = webpack(webpackConfig);
 
-app.use(bodyParser());
+// app.use(bodyParser());
 app.use(express.static(devConfig.contentBase || __dirname));
 app.use(webpackDevMiddleware(compiler, {}));
 app.use(webpackHotMiddleware(compiler));

@@ -7,7 +7,10 @@ jquery
 
 ### 开启本地开发服务
 ```shell
+# 这种方式开启的服务，在文件上传的时候，转发到mock-server会有问题
 npm start
+# 鉴于文件上传请求转发bug，用下面命令
+node dev-server.js
 ```
 
 ### 编译测试环境代码
