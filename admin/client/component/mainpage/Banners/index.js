@@ -9,6 +9,7 @@ import style from './style.css';
 import Loading from '../../Loading';
 import service from '../../../service';
 import AddBanner from './AddBanner';
+import SubHeader from '../../SubHeader';
 
 // 不要用import的方式，会报错，请用require
 // import Button from 'antd';
@@ -43,6 +44,7 @@ export default class Banners extends Component {
 
     render() {
         let tableProps = {
+            pagination: false,
             dataSource: this.state.banners,
             columns: this.getColumnsConfig(),
             bordered: true
@@ -71,7 +73,7 @@ export default class Banners extends Component {
 
         return (
             <div>
-                <header className={style.header}>首页-头部banner图配置</header>
+                <SubHeader>首页-头部banner图配置</SubHeader>
                 <div className={style['wrapper-btn']}>
                     <Button type='primary' onClick={this.onAdd.bind(this)}>新建</Button>
                 </div>

@@ -19,7 +19,7 @@ export default class App extends Component {
                         <Link to='/mainpage/banners' className={style['menu-link']} activeClassName={style.active}>轮播图</Link>
                     </li>
                     <li>
-                        <Link to='/mainpage/company' className={style['menu-link']} activeClassName={style.active}>公司信息</Link>
+                        <Link to='/mainpage/company' className={style['menu-link']} activeClassName={style.active}>公司介绍图片</Link>
                     </li>
                     <li>
                         <Link to='/mainpage/courses' className={style['menu-link']} activeClassName={style.active}>课程列表</Link>

@@ -1,0 +1,15 @@
+.table-wrapper {
+    margin-top: 20px;
+}
+.image-preview-placeholder {
+    width: 400px;
+    height: 200px;
+    background-color: #eee;
+    margin-top: 24px;
+}
+.image-preview-wrapper {
+    margin-top: 24px;
+}
+.image-preview-wrapper img {
+    max-width: 100%;
+}

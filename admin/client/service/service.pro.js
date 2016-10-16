@@ -37,5 +37,21 @@ export default {
             let response = JSON.stringify(res);
             return response;
         });
+    },
+
+    // 首页配置 - 公司介绍图片获取
+    getCompany() {
+        return $.get('/company/get').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 首页配置 - 公司介绍图片更新
+    updateCompany(pic) {
+        return $.post("/company/update", {pic: pic}).then(function (res) {
+            let response = JSON.stringify(res);
+            return response;
+        });
     }
 };
