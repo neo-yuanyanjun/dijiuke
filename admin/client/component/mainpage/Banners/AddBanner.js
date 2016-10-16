@@ -74,7 +74,6 @@ class AddBannerForm extends Component {
     }
 
     render() {
-        const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
             labelCol: { span:4 },
             wrapperCol: { span: 16 }
@@ -90,7 +89,7 @@ class AddBannerForm extends Component {
 
 
         return (
-            <Form horizontal>
+            <div>
                 <FormItem {...formItemLayout} label="位置:">
                     <InputNumber
                         name='position'
@@ -119,10 +118,9 @@ class AddBannerForm extends Component {
                         onChange={this.onLinkChange.bind(this)}
                     />
                 </FormItem>
-            </Form>
+            </div>
         );
     }
 }
-AddBannerForm = Form.create()(AddBannerForm);
 
 export default AddBannerForm;

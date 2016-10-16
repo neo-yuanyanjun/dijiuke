@@ -16,7 +16,6 @@ export default {
     },
     // 首页配置 - 删除Banner图片
     deleteBanner(item) {
-        debugger;
         return $.post('/banner/delete', {
             id: item.id
         }).then(function (res) {

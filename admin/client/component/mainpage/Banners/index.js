@@ -190,11 +190,7 @@ export default class Banners extends Component {
     }
 
     onModalOk() {
-        var t = this.refs['add-banner-component'];
-        debugger;
-        // var record = this.refs['add-banner-component'].getRecord();
-        var valuses = this.refs['add-banner-component'].getFieldsValue();
-        debugger;
+        var record = this.refs['add-banner-component'].getRecord();
         if (this.state.actionType === 'add') {
             service.addBanner(record).then(this.loadData.bind(this));
         }
