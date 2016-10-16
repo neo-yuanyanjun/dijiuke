@@ -1,3 +1,9 @@
+/**
+ * @file 新增和修改首页课程配置
+ * @author Yuan Yanjun
+ * @date 2016.10.16
+ */
+
 import React, {Component} from 'react';
 import style from './style.css';
 import Upload from '../../Upload';
@@ -13,8 +19,8 @@ const FormItem = Form.Item;
 export default class extends Component {
     constructor(props) {
         super(props);
-
-        let let defaultCouserInfo = {
+        /* eslint-disable */
+        let defaultCouserInfo = {
             position: null,
             banner: '',
             time: '',
@@ -38,16 +44,17 @@ export default class extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.pic) {
+        if (nextProps.course) {
             this.setState({
+                course: nextProps.course
             });
         }
     }
 
     render() {
         let formItemLayout = {
-            labelCol: { span:4 },
-            wrapperCol: { span: 16 }
+            labelCol: {span: 4},
+            wrapperCol: {span: 16}
         };
 
         // upload
@@ -62,6 +69,7 @@ export default class extends Component {
             <div>
                 <FormItem {...formItemLayout} label="课程名称:">
                     <Input
+                        size='default'
                         name='name'
                         placeholder="课程名称"
                         value={this.state.course.name}
@@ -81,7 +89,7 @@ export default class extends Component {
                 <FormItem {...formItemLayout} label="banner图">
                     <Upload {...uploadProps} ></Upload>
                     {
-                        this.state.course
+                        this.state.course && this.state.course.banner
                         ? <div className={style['image-preview-wrapper']}>
                             <img src={this.state.course.banner} />
                         </div>
@@ -93,7 +101,7 @@ export default class extends Component {
     }
 
     onNameChange(e) {
-        var course = this.state.course;
+        let course = this.state.course;
         course.name = e.target.value;
         this.setState({
             course
@@ -101,7 +109,7 @@ export default class extends Component {
     }
 
     onPositionChange(value) {
-        var course = this.state.course;
+        let course = this.state.course;
         course.position = value;
         this.setState({
             course

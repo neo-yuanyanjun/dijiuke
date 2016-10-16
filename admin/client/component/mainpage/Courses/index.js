@@ -64,7 +64,7 @@ export default class extends Component {
 
         let addCourseProps = {
             ref: 'add-course-component',
-            course: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifyCourse) : null
+            course: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifyCourse) : {}
         };
 
         return (
