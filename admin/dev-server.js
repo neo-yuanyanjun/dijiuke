@@ -1,3 +1,10 @@
+/**
+ * webpack dev sever proxy 上传文件又好使了，这个文件暂时不需要了。
+ *
+ * @file dev server
+ */
+
+
 var express = require('express');
 var path = require('path');
 var webpackConfig = require('./webpack.config');
@@ -22,14 +29,15 @@ app.use(webpackHotMiddleware(compiler));
 // 这个服务写在mock-server里会有问题，响应一直处于pending状态
 // 用“advanced restful client” 测试能转发到mock-server那边
 // 但是在页面上有问题
-app.use('/file/upload', function (req, res) {
-    var response = {
-        code: 0,
-        message: null,
-        data: 'http://img6.bdstatic.com/img/image/smallpic/chongwu1014.jpg'
-    };
-    res.end(JSON.stringify(response));
-});
+// 好像又没有这个bug了
+// app.use('/file/upload', function (req, res) {
+//     var response = {
+//         code: 0,
+//         message: null,
+//         data: 'http://img6.bdstatic.com/img/image/smallpic/chongwu1014.jpg'
+//     };
+//     res.end(JSON.stringify(response));
+// });
 
 // Set up the proxy.
 if(devConfig.proxy) {

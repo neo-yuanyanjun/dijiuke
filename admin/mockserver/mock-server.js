@@ -14,8 +14,8 @@ var app = express();
 app.use(express.static(__dirname));
 
 app.use(function (req, res, next) {
-    // console.log('*******************************');
-    // console.log('request path: ', req.path);
+    console.log('*******************************');
+    console.log('request path: ', req.path);
     // console.log('*******************************');
     var reqPath = req.path;
     if (reqPath[0] === '/') {
