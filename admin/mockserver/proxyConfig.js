@@ -39,5 +39,21 @@ module.exports = {
 
     '/company/update': {
         target: 'http://127.0.0.1:3001'
+    },
+
+    '/home_courses/get': {
+        target: 'http://127.0.0.1:3001'
+    },
+
+    '/home_courses/add': {
+        target: 'http://127.0.0.1:3001'
+    },
+
+    '/home_courses/update': {
+        target: 'http://127.0.0.1:3001'
+    },
+
+    '/home_courses/delete': {
+        target: 'http://127.0.0.1:3001'
     }
 };

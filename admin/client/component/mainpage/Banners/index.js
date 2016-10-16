@@ -96,7 +96,7 @@ export default class Banners extends Component {
         let me = this;
         this.caches.loadDataRequest = service.getBannerList().then(function (response) {
             me.setState({
-                banners: response.data.banners
+                banners: response.data.banners || []
             });
         });
     }
