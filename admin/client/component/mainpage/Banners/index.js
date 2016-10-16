@@ -7,7 +7,6 @@
 import React, {Component} from 'react';
 import style from './style.css';
 import Loading from '../../Loading';
-// import service from './service';
 import service from '../../../service';
 import AddBanner from './AddBanner';
 
@@ -51,7 +50,8 @@ export default class Banners extends Component {
 
         let modalProps = {
             width: 900,
-            closable: false,
+            closable: true,
+            maskClosable: false,
             title: (
                     <div>
                         {this.state.actionType === 'add' ? '新建Banner' : '修改Banner'}
@@ -65,7 +65,8 @@ export default class Banners extends Component {
         };
 
         let addBannerProps = {
-            record: this.state.actionType === 'modify' ? this.state.modifyRecord : null
+            ref: 'add-banner-component',
+            record: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifyRecord) : {}
         };
 
         return (
@@ -189,6 +190,20 @@ export default class Banners extends Component {
     }
 
     onModalOk() {
+        var t = this.refs['add-banner-component'];
+        debugger;
+        // var record = this.refs['add-banner-component'].getRecord();
+        var valuses = this.refs['add-banner-component'].getFieldsValue();
+        debugger;
+        if (this.state.actionType === 'add') {
+            service.addBanner(record).then(this.loadData.bind(this));
+        }
+        else {
+            service.updateBanner(record).then(this.loadData.bind(this));
+        }
+
+        // TODO 做验证
+
         this.setState({
             actionType: null,
             addModalVisible: false,
