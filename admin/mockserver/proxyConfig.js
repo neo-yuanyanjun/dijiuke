@@ -12,7 +12,7 @@ module.exports = {
     //         return '/file/upload';
     //     }
     // }
-    
+
     '/file/upload': {
         target: 'http://127.0.0.1:3001'
     },
@@ -54,6 +54,14 @@ module.exports = {
     },
 
     '/home_courses/delete': {
+        target: 'http://127.0.0.1:3001'
+    },
+
+    '/bottom/get': {
+        target: 'http://127.0.0.1:3001'
+    },
+
+    '/bottom/update': {
         target: 'http://127.0.0.1:3001'
     }
 };
