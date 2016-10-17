@@ -72,7 +72,7 @@ export default class Banners extends Component {
         };
 
         return (
-            <div>
+            <div style={{paddingBottom: '20px'}}>
                 <SubHeader>首页-头部banner图配置</SubHeader>
                 <div className={style['wrapper-btn']}>
                     <Button type='primary' onClick={this.onAdd.bind(this)}>新建</Button>
@@ -192,7 +192,7 @@ export default class Banners extends Component {
     }
 
     onModalOk() {
-        var record = this.refs['add-banner-component'].getRecord();
+        let record = this.refs['add-banner-component'].getRecord();
         if (this.state.actionType === 'add') {
             service.addBanner(record).then(this.loadData.bind(this));
         }
