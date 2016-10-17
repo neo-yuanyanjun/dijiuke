@@ -96,6 +96,61 @@ export default class extends Component {
                         : <div className={style['image-preview-placeholder']}></div>
                     }
                 </FormItem>
+                <FormItem {...formItemLayout} label="开课时间">
+                    <Input
+                        size='default'
+                        name='time'
+                        placeholder="开课时间"
+                        value={this.state.course.time}
+                        onChange={this.onTimeChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="开课城市">
+                    <Input
+                        size='default'
+                        name='city'
+                        placeholder="开课城市"
+                        value={this.state.course.city}
+                        onChange={this.onCityChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="课程介绍">
+                    <Input
+                        size='default'
+                        name='describe'
+                        placeholder="课程介绍"
+                        value={this.state.course.describe}
+                        onChange={this.onDescribeChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="课程价格">
+                    <InputNumber
+                        name='price'
+                        min={1}
+                        max={100000}
+                        defaultValue={1}
+                        value={this.state.course.price}
+                        onChange={this.onPriceChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="按钮文案">
+                    <Input
+                        size='default'
+                        name='button_word'
+                        placeholder="按钮文案"
+                        value={this.state.course.button_word}
+                        onChange={this.onButtonWordChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="按钮跳转链接">
+                    <Input
+                        size='default'
+                        name='button_link'
+                        placeholder="按钮跳转链接"
+                        value={this.state.course.button_link}
+                        onChange={this.onButtonLinkChange.bind(this)}
+                    />
+                </FormItem>
             </div>
         );
     }
@@ -120,6 +175,54 @@ export default class extends Component {
         let res = JSON.parse(response);
         let course = this.state.course;
         course.banner = res.data;
+        this.setState({
+            course
+        });
+    }
+
+    onTimeChange(e) {
+        let course = this.state.course;
+        course.time = e.target.value;
+        this.setState({
+            course
+        });
+    }
+
+    onCityChange(e) {
+        let course = this.state.course;
+        course.city = e.target.value;
+        this.setState({
+            course
+        });
+    }
+
+    onDescribeChange(e) {
+        let course = this.state.course;
+        course.describe = e.target.value;
+        this.setState({
+            course
+        });
+    }
+
+    onPriceChange(value) {
+        let course = this.state.course;
+        course.price = value;
+        this.setState({
+            course
+        });
+    }
+
+    onButtonWordChange(e) {
+        let course = this.state.course;
+        course.button_word = e.target.value;
+        this.setState({
+            course
+        });
+    }
+
+    onButtonLinkChange(e) {
+        let course = this.state.course;
+        course.button_link = e.target.value;
         this.setState({
             course
         });
