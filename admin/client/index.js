@@ -17,6 +17,9 @@ import Company from './component/mainpage/Company';
 import Courses from './component/mainpage/Courses';
 import MainpageBottom from './component/mainpage/Bottom';
 
+// 课程列表
+import CourseList from './component/Course/List';
+
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
@@ -25,6 +28,7 @@ ReactDOM.render(
             <Route path="/mainpage/company" component={Company} />
             <Route path="/mainpage/courses" component={Courses} />
             <Route path="/mainpage/bottom" component={MainpageBottom} />
+            <Route path="/course/list" component={CourseList} />
         </Route>
     </Router>,
     document.getElementById('root')

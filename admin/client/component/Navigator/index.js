@@ -27,6 +27,12 @@ export default class App extends Component {
                     <li>
                         <Link to='/mainpage/bottom' className={style['menu-link']} activeClassName={style.active}>底部图文区</Link>
                     </li>
+                    <li>
+                        <span className={style['menu-group-label']}>课程中心</span>
+                    </li>
+                    <li>
+                        <Link to='/course/list' className={style['menu-link']} activeClassName={style.active}>课程列表</Link>
+                    </li>
                 </ul>
             </div>
         );
