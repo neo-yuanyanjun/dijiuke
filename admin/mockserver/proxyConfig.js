@@ -4,6 +4,12 @@
  * @date 20161016
  */
 
+// rd 开发机ip
+// const host = 'http://139.224.55.29';
+
+// 本地开发机ip
+const host = 'http://127.0.0.1:3001';
+
 module.exports = {
     // '/file/upload': {
     //     target: 'http://127.0.0.1:3001',
@@ -14,54 +20,54 @@ module.exports = {
     // }
 
     '/file/upload': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/banner/get': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/banner/add': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/banner/update': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/banner/delete': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/company/get': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/company/update': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/home_courses/get': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/home_courses/add': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/home_courses/update': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/home_courses/delete': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/bottom/get': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     },
 
     '/bottom/update': {
-        target: 'http://127.0.0.1:3001'
+        target: host
     }
 };
