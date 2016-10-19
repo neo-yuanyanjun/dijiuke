@@ -1,11 +1,21 @@
+/**
+ * @file file upload component
+ * @author  Yuan Yanjun
+ * 有多种方式何以实现文件上传
+ *     1. form + iframe方式，在chrome下兼容性不太好
+ *     2. ajax + file API，可以参考
+ *         http://www.ibm.com/developerworks/cn/web/1101_hanbf_fileupload/index.html
+ *     3. XMLHttpRequest + file + FormData
+ * 本文件采用第三种方式
+ */
+
 import React, {Component} from 'react';
-// import style from './style.css';
 
 const antd = require('antd');
 const Button = antd.Button;
 const Icon = antd.Icon;
 
-export default class Upload extends Component {
+export default class extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -13,69 +23,52 @@ export default class Upload extends Component {
 
 
     btnClickHander() {
-        this.refs['upload-plugin-input'].click();
+        this.refs['file-upload-input'].click();
     }
 
     inputChangehandler() {
-        this.refs['upload-plugin-form'].submit();
-    }
+        let file = this.refs['file-upload-input'].files[0];
+        let path = this.props.action;
+        let name = this.props.name;
+        let uploadCallback = this.props.uploadCallback;
 
-    iframeLoadHandler() {
-        var response = this.refs['upload-plugin-iframe'].contentDocument.body.innerText;
-        if (!response) {
-            return;
-        }
-        this.props.uploadCallback(response);
+        let form = new window.FormData();
+        form.append(name, file);
+
+        let xhr = new window.XMLHttpRequest();
+        xhr.open('post', path, true);
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === window.XMLHttpRequest.DONE && xhr.status === 200) {
+                uploadCallback(xhr.responseText);
+            }
+        };
+
+        xhr.send(form);
     }
 
     componentDidMount() {
-        // React iframe 不支持 onLoad 事件，
-        // 只能按照这种原生的方式来添加事件
-        var iframeDOMNode = this.refs['upload-plugin-iframe'];
-        iframeDOMNode.onload = this.iframeLoadHandler.bind(this);
+
     }
 
     render() {
-        let iframeId = 'upload-plugin-iframe-' + Date.now();
-        let formProps = {
-            ref: 'upload-plugin-form',
-            action: this.props.action,
-            method: this.props.method,
-            encType: 'multipart/form-data',
-            target: iframeId
-        };
-
-        let inputPorps = {
-            ref: 'upload-plugin-input',
-            name: this.props.name,
-            style: {
-                display: 'none'
-            },
-            onChange: this.inputChangehandler.bind(this)
-        };
 
         let buttonProps = {
             onClick: this.btnClickHander.bind(this)
         };
 
-        let iframeProps = {
-            ref: 'upload-plugin-iframe',
-            id: iframeId,
-            name: iframeId,
-            src: '',
+        let inputPorps = {
+            ref: 'file-upload-input',
             style: {
                 display: 'none'
-            }
+            },
+            onChange: this.inputChangehandler.bind(this)
         };
         return (
             <div>
-                <form {...formProps}>
-                    <input type='file' {...inputPorps} />
-                    <Button {...buttonProps}>
-                        <Icon type="upload" /> 上传
-                    </Button>
-                </form>
-                <iframe {...iframeProps} />
+                <input type='file' {...inputPorps} />
+                <Button {...buttonProps}>
+                    <Icon type="upload" /> 上传
+                </Button>
             </div>
         );
     }
