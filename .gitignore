@@ -7,3 +7,5 @@ nohup.out
 demo-1/dist/*
 
 static*
+
+npm-debug.log

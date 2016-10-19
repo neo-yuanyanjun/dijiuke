@@ -2,6 +2,10 @@
  * @file component 『首页-底部图文区』配置页面
  * @author Yuan Yanjun
  * @date 2010.10.09
+ *
+ * tinymce实现文件上传功能：
+ *     1. http://stackoverflow.com/questions/32142099/tinymce-image-upload
+ *     2. https://www.tinymce.com/docs/configure/file-image-upload/
  */
 
 import React, {Component} from 'react';
