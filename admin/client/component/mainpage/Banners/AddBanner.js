@@ -82,7 +82,7 @@ class AddBannerForm extends Component {
         // upload
         const uploadProps = {
             action: '/file/upload',
-            name: 'userfile',
+            name: 'user_file',
             method: 'post',
             uploadCallback: this.imgUploadCallback.bind(this)
         };

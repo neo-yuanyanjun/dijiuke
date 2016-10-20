@@ -56,6 +56,17 @@ app.use('/file/upload', function (req, res) {
     res.end(JSON.stringify(response));
 });
 
+
+// var multer = require('multer');
+// var upload = multer({ dest: 'uploads/' });
+// app.post('/file/upload', upload.single('user_file'), function (req, res, next) {
+//   console.log('file', req.file);
+//   res.JSON({code: 0});
+// });
+
+
+
+
 // Set up the proxy.
 if(devConfig.proxy) {
   Object.keys(devConfig.proxy).forEach(function(context) {

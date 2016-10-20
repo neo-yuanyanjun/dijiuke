@@ -42,7 +42,7 @@ export default class extends Component {
         // upload
         let uploadProps = {
             action: '/file/upload',
-            name: 'userfile',
+            name: 'user_file',
             method: 'post',
             uploadCallback: this.imgUploadCallback.bind(this)
         };

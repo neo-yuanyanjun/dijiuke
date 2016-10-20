@@ -28,6 +28,7 @@
     "file-loader": "^0.8.5",
     "http-proxy-middleware": "^0.17.2",
     "jquery": "^3.1.1",
+    "multer": "^1.2.0",
     "postcss-loader": "^0.8.1",
     "rctui": "^0.6.8",
     "react": "^15.0.0",
