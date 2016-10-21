@@ -1,3 +1,8 @@
+/**
+ * @file file upload test
+ * @author Yuan Yanjun
+ */
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -23,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({dest: 'public/uploads/'});
 app.post('/upload', upload.single('avatar'), function (req, res, next) {
     res.end('get file');
 });
@@ -32,19 +37,19 @@ app.post('/upload', upload.single('avatar'), function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 
-/// catch 404 and forwarding to error handler
-app.use(function(req, res, next) {
+// catch 404 and forwarding to error handler
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-/// error handlers
+// error handlers
 
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -55,7 +60,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
@@ -66,6 +71,8 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
+
 app.listen(3003, function () {
+    /* eslint-disable */
     console.log('server start at port 3003');
 });
