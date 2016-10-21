@@ -11,3 +11,5 @@ static*
 npm-debug.log
 
 fileuploadtest/public/uploads/*
+
+admin/uploads/*

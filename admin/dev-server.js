@@ -1,7 +1,7 @@
 /**
- * webpack dev sever proxy 上传文件又好使了，这个文件暂时不需要了。
+ * @file webpack dev sever proxy 上传文件又好使了，这个文件暂时不需要了。
  *
- * @file dev server
+ * @author Yuan Yanjun
  */
 
 
@@ -21,6 +21,7 @@ var compiler = webpack(webpackConfig);
 
 // app.use(bodyParser());
 app.use(express.static(devConfig.contentBase || __dirname));
+app.use(express.static('uploads/'));
 app.use(webpackDevMiddleware(compiler, {}));
 app.use(webpackHotMiddleware(compiler));
 
@@ -40,7 +41,7 @@ app.use('/file/upload', function (req, res) {
         message: null,
         data: 'http://img6.bdstatic.com/img/image/smallpic/chongwu1014.jpg'
     };
-    
+
     // ant-design的upload插件对相应数据格式有特殊要求，请参考jquery-file-upload的文档
     // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
     // var response = {
@@ -66,22 +67,22 @@ app.use('/file/upload', function (req, res) {
 
 
 
-
 // Set up the proxy.
-if(devConfig.proxy) {
-  Object.keys(devConfig.proxy).forEach(function(context) {
-    app.use(proxyMiddleware(context, devConfig.proxy[context]));
-  });
+if (devConfig.proxy) {
+    Object.keys(devConfig.proxy).forEach(function (context) {
+        app.use(proxyMiddleware(context, devConfig.proxy[context]));
+    });
 }
 
-if(devConfig.historyApiFallback) {
-  console.log('404 responses will be forwarded to /index.html');
+if (devConfig.historyApiFallback) {
+    // console.log('404 responses will be forwarded to /index.html');
 
-  app.get('*', function(req, res) {
-    res.sendFile(path.resolve(devConfig.contentBase, 'index.html'));
-  });
+    app.get('*', function (req, res) {
+        res.sendFile(path.resolve(devConfig.contentBase, 'index.html'));
+    });
 }
 
-app.listen(devConfig.port || 8080, function() {
-  console.log('Development server listening on port ' + devConfig.port);
+app.listen(devConfig.port || 8080, function () {
+    /* eslint-disable */
+    console.log('Development server listening on port ' + devConfig.port);
 });
