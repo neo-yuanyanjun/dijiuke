@@ -30,7 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 var multer  = require('multer');
 var upload = multer({dest: 'public/uploads/'});
 app.post('/upload', upload.single('avatar'), function (req, res, next) {
-    res.end('get file');
+    // res.end('get file');
+    res.end(JSON.stringify(req.file));
+    // res.sendFile(req.file.path);
+    // res.JSON(req.file);
 });
 
 
