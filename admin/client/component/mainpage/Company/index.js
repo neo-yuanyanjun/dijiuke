@@ -6,15 +6,15 @@
 
 import React, {Component} from 'react';
 import style from './style.css';
-import Loading from '../../Loading';
 import service from '../../../service';
 import SubHeader from '../../SubHeader';
 import Update from './Update';
 
 const antd = require('antd');
-const Button = antd.Button;
-const Table = antd.Table;
-const Modal = antd.Modal;
+// const Button = antd.Button;
+// const Table = antd.Table;
+// const Modal = antd.Modal;
+const {Button, Table, Modal} = antd;
 
 export default class Banners extends Component {
     constructor(props) {

@@ -12,9 +12,10 @@ import SubHeader from '../../SubHeader';
 import AddCourse from './AddCourse';
 
 const antd = require('antd');
-const Button = antd.Button;
-const Table = antd.Table;
-const Modal = antd.Modal;
+// const Button = antd.Button;
+// const Table = antd.Table;
+// const Modal = antd.Modal;
+const {Button, Table, Modal} = antd;
 
 export default class extends Component {
     constructor(props) {

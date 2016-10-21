@@ -1,14 +1,19 @@
+/**
+ * @file 首页 - 公司信息图片 - 更新
+ * @author Yuan Yanjun
+ */
+
 import React, {Component} from 'react';
 import style from './style.css';
 import Upload from '../../Upload';
 
 const antd = require('antd');
-const Button = antd.Button;
-const Form = antd.Form;
-const Input = antd.Input;
-const Icon = antd.Icon;
-const InputNumber = antd.InputNumber;
-const FormItem = Form.Item;
+// const Button = antd.Button;
+// const Form = antd.Form;
+// const Input = antd.Input;
+// const Icon = antd.Icon;
+// const InputNumber = antd.InputNumber;
+const FormItem = antd.Form.Item;
 
 export default class extends Component {
     constructor(props) {
@@ -35,8 +40,8 @@ export default class extends Component {
 
     render() {
         let formItemLayout = {
-            labelCol: { span:4 },
-            wrapperCol: { span: 16 }
+            labelCol: {span: 4},
+            wrapperCol: {span: 16}
         };
 
         // upload
@@ -66,7 +71,7 @@ export default class extends Component {
     imgUploadCallback(response) {
         let res = JSON.parse(response);
         this.setState({
-            pic: res.data
+            pic: res.data.file_path
         });
     }
 

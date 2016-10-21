@@ -1,18 +1,20 @@
+/**
+ * @file 首页 - banner - 添加+修改
+ * @author Yuan Yanjun
+ */
 import React, {Component} from 'react';
 import style from './style.css';
 import Upload from '../../Upload';
 
 const antd = require('antd');
-const Button = antd.Button;
-const Form = antd.Form;
-const Input = antd.Input;
-const Icon = antd.Icon;
-const InputNumber = antd.InputNumber;
+// const Form = antd.Form;
+// const Input = antd.Input;
+// const InputNumber = antd.InputNumber;
+const {Form, Input, InputNumber} = antd;
 const FormItem = Form.Item;
-const message = antd.message;
 
 
-class AddBannerForm extends Component {
+export default class extends Component {
     constructor(props) {
         super(props);
         let defaultRecord = {
@@ -28,15 +30,15 @@ class AddBannerForm extends Component {
 
     imgUploadCallback(response) {
         let res = JSON.parse(response);
-        var record = this.state.record;
-        record.pic = res.data;
+        let record = this.state.record;
+        record.pic = res.data.file_path;
         this.setState({
             record
         });
     }
 
     onPositionChange(value) {
-        var record = this.state.record;
+        let record = this.state.record;
         record.position = value;
         this.setState({
             record
@@ -44,7 +46,7 @@ class AddBannerForm extends Component {
     }
 
     onLinkChange(e) {
-        var record = this.state.record;
+        let record = this.state.record;
         record.link = e.target.value;
         this.setState({
             record
@@ -68,15 +70,15 @@ class AddBannerForm extends Component {
 
     componentWillUpdate() {
 
-    }    
+    }
 
     componentWillUnmount() {
     }
 
     render() {
         const formItemLayout = {
-            labelCol: { span:4 },
-            wrapperCol: { span: 16 }
+            labelCol: {span: 4},
+            wrapperCol: {span: 16}
         };
 
         // upload
@@ -122,5 +124,3 @@ class AddBannerForm extends Component {
         );
     }
 }
-
-export default AddBannerForm;

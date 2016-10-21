@@ -9,11 +9,11 @@ import style from './style.css';
 import Upload from '../../Upload';
 
 const antd = require('antd');
-const Button = antd.Button;
-const Form = antd.Form;
-const Input = antd.Input;
-const Icon = antd.Icon;
-const InputNumber = antd.InputNumber;
+// const Form = antd.Form;
+// const Input = antd.Input;
+// const InputNumber = antd.InputNumber;
+
+const {Form, Input, InputNumber} = antd;
 const FormItem = Form.Item;
 
 export default class extends Component {
@@ -174,7 +174,7 @@ export default class extends Component {
     imgUploadCallback(response) {
         let res = JSON.parse(response);
         let course = this.state.course;
-        course.banner = res.data;
+        course.banner = res.data.file_path;
         this.setState({
             course
         });

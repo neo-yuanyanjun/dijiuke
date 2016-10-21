@@ -60,7 +60,8 @@ export default class extends Component {
                 width: 640,
                 height: 960,
                 plugins: 'link image code textcolor colorpicker',
-                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code | image | forecolor backcolor'
+                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code '
+                    + '| image | forecolor backcolor'
             },
             onChange: this.handleEditorChange.bind(this)
         };
@@ -91,7 +92,7 @@ export default class extends Component {
     loadData() {
         let me = this;
         this.caches.loadDataRequest = service.getHomeButton().then(function (response) {
-            let editor = tinymce.EditorManager.get(me.state.editorId);
+            let editor = window.tinymce.EditorManager.get(me.state.editorId);
             editor.setContent(response.data.content);
             me.setState({
                 latestSavedContent: response.data.content
@@ -100,15 +101,14 @@ export default class extends Component {
     }
 
     handleEditorChange(e) {
-        let newContent = e.target.getContent();
     }
 
     onSave() {
         let me = this;
-        let editor = tinymce.EditorManager.get(this.state.editorId);
+        let editor = window.tinymce.EditorManager.get(this.state.editorId);
         let content = editor.getContent();
-        
-        service.updateHomeButton(content).then(function(res) {
+
+        service.updateHomeButton(content).then(function (res) {
             me.setState({
                 latestSavedContent: content
             });
@@ -116,7 +116,7 @@ export default class extends Component {
     }
 
     onCancel() {
-        let editor = tinymce.EditorManager.get(this.state.editorId);
+        let editor = window.tinymce.EditorManager.get(this.state.editorId);
         editor.setContent(this.state.latestSavedContent);
     }
 }

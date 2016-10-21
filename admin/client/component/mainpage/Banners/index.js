@@ -14,9 +14,10 @@ import SubHeader from '../../SubHeader';
 // 不要用import的方式，会报错，请用require
 // import Button from 'antd';
 const antd = require('antd');
-const Button = antd.Button;
-const Table = antd.Table;
-const Modal = antd.Modal;
+// const Button = antd.Button;
+// const Table = antd.Table;
+// const Modal = antd.Modal;
+const {Button, Table, Modal} = antd;
 
 
 export default class Banners extends Component {

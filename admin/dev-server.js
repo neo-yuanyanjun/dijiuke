@@ -21,7 +21,7 @@ var compiler = webpack(webpackConfig);
 
 // app.use(bodyParser());
 app.use(express.static(devConfig.contentBase || __dirname));
-app.use(express.static('uploads/'));
+app.use(express.static('uploads'));
 app.use(webpackDevMiddleware(compiler, {}));
 app.use(webpackHotMiddleware(compiler));
 
@@ -35,35 +35,48 @@ app.use(webpackHotMiddleware(compiler));
 // 1. 我本地开了green vpn的问题(好像不是)
 // 2. 有可能是文件上传的时候，需要把上传的二进制数据也转发过去，
 // mock服务还有接受完二进制数据就直接res.end了，导致出错
-app.use('/file/upload', function (req, res) {
-    var response = {
+
+// app.use('/file/upload', function (req, res) {
+//     var response = {
+//         code: 0,
+//         message: null,
+//         data: 'http://img6.bdstatic.com/img/image/smallpic/chongwu1014.jpg'
+//     };
+
+//     // ant-design的upload插件对相应数据格式有特殊要求，请参考jquery-file-upload的文档
+//     // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
+//     // var response = {
+//     //   files: [{
+//     //     "name": "picture2.jpg",
+//     //     "size": 841946,
+//     //     "url": "http:\/\/example.org\/files\/picture2.jpg",
+//     //     "thumbnailUrl": "http:\/\/example.org\/files\/thumbnail\/picture2.jpg",
+//     //     "deleteUrl": "http:\/\/example.org\/files\/picture2.jpg",
+//     //     "deleteType": "DELETE"
+//     //   }]
+//     // };
+//     res.end(JSON.stringify(response));
+// });
+
+
+var multer = require('multer');
+var upload = multer({dest: 'uploads/'});
+app.post('/file/upload', upload.single('user_file'), function (req, res, next) {
+    /* eslint-disable */
+    var extension = '';
+    var lastIndex = req.file.originalname.lastIndexOf('.');
+    if (lastIndex !== -1) {
+        extension = req.file.originalname.substr(lastIndex);
+    }
+    res.end(JSON.stringify({
         code: 0,
         message: null,
-        data: 'http://img6.bdstatic.com/img/image/smallpic/chongwu1014.jpg'
-    };
-
-    // ant-design的upload插件对相应数据格式有特殊要求，请参考jquery-file-upload的文档
-    // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
-    // var response = {
-    //   files: [{
-    //     "name": "picture2.jpg",
-    //     "size": 841946,
-    //     "url": "http:\/\/example.org\/files\/picture2.jpg",
-    //     "thumbnailUrl": "http:\/\/example.org\/files\/thumbnail\/picture2.jpg",
-    //     "deleteUrl": "http:\/\/example.org\/files\/picture2.jpg",
-    //     "deleteType": "DELETE"
-    //   }]
-    // };
-    res.end(JSON.stringify(response));
+        data: {
+            // file_path: req.file.path + extension
+            file_path: req.file.filename
+        }
+    }));
 });
-
-
-// var multer = require('multer');
-// var upload = multer({ dest: 'uploads/' });
-// app.post('/file/upload', upload.single('user_file'), function (req, res, next) {
-//   console.log('file', req.file);
-//   res.JSON({code: 0});
-// });
 
 
 
