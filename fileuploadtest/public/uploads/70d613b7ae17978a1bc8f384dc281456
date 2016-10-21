@@ -1,7 +1,0 @@
-var controller = require('er/controller');
-console.log(
-    controller.currentURL.getPath(),
-    controller.currentAction.context.url.getPath(),
-    controller.currentAction.context.referrer && controller.currentAction.context.referrer.getPath(),
-    controller.currentAction.context.originalURL && controller.currentAction.context.originalURL.getPath()
-);
