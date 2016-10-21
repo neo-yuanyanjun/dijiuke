@@ -42,6 +42,7 @@
     "redux-actions": "^0.9.1",
     "rucksack-css": "^0.8.5",
     "style-loader": "^0.13.0",
+    "tinymce": "^4.4.3",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.14.1",
