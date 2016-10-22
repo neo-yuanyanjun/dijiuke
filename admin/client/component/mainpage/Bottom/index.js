@@ -6,6 +6,11 @@
  * tinymce实现文件上传功能：
  *     1. http://stackoverflow.com/questions/32142099/tinymce-image-upload
  *     2. https://www.tinymce.com/docs/configure/file-image-upload/
+ *
+ * 如何在webpack中结合tinyMCE可以参考下面两篇文章，等后面熟练webpack后一定要实践：
+ * http://stackoverflow.com/questions/30522896/how-to-shim-tinymce-in-webpack
+ * https://github.com/tinymce/tinymce/issues/2836
+ * https://shellmonger.com/2016/01/22/working-with-fonts-with-webpack/
  */
 
 import React, {Component} from 'react';
