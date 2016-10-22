@@ -15,10 +15,8 @@
 
 import React, {Component} from 'react';
 import style from './style.css';
-// import Loading from '../../Loading';
 import service from '../../../service';
 import SubHeader from '../../SubHeader';
-import TinyMCE from 'react-tinymce';
 
 const antd = require('antd');
 const Button = antd.Button;
@@ -28,12 +26,13 @@ export default class extends Component {
         super(props);
         this.state = {
             // 拉取下的原始数据
-            latestSavedContent: null,
-            editorId: 'my-editor'
+            latestSavedContent: null
         };
     }
 
     componentDidMount() {
+        this.initEditor();
+
         this.caches = {};
         this.loadData();
     }
@@ -42,39 +41,16 @@ export default class extends Component {
         this.caches.loadDataRequest
         && this.caches.loadDataRequest.abort
         && this.caches.loadDataRequest.abort();
+
+        this.destroyEditor();
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     let editor = tinymce.EditorManager.get(this.id);
-    //     if (editor && !isEqual(editor.getContent(), nextProps.content)) {
-    //         tinymce.EditorManager.get(this.id).setContent(nextProps.content)
-    //     }
-    // }
-
-    // shouldComponentUpdate() {
-
-    // }
-
     render() {
-        let editorProps = {
-            id: 'my-editor',
-            // 这个有bug，不会刷新editor 的内容
-            // https://github.com/instructure-react/react-tinymce/issues/21
-            content: this.state.content,
-            config: {
-                width: 640,
-                height: 960,
-                plugins: 'link image code textcolor colorpicker',
-                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code '
-                    + '| image | forecolor backcolor'
-            },
-            onChange: this.handleEditorChange.bind(this)
-        };
         return (
             <div>
                 <SubHeader>首页底部配置</SubHeader>
                 <div className={style['wrapper-editor']}>
-                    <TinyMCE {...editorProps} />
+                    <textarea id='my-tinymce-eidtor'></textarea>
                 </div>
                 <div className={style['wrapper-btns']}>
                     <Button
@@ -94,10 +70,88 @@ export default class extends Component {
         );
     }
 
+    initEditor() {
+        /* eslint-disable1 */
+        window.tinymce.init({
+            selector: '#my-tinymce-eidtor',
+            width: 640,
+            height: 960,
+            file_browser_callback(field_name, url, type, win) {
+                // win.document.getElementById(field_name).value = 'my browser value';
+                let inputEle = document.createElement('input');
+                inputEle.setAttribute('type', 'file');
+                inputEle.style.display = 'none';
+                window.document.body.appendChild(inputEle);
+
+                inputEle.addEventListener('change', function () {
+                    let file = this.files[0];
+                    let path = 'file/upload';
+                    let name = 'user_file';
+
+                    let formData = new window.FormData();
+                    formData.append(name, file);
+
+                    let xhr = new window.XMLHttpRequest();
+                    xhr.open('post', path, true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === window.XMLHttpRequest.DONE && xhr.status === 200) {
+                            let response = JSON.parse(xhr.responseText);
+                            win.document.getElementById(field_name).value = response.data.file_path;
+                        }
+                    };
+
+                    xhr.send(formData);
+                });
+                inputEle.click();
+            },
+            file_browser_callback_types: 'image',
+
+            // images_upload_handler(blobInfo, success, failure) {
+            //     let xhr;
+            //     let formData;
+
+            //     xhr = new window.XMLHttpRequest();
+            //     xhr.withCredentials = false;
+            //     xhr.open('POST', '/file/upload');
+            //     xhr.onload = function () {
+            //         let json;
+
+            //         if (xhr.status !== 200) {
+            //             failure('HTTP Error: ' + xhr.status);
+            //             return;
+            //         }
+
+            //         json = JSON.parse(xhr.responseText);
+
+            //         if (!json || typeof json.file_path !== 'string') {
+            //             failure('Invalid JSON: ' + xhr.responseText);
+            //             return;
+            //         }
+
+            //         success(json.file_path);
+            //     };
+
+            //     formData = new FormData();
+            //     formData.append('user_file', blobInfo.blob(), blobInfo.filename());
+
+            //     xhr.send(formData);
+            // },
+
+            plugins: 'link image code textcolor colorpicker',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code '
+                + '| image | forecolor backcolor'
+        });
+    }
+
+    destroyEditor() {
+        let editor = window.tinymce.EditorManager.get('my-tinymce-eidtor');
+        editor.destroy();
+    }
+
     loadData() {
         let me = this;
         this.caches.loadDataRequest = service.getHomeButton().then(function (response) {
-            let editor = window.tinymce.EditorManager.get(me.state.editorId);
+            let editor = window.tinymce.EditorManager.get('my-tinymce-eidtor');
             editor.setContent(response.data.content);
             me.setState({
                 latestSavedContent: response.data.content
@@ -110,7 +164,7 @@ export default class extends Component {
 
     onSave() {
         let me = this;
-        let editor = window.tinymce.EditorManager.get(this.state.editorId);
+        let editor = window.tinymce.EditorManager.get('my-tinymce-eidtor');
         let content = editor.getContent();
 
         service.updateHomeButton(content).then(function (res) {
@@ -121,7 +175,7 @@ export default class extends Component {
     }
 
     onCancel() {
-        let editor = window.tinymce.EditorManager.get(this.state.editorId);
+        let editor = window.tinymce.EditorManager.get('my-tinymce-eidtor');
         editor.setContent(this.state.latestSavedContent);
     }
 }
