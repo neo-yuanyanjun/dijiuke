@@ -6,15 +6,19 @@
 
 import React, {Component} from 'react';
 import style from './style.css';
+import AddSubCourse from '../AddSubCourse';
 
 const antd = require('antd');
-const {Button, Input, Table, Form} = antd;
+const {Button, Input, Table, Form, Modal} = antd;
 const FormItem = Form.Item;
 
 export default class extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            actionType: null,
+            modifySubCourse: null,
+            addSubCourseModalVisible: false,
             course: this.props.course || {}
         };
     }
@@ -57,6 +61,26 @@ export default class extends Component {
             bordered: true
         };
 
+        let addSubCourseModalProps = {
+            width: 600,
+            closable: true,
+            maskClosable: false,
+            title: (
+                    <div>
+                        {this.state.actionType === 'add' ? '新建课程排期' : '修改课程排期'}
+                    </div>
+                ),
+            visible: this.state.addSubCourseModalVisible,
+            onOk: this.onModalOk.bind(this),
+            onCancel: this.onModalCancel.bind(this),
+            okText: '保存',
+            cancelText: '关闭'
+        };
+        let addSubCourseProps = {
+            ref: 'add-sub-course-component',
+            subCourse: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifySubCourse) : {}
+        };
+
         return (
             <div>
                 <FormItem {...formItemLayout} label="课程名称:">
@@ -81,6 +105,7 @@ export default class extends Component {
                 <div className={style['wrapper-add-sub-course']}>
                     <Button
                         type='primary'
+                        onClick={this.onAddSubCourse.bind(this)}
                     >
                         新增展示课程排期
                     </Button>
@@ -108,6 +133,9 @@ export default class extends Component {
                         onChange={this.onConsultLinkUrlChange.bind(this)}
                     />
                 </FormItem>
+                <Modal {...addSubCourseModalProps}>
+                    <AddSubCourse {...addSubCourseProps}/>
+                </Modal>
             </div>
         );
     }
@@ -233,6 +261,7 @@ export default class extends Component {
                         }}>
                             <Button
                                 style={{marginRight: '10px'}}
+                                onClick={me.onModifySubCourse.bind(me, record)}
                             >
                                 修改
                             </Button>
@@ -256,5 +285,39 @@ export default class extends Component {
         course.sub_courses = subCourses;
 
         return course;
+    }
+
+    // 以下是修改子课程的逻辑
+
+    onAddSubCourse() {
+        this.setState({
+            actionType: 'add',
+            modifySubCourse: null,
+            addSubCourseModalVisible: true
+        });
+    }
+
+    onModifySubCourse(subCourse) {
+        this.setState({
+            actionType: 'modify',
+            modifySubCourse: subCourse,
+            addSubCourseModalVisible: true
+        });
+    }
+
+    onModalOk() {
+        this.setState({
+            actionType: null,
+            modifySubCourse: null,
+            addSubCourseModalVisible: false
+        });
+    }
+
+    onModalCancel() {
+        this.setState({
+            actionType: null,
+            modifySubCourse: null,
+            addSubCourseModalVisible: false
+        });
     }
 }
