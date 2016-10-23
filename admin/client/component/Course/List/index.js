@@ -9,6 +9,7 @@ import style from './style.css';
 import service from '../../../service';
 import SubHeader from '../../SubHeader';
 import Loading from '../../Loading';
+import AddCourse from '../AddCourse';
 
 const antd = require('antd');
 const {Button, Table, Modal} = antd;
@@ -17,7 +18,10 @@ export default class extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            courses: null
+            courses: null,
+            actionType: null,
+            modifyCourse: null,
+            addCourseModalVisible: false
         };
     }
 
@@ -40,12 +44,32 @@ export default class extends Component {
             columns: this.getCoursesTableColumnsConfig(),
             bordered: true
         };
+
+        let modalProps = {
+            // width: '100%',
+            width: 1024,
+            closable: true,
+            maskClosable: false,
+            title: (
+                    <div>
+                        {this.state.actionType === 'add' ? '新建课程' : '修改课程'}
+                    </div>
+                ),
+            visible: this.state.addCourseModalVisible,
+            onOk: this.onModalOk.bind(this),
+            onCancel: this.onModalCancel.bind(this),
+            okText: '保存',
+            cancelText: '关闭'
+        };
+
+        let addCourseProps = {};
         return (
             <div>
                 <SubHeader>课程列表</SubHeader>
                 <div className={style['wrapper-btn']}>
                     <Button type='primary' onClick={this.onAddCourse.bind(this)}>新增课程</Button>
                 </div>
+
                 {
                     this.state.courses
                     ? <div className={style['wrapper-table']}>
@@ -53,6 +77,10 @@ export default class extends Component {
                     </div>
                     : <Loading/>
                 }
+
+                <Modal {...modalProps}>
+                    <AddCourse {...addCourseProps}></AddCourse>
+                </Modal>
             </div>
         );
     }
@@ -101,6 +129,7 @@ export default class extends Component {
                             <Button
                                 type='primary'
                                 style={{marginRight: '10px'}}
+                                onClick={me.onModifyCourse.bind(me, record)}
                             >
                                 课程配置
                             </Button>
@@ -126,8 +155,6 @@ export default class extends Component {
         });
     }
 
-    onAddCourse() {}
-
     onDeleteCourse(course) {
         let me = this;
         Modal.confirm({
@@ -143,6 +170,38 @@ export default class extends Component {
             onCancel() {
                 // do nothing
             }
+        });
+    }
+
+    onAddCourse() {
+        this.setState({
+            actionType: 'add',
+            modifyCourse: null,
+            addCourseModalVisible: true
+        });
+    }
+
+    onModifyCourse(course) {
+        this.setState({
+            actionType: 'modify',
+            modifyCourse: course,
+            addCourseModalVisible: true
+        });
+    }
+
+    onModalOk() {
+        this.setState({
+            actionType: null,
+            modifyCourse: null,
+            addCourseModalVisible: false
+        });
+    }
+
+    onModalCancel() {
+        this.setState({
+            actionType: null,
+            modifyCourse: null,
+            addCourseModalVisible: false
         });
     }
 }
