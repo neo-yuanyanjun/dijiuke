@@ -1,0 +1,18 @@
+.wrapper-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.wrapper-table {
+    text-align: center;
+}
+
+.wrapper-table table,
+.wrapper-table table th
+{
+    text-align: center;
+}
+
+/*.wrapper-table td {
+    text-align: center;
+}*/

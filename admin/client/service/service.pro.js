@@ -101,5 +101,69 @@ export default {
             let response = JSON.parse(res);
             return response;
         });
+    },
+
+    // 课程中心 - 课程 - 获取
+    getCourses() {
+        return $.get('course/get').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 课程 - 新增
+    addCourse(course) {
+        return $.post('course/add', course).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 课程 - 更新
+    updateCourse(course) {
+        return $.post('course/update', course).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 课程 - 删除
+    deleteCourse(courseId) {
+        return $.post('course/delete', {id: courseId}).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 子课程 - 获取
+    getSubCourses() {
+        return $.get('sub_course/get').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 子课程 - 新增
+    addSubCourse(subCourse) {
+        return $.post('sub_course/add', subCourse).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 子课程 - 获取
+    updateSubCourse() {
+        return $.post('sub_course/update').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 课程中心 - 子课程 - 删除
+    deleteSubCourse(subCourseId) {
+        return $.post('sub_course/delete', {id: subCourseId}).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
     }
 };

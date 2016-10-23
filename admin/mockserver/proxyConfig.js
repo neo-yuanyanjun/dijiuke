@@ -69,5 +69,37 @@ module.exports = {
 
     '/bottom/update': {
         target: host
+    },
+
+    '/course/get': {
+        target: host
+    },
+
+    '/course/add': {
+        target: host
+    },
+
+    '/course/update': {
+        target: host
+    },
+
+    '/course/delete': {
+        target: host
+    },
+
+    '/sub_course/get': {
+        target: host
+    },
+
+    '/sub_course/add': {
+        target: host
+    },
+
+    '/sub_course/update': {
+        target: host
+    },
+
+    '/sub_course/delete': {
+        target: host
     }
 };
