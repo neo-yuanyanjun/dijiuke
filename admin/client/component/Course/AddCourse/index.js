@@ -6,6 +6,7 @@
 
 import React, {Component} from 'react';
 import style from './style.css';
+import service from '../../../service';
 import AddSubCourse from '../AddSubCourse';
 
 const antd = require('antd');
@@ -265,7 +266,9 @@ export default class extends Component {
                             >
                                 修改
                             </Button>
-                            <Button>
+                            <Button
+                                onClick={me.onDeleteSubCourse.bind(me, record)}
+                            >
                                 删除
                             </Button>
                         </div>
@@ -288,6 +291,26 @@ export default class extends Component {
     }
 
     // 以下是修改子课程的逻辑
+
+    onDeleteSubCourse(subCourse) {
+        let me = this;
+        Modal.confirm({
+            title: '确认',
+            content: '确定删除此课程排期么？',
+            okText: '确定删除',
+            cancelText: '取消',
+            onOk() {
+                service.deleteSubCourse(subCourse.id).then(function (response) {
+                    // TODO 删除课程后的逻辑
+                    //  1. 更新state.course.sub_courses数组，刷新界面
+                    //  2. 向服务器发送请求更新该课程的子课程列表(这里是否由服务器在删除子课程的时候主动更新主课程的子课程列表比较好呢？)
+                });
+            },
+            onCancel() {
+                // do nothing
+            }
+        });
+    }
 
     onAddSubCourse() {
         this.setState({
