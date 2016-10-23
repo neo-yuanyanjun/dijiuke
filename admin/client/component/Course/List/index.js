@@ -11,7 +11,7 @@ import SubHeader from '../../SubHeader';
 import Loading from '../../Loading';
 
 const antd = require('antd');
-const {Button, Table} = antd;
+const {Button, Table, Modal} = antd;
 
 export default class extends Component {
     constructor(props) {
@@ -106,6 +106,7 @@ export default class extends Component {
                             </Button>
                             <Button
                                 type='primary'
+                                onClick={me.onDeleteCourse.bind(me, record)}
                             >
                                 删除
                             </Button>
@@ -126,4 +127,22 @@ export default class extends Component {
     }
 
     onAddCourse() {}
+
+    onDeleteCourse(course) {
+        let me = this;
+        Modal.confirm({
+            title: '确认',
+            content: '此操作将会删除此课程的所有内容，请慎重！',
+            okText: '确定删除',
+            cancelText: '取消',
+            onOk() {
+                service.deleteCourse(course.id).then(function (response) {
+                    me.loadData();
+                });
+            },
+            onCancel() {
+                // do nothing
+            }
+        });
+    }
 }
