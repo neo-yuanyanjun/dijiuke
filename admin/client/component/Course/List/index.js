@@ -62,7 +62,10 @@ export default class extends Component {
             cancelText: '关闭'
         };
 
-        let addCourseProps = {};
+        let addCourseProps = {
+            ref: 'add-course-component',
+            course: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifyCourse) : {}
+        };
         return (
             <div>
                 <SubHeader>课程列表</SubHeader>
@@ -190,6 +193,14 @@ export default class extends Component {
     }
 
     onModalOk() {
+        let course = this.refs['add-course-component'].getCourseDetail();
+        if (this.state.actionType === 'add') {
+            service.addCourse(course).then(this.loadData.bind(this));
+        }
+        else {
+            service.updateCourse(course).then(this.loadData.bind(this));
+        }
+
         this.setState({
             actionType: null,
             modifyCourse: null,

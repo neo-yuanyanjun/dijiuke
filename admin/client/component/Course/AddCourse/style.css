@@ -1,0 +1,20 @@
+.section-header {
+    line-height: 1;
+    margin: 24px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.wrapper-editor {
+
+}
+.wrapper-add-sub-course {
+    margin: 10px 0;
+}
+
+.wrapper-sub-course-table table,
+.wrapper-sub-course-table table th
+{
+    text-align: center;
+}

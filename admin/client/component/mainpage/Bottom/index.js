@@ -71,7 +71,7 @@ export default class extends Component {
     }
 
     initEditor() {
-        /* eslint-disable1 */
+        /* eslint-disable */
         window.tinymce.init({
             selector: '#my-tinymce-eidtor',
             width: 640,
@@ -101,6 +101,7 @@ export default class extends Component {
                     };
 
                     xhr.send(formData);
+                    window.document.body.removeChild(inputEle);
                 });
                 inputEle.click();
             },
