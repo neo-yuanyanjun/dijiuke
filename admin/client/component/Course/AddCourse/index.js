@@ -367,9 +367,7 @@ export default class extends Component {
             cancelText: '取消',
             onOk() {
                 service.deleteSubCourse(subCourse.id).then(function (response) {
-                    // TODO 删除课程后的逻辑
-                    //  1. 更新state.course.sub_courses数组，刷新界面
-                    //  2. 向服务器发送请求更新该课程的子课程列表(这里是否由服务器在删除子课程的时候主动更新主课程的子课程列表比较好呢？)
+                    me.loadSubCourses();                    
                 });
             },
             onCancel() {
