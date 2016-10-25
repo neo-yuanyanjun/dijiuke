@@ -65,8 +65,9 @@ export default class extends Component {
         let addCourseProps = {
             ref: 'add-course-component',
             course: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifyCourse) : null,
-            // 传一个时间戳，强制弹出框更新界面(可能不需要哟)
-            timestamp: Date.now()
+            // Modal的可见状态改变的时候，传进去。强制Modal中的内容进行刷新
+            addCourseModalVisible: this.state.addCourseModalVisible,
+            actionType: this.state.actionType
         };
         return (
             <div>

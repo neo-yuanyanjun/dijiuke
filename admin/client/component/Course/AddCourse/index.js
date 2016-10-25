@@ -40,13 +40,42 @@ export default class extends Component {
         && this.caches.loadSubCoursesRequest.abort();
     }
 
+    // 在"新建课程" + "课程配置" 两个按钮会触发这个函数
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            course: nextProps.course || {},
-            subCourses: null
-        });
+        // 如果隐藏Modal，清空
+        if (!nextProps.addCourseModalVisible) {
+            this.setState({
+                course: {},
+                subCourses: null
+            });
+            return;
+        }
+        // 如果是显示Modal，并修改课程
+        if (nextProps.actionType === 'modify') {
+            // this.setState({
+            //     course: nextProps.course,
+            //     subCourses: null
+            // });
+            // this.loadSubCourses();
 
-        this.loadSubCourses();
+            // MARK !important
+            // 由于 setState是异步，上面的写法是有问题的，会获取不到最新的course状态
+            // 需要用回调的方式来调用
+            // 详细:
+            // http://stackoverflow.com/questions/36085726/setstate-in-reactjs-is-async-or-sync
+            // http://thereignn.ghost.io/on-the-async-nature-of-setstate-in-react/
+            this.setState({
+                course: nextProps.course,
+                subCourses: null
+            }, () => this.loadSubCourses());
+        }
+        // 如果显示Modal，并新建课程
+        else {
+            this.setState({
+                course: {},
+                subCourses: null
+            });
+        }
     }
 
     componentWillUpdate() {}
@@ -66,7 +95,7 @@ export default class extends Component {
 
         let subCourseTableProps = {
             pagination: false,
-            dataSource: this.state.subCourse,
+            dataSource: this.state.subCourses,
             columns: this.getColumnsConfig(),
             bordered: true
         };
@@ -311,11 +340,16 @@ export default class extends Component {
     loadSubCourses() {
         let me = this;
         // 新建主课程，不拉取子课程 
-        if (!this.props.course || this.props.course.id === undefined) {
+        if (!this.state.course || this.state.course.id === undefined) {
             return;
         }
-        let courseId = this.props.course.id;
-        this.caches.loadSubCoursesRequest = service.getCourses(courseId).then(function (response) {
+
+        this.caches.loadSubCoursesRequest
+        && this.caches.loadSubCoursesRequest.abort
+        && this.caches.loadSubCoursesRequest.abort();
+
+        let courseId = this.state.course.id;
+        this.caches.loadSubCoursesRequest = service.getSubCourses(courseId).then(function (response) {
             me.setState({
                 subCourses: response.data.sub_courses || []
             });
