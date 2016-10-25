@@ -136,8 +136,8 @@ export default {
     },
 
     // 课程中心 - 子课程 - 获取
-    getSubCourses() {
-        return $.get('sub_course/get').then(function (res) {
+    getSubCourses(courseId) {
+        return $.get('sub_course/get', {id: courseId}).then(function (res) {
             let response = JSON.parse(res);
             return response;
         });

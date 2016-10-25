@@ -20,24 +20,33 @@ export default class extends Component {
             actionType: null,
             modifySubCourse: null,
             addSubCourseModalVisible: false,
-            course: this.props.course || {}
+            course: this.props.course || {},
+            subCourses: null
         };
     }
 
     componentDidMount() {
         this.initEditor();
+
+        this.caches = {};
+        this.loadSubCourses();
     }
 
     componentWillUnmount() {
         this.destroyEditor();
+
+        this.caches.loadSubCoursesRequest
+        && this.caches.loadSubCoursesRequest.abort
+        && this.caches.loadSubCoursesRequest.abort();
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.course) {
-            this.setState({
-                course: nextProps.course
-            });
-        }
+        this.setState({
+            course: nextProps.course || {},
+            subCourses: null
+        });
+
+        this.loadSubCourses();
     }
 
     componentWillUpdate() {}
@@ -57,7 +66,7 @@ export default class extends Component {
 
         let subCourseTableProps = {
             pagination: false,
-            dataSource: this.state.course.sub_courses,
+            dataSource: this.state.subCourse,
             columns: this.getColumnsConfig(),
             bordered: true
         };
@@ -82,6 +91,7 @@ export default class extends Component {
             subCourse: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifySubCourse) : {}
         };
 
+        let enableAddSubCourseBtn = this.props.course && this.props.course.id !== undefined;
         return (
             <div>
                 <FormItem {...formItemLayout} label="课程名称:">
@@ -107,9 +117,17 @@ export default class extends Component {
                     <Button
                         type='primary'
                         onClick={this.onAddSubCourse.bind(this)}
+                        disabled={!enableAddSubCourseBtn}
                     >
                         新增展示课程排期
                     </Button>
+                    {
+                        !enableAddSubCourseBtn
+                        ? (
+                            <span className={style.error}>只有新建了主课程，才能新建子课程</span>
+                        )
+                        : null
+                    }
                 </div>
                 <div className={style['wrapper-sub-course-table']}>
                     <Table {...subCourseTableProps}></Table>
@@ -288,6 +306,20 @@ export default class extends Component {
         course.sub_courses = subCourses;
 
         return course;
+    }
+
+    loadSubCourses() {
+        let me = this;
+        // 新建主课程，不拉取子课程 
+        if (!this.props.course || this.props.course.id === undefined) {
+            return;
+        }
+        let courseId = this.props.course.id;
+        this.caches.loadSubCoursesRequest = service.getCourses(courseId).then(function (response) {
+            me.setState({
+                subCourses: response.data.sub_courses || []
+            });
+        });
     }
 
     // 以下是修改子课程的逻辑

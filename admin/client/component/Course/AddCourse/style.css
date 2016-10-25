@@ -18,3 +18,8 @@
 {
     text-align: center;
 }
+
+.error {
+    margin-left: 10px;
+    color: red;
+}
