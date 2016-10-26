@@ -15,8 +15,8 @@ module.exports = function (req, res) {
                     teachers: '大成',
                     describe: '课程描述1',
                     price: 1000,
-                    max_enter_num: 50,
-                    button_word: '去看看'
+                    max_enter_num: 10,
+                    button_word: '去1看看'
                 },
                 {
                     id: 2,
@@ -27,9 +27,9 @@ module.exports = function (req, res) {
                     city: '北京',
                     teachers: '大成',
                     describe: '课程描述2',
-                    price: 1000,
-                    max_enter_num: 50,
-                    button_word: '去看看'
+                    price: 2000,
+                    max_enter_num: 20,
+                    button_word: '去2看看'
                 },
                 {
                     id: 3,
@@ -40,9 +40,9 @@ module.exports = function (req, res) {
                     city: '北京',
                     teachers: '大成',
                     describe: '课程描述3',
-                    price: 1000,
-                    max_enter_num: 50,
-                    button_word: '去看看'
+                    price: 3000,
+                    max_enter_num: 30,
+                    button_word: '去2看看'
                 }
             ]
         }

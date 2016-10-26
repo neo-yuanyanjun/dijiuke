@@ -122,8 +122,12 @@ export default class extends Component {
             cancelText: '关闭'
         };
         let addSubCourseProps = {
+            addSubCourseModalVisible: this.state.addSubCourseModalVisible,
             ref: 'add-sub-course-component',
-            subCourse: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifySubCourse) : {}
+            isEditSubCourse: this.state.actionType === 'modify',
+            courseId: this.state.course.id,
+            courseCode: this.state.course.code,
+            subCourse: this.state.actionType === 'modify' ? Object.assign({}, this.state.modifySubCourse) : null
         };
 
         let enableAddSubCourseBtn = this.props.course && this.props.course.id !== undefined;
@@ -200,7 +204,7 @@ export default class extends Component {
             selector: '#course-content-editor',
             width: 640,
             // height: 960,
-            height: 100,
+            height: 400,
             file_browser_callback(field_name, url, type, win) {
                 let inputEle = document.createElement('input');
                 inputEle.setAttribute('type', 'file');
@@ -410,6 +414,18 @@ export default class extends Component {
             modifySubCourse: null,
             addSubCourseModalVisible: false
         });
+        let me = this;
+        let subCourse = this.refs['add-sub-course-component'].getSubCourseDetail();
+        if (this.state.actionType === 'modify') {
+            service.updateSubCourse(subCourse).then(function () {
+                me.loadSubCourses();
+            });
+        }
+        else if (this.state.actionType === 'add') {
+            service.addSubCourse(subCourse).then(function () {
+                me.loadSubCourses();
+            });
+        }
     }
 
     onModalCancel() {

@@ -152,8 +152,8 @@ export default {
     },
 
     // 课程中心 - 子课程 - 获取
-    updateSubCourse() {
-        return $.post('sub_course/update').then(function (res) {
+    updateSubCourse(subCourse) {
+        return $.post('sub_course/update', subCourse).then(function (res) {
             let response = JSON.parse(res);
             return response;
         });
