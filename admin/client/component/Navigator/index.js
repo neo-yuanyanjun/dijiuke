@@ -33,6 +33,12 @@ export default class App extends Component {
                     <li>
                         <Link to='/course/list' className={style['menu-link']} activeClassName={style.active}>课程列表</Link>
                     </li>
+                    <li>
+                        <span className={style['menu-group-label']}>菜单tab</span>
+                    </li>
+                    <li>
+                        <Link to='/menu' className={style['menu-link']} activeClassName={style.active}>菜单tab</Link>
+                    </li>
                 </ul>
             </div>
         );
