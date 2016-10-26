@@ -17,6 +17,8 @@ export default class extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            // 区分添加/修改主课程
+            isAddCourse: false,
             actionType: null,
             modifySubCourse: null,
             addSubCourseModalVisible: false,
@@ -42,12 +44,17 @@ export default class extends Component {
 
     // 在"新建课程" + "课程配置" 两个按钮会触发这个函数
     componentWillReceiveProps(nextProps) {
+        // 更新编辑器内容
+        let editor = window.tinymce.EditorManager.get('course-content-editor');
+
         // 如果隐藏Modal，清空
         if (!nextProps.addCourseModalVisible) {
             this.setState({
+                isAddCourse: false,
                 course: {},
                 subCourses: null
             });
+            editor.setContent('');
             return;
         }
         // 如果是显示Modal，并修改课程
@@ -65,27 +72,26 @@ export default class extends Component {
             // http://stackoverflow.com/questions/36085726/setstate-in-reactjs-is-async-or-sync
             // http://thereignn.ghost.io/on-the-async-nature-of-setstate-in-react/
             this.setState({
+                isAddCourse: false,
                 course: nextProps.course,
                 subCourses: null
             }, () => this.loadSubCourses());
+            editor.setContent(nextProps.course.course_page_info || '');
         }
         // 如果显示Modal，并新建课程
         else {
             this.setState({
+                isAddCourse: true,
                 course: {},
                 subCourses: null
             });
+            editor.setContent('');
         }
     }
 
     componentWillUpdate() {}
 
-    componentDidUpdate() {
-        // 更新编辑器内容
-        let editor = window.tinymce.EditorManager.get('course-content-editor');
-        let content = this.state.course.course_page_info || '';
-        editor.setContent(content);
-    }
+    componentDidUpdate() {}
 
     render() {
         const formItemLayout = {
@@ -193,7 +199,8 @@ export default class extends Component {
         window.tinymce.init({
             selector: '#course-content-editor',
             width: 640,
-            height: 960,
+            // height: 960,
+            height: 100,
             file_browser_callback(field_name, url, type, win) {
                 let inputEle = document.createElement('input');
                 inputEle.setAttribute('type', 'file');
@@ -330,10 +337,15 @@ export default class extends Component {
         let editor = window.tinymce.EditorManager.get('course-content-editor');
         course.course_page_info = editor.getContent() || '';
 
-        let subCourses = course.sub_courses || [];
+        let subCourses = this.state.subCourses || [];
         subCourses = subCourses.map(subCourse => subCourse.id);
-        course.sub_courses = subCourses;
 
+        // 新建的主课程是没有子课程概念的。
+        // 只有新建好主课程，然后去修改。
+        if (!this.state.isAddCourse) {
+            course.sub_courses = subCourses;
+        }
+    
         return course;
     }
 
