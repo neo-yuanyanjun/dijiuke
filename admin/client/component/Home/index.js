@@ -15,7 +15,7 @@ export default class Banners extends Component {
                 <div style={ {
                     textAlign: 'center',
                     color: 'red'
-                } }>此处应有鲜花和掌声</div>
+                } }></div>
             </div>
         );
     }

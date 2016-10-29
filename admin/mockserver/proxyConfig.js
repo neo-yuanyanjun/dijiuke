@@ -117,5 +117,13 @@ module.exports = {
 
     '/tab/delete': {
         target: host
+    },
+
+    '/order/get': {
+        target: host
+    },
+
+    '/order/detail': {
+        target: host
     }
 };

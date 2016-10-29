@@ -17,6 +17,8 @@ import Company from './component/mainpage/Company';
 import Courses from './component/mainpage/Courses';
 import MainpageBottom from './component/mainpage/Bottom';
 import Menu from './component/Menu';
+import OrderList from './component/Order/List';
+import OrderDetail from './component/Order/detail';
 
 // 课程列表
 import CourseList from './component/Course/List';
@@ -31,6 +33,8 @@ ReactDOM.render(
             <Route path="/mainpage/bottom" component={MainpageBottom} />
             <Route path="/course/list" component={CourseList} />
             <Route path="/menu" component={Menu} />
+            <Route path="/order" component={OrderList} />
+            <Route path="/order/:id" component={OrderDetail} />
         </Route>
     </Router>,
     document.getElementById('root')

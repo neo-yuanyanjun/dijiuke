@@ -197,5 +197,24 @@ export default {
             let response = JSON.parse(res);
             return response;
         });
-    }
+    },
+
+    // 订单 - 获取所有课程订单列表
+    getOrders() {
+        return $.get('order/get').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 订单 - 获取某个课程的订单列表
+    getOrderDetail(id) {
+        return $.get('order/detail', {id: id}).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 订单 - 搜索
+    searchOrder() {}
 };

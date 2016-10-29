@@ -1,0 +1,19 @@
+.wrapper-list-table,
+.wrapper-detail-table
+{
+    margin: 20px 0;
+}
+
+.wrapper-list-table table tr th,
+.wrapper-list-table table tr td,
+.wrapper-detail-table table tr th,
+.wrapper-detail-table table tr td
+{
+    text-align: center;
+}
+
+.operation-bar
+{
+    margin: 20px 0;
+    line-height: 28px;
+}
