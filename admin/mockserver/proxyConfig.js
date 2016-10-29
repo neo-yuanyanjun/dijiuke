@@ -101,5 +101,21 @@ module.exports = {
 
     '/sub_course/delete': {
         target: host
+    },
+
+    '/tab/get': {
+        target: host
+    },
+
+    '/tab/add': {
+        target: host
+    },
+
+    '/tab/update': {
+        target: host
+    },
+
+    '/tab/delete': {
+        target: host
     }
 };

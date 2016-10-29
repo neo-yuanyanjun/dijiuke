@@ -151,7 +151,7 @@ export default {
         });
     },
 
-    // 课程中心 - 子课程 - 获取
+    // 课程中心 - 子课程 - 更新
     updateSubCourse(subCourse) {
         return $.post('sub_course/update', subCourse).then(function (res) {
             let response = JSON.parse(res);
@@ -162,6 +162,38 @@ export default {
     // 课程中心 - 子课程 - 删除
     deleteSubCourse(subCourseId) {
         return $.post('sub_course/delete', {id: subCourseId}).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 全局菜单 - 获取
+    getMenuItems() {
+        return $.get('tab/get').then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 全局菜单 - 新增
+    addMenuItem(menuItem) {
+        return $.post('tab/add', menuItem).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 全局菜单 - 更新
+    updateMenuItem(menuItem) {
+        return $.post('tab/update', menuItem).then(function (res) {
+            let response = JSON.parse(res);
+            return response;
+        });
+    },
+
+    // 全局菜单 - 删除
+    deleteMenuItem(menuItemId) {
+        return $.post('tab/delete', {id: menuItemId}).then(function (res) {
             let response = JSON.parse(res);
             return response;
         });
