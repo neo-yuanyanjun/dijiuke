@@ -192,6 +192,8 @@ export default class extends Component {
                             return '已支付';
                         case 1:
                             return '未支付';
+                        case -1:
+                            return '全部';
                         default:
                             return '未知';
                     }
@@ -203,7 +205,14 @@ export default class extends Component {
                 dataIndex: 'pay_channel',
                 key: 'pay_channel',
                 render(text, record, index) {
-                    return text;
+                    switch (text) {
+                        case 0:
+                            return '支付宝';
+                        case 1:
+                            return '微信';
+                        default:
+                            return '未知';
+                    }
                 }
             }
         ];
@@ -220,7 +229,7 @@ export default class extends Component {
             id: this.state.id,
             offset: pagination.pageSize * (pagination.pageNo - 1),
             num: pagination.pageSize,
-            state: this.state.condition.state
+            state: +this.state.condition.state
         };
         service.getOrderDetail(params).then(function (response) {
             let pagination = me.state.pagination;
@@ -247,5 +256,16 @@ export default class extends Component {
         this.loadData();
     }
 
-    downloadTable() {}
+    downloadTable() {
+        let linkEle = document.createElement('a');
+        let path = 'order/excel';
+        path += '?id=' + this.state.id + '&state=' + this.state.condition.state;
+        linkEle.setAttribute('href', path);
+        linkEle.setAttribute('target', '_blank');
+        window.document.body.appendChild(linkEle);
+        linkEle.click();
+        setTimeout(function () {
+            window.document.body.removeChild(linkEle);
+        }, 500);
+    }
 }

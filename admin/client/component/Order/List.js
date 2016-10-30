@@ -137,5 +137,19 @@ export default class extends Component {
         window.location.hash = '#order/' + record.id;
     }
 
-    downloadTable(record) {}
+    downloadTable(record) {
+        let path = 'order/excel';
+        path += '?id=' + record.id + '&state=-1';
+
+        let linkEle = document.createElement('a');
+        linkEle.setAttribute('href', path);
+        linkEle.setAttribute('target', '_blank');
+
+        window.document.body.appendChild(linkEle);
+        linkEle.click();
+
+        setTimeout(function () {
+            window.document.body.removeChild(linkEle);
+        }, 500);
+    }
 }

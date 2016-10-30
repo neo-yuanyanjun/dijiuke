@@ -19,7 +19,7 @@ module.exports = function (req, res) {
                     total_price: 1000,
                     enter_num: 50,
                     state: 0,
-                    pay_channel: 1
+                    pay_channel: 0
                 },
                 {
                     username: '用户2',
@@ -30,7 +30,7 @@ module.exports = function (req, res) {
                     total_price: 2000,
                     enter_num: 60,
                     state: 1,
-                    pay_channel: 2
+                    pay_channel: 1
                 },
                 {
                     username: '用户3',
@@ -40,8 +40,19 @@ module.exports = function (req, res) {
                     time: '报名时间3',
                     total_price: 3000,
                     enter_num: 70,
+                    state: -1,
+                    pay_channel: 0
+                },
+                {
+                    username: '用户4',
+                    student_name: '真实姓名4',
+                    student_phone_num: '手机号4',
+                    student_email: '邮箱4',
+                    time: '报名时间4',
+                    total_price: 4000,
+                    enter_num: 80,
                     state: 2,
-                    pay_channel: 3
+                    pay_channel: 2
                 }
             ]
         }
