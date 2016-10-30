@@ -1,9 +1,14 @@
 module.exports = function (req, res) {
+    function rand(min, max) {
+        return Math.floor(min + Math.random() * (max - min));
+    }
+
     // state: 订单状态，－1 全部，0 未支付，1 已支付
     var response = {
         code: 0,
         message: '',
         data: {
+            total: rand(500, 2000),
             sub_course_orders: [
                 {
                     username: '用户1',

@@ -16,11 +16,8 @@ import service from '../../service';
 import SubHeader from '../SubHeader';
 
 const antd = require('antd');
-const {Button, Table, Select} = antd;
+const {Button, Table, Select, Pagination} = antd;
 const Option = Select.Option;
-
-// 每页显示20条数据
-const pageSize = 20;
 
 export default class extends Component {
     constructor(props) {
@@ -31,8 +28,12 @@ export default class extends Component {
             orderDetails: null,
             condition: {
                 // 订单状态
-                state: -1,
-                pageNo: 1
+                state: '-1'
+            },
+            pagination: {
+                total: 0,
+                pageNo: 1,
+                pageSize: 10
             }
         };
     }
@@ -55,19 +56,28 @@ export default class extends Component {
             columns: this.getColumnsConfig(),
             bordered: true
         };
+        let paginationProps = {
+            total: this.state.pagination.total,
+            current: this.state.pagination.pageNo,
+            pageSize: this.state.pagination.pageSize,
+            showTotal(total) {
+                return `共 ${total} 个订单`;
+            },
+            onChange: this.onPageNoChange.bind(this)
+        };
         return (
             <div>
                 <SubHeader>课程订单详情</SubHeader>
                 <div className={style['operation-bar']}>
                     选择订单状态：
                     <Select
-                        defaultValue={this.state.condition.state}
+                        value={this.state.condition.state}
                         style={{width: 120}}
                         onChange={this.onSelectChange.bind(this)}
                     >
-                        <Option value={-1}>全部</Option>
-                        <Option value={0}>未支付</Option>
-                        <Option value={1}>已支付</Option>
+                        <Option value='-1'>全部</Option>
+                        <Option value='0'>未支付</Option>
+                        <Option value='1'>已支付</Option>
                     </Select>
                     <Button
                         type='primary'
@@ -86,8 +96,20 @@ export default class extends Component {
                         <Table {...tableProps} />
                     </div>
                 }
+                <div className={style['wrapper-pagination']}>
+                    <Pagination {...paginationProps} />
+                </div>
             </div>
         );
+    }
+
+    onPageNoChange(pageNo) {
+        let pagination = this.state.pagination;
+        pagination.pageNo = pageNo;
+        this.setState({
+            pagination
+        });
+        this.loadData();
     }
 
     getColumnsConfig() {
@@ -192,16 +214,37 @@ export default class extends Component {
         this.setState({
             isLoading: true
         });
-        service.getOrderDetail(this.state.id).then(function (response) {
+
+        let pagination = this.state.pagination;
+        let params = {
+            id: this.state.id,
+            offset: pagination.pageSize * (pagination.pageNo - 1),
+            num: pagination.pageSize,
+            state: this.state.condition.state
+        };
+        service.getOrderDetail(params).then(function (response) {
+            let pagination = me.state.pagination;
+            pagination.total = response.data.total;
             me.setState({
                 isLoading: false,
-                orderDetails: response.data.sub_course_orders
+                orderDetails: response.data.sub_course_orders,
+                pagination
             });
         });
     }
 
-    onSelectChange() {
+    onSelectChange(value) {
+        let condition = this.state.condition;
+        condition.state = value;
 
+        let pagination = this.state.pagination;
+        pagination.pageNo = 1;
+
+        this.setState({
+            condition,
+            pagination
+        });
+        this.loadData();
     }
 
     downloadTable() {}

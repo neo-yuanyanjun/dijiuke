@@ -208,8 +208,8 @@ export default {
     },
 
     // 订单 - 获取某个课程的订单列表
-    getOrderDetail(id) {
-        return $.get('order/detail', {id: id}).then(function (res) {
+    getOrderDetail(params) {
+        return $.get('order/detail', params).then(function (res) {
             let response = JSON.parse(res);
             return response;
         });
