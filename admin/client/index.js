@@ -19,6 +19,7 @@ import MainpageBottom from './component/mainpage/Bottom';
 import Menu from './component/Menu';
 import OrderList from './component/Order/List';
 import OrderDetail from './component/Order/detail';
+import Administrators from './component/Authority/Administrators';
 
 // 课程列表
 import CourseList from './component/Course/List';
@@ -35,6 +36,7 @@ ReactDOM.render(
             <Route path="/menu" component={Menu} />
             <Route path="/order" component={OrderList} />
             <Route path="/order/:id" component={OrderDetail} />
+            <Route path="/authority" component={Administrators} />
         </Route>
     </Router>,
     document.getElementById('root')

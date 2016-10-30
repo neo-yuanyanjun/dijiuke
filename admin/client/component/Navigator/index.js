@@ -45,6 +45,12 @@ export default class App extends Component {
                     <li>
                         <Link to='/order' className={style['menu-link']} activeClassName={style.active}>所有课程订单</Link>
                     </li>
+                    <li>
+                        <span className={style['menu-group-label']}>权限中心</span>
+                    </li>
+                    <li>
+                        <Link to='/authority' className={style['menu-link']} activeClassName={style.active}>管理员管理</Link>
+                    </li>
                 </ul>
             </div>
         );
