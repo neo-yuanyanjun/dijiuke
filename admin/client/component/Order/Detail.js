@@ -205,6 +205,10 @@ export default class extends Component {
                 dataIndex: 'pay_channel',
                 key: 'pay_channel',
                 render(text, record, index) {
+                    // 如果是"未支付"状态，返回'-'字符
+                    if (record.state === 0) {
+                        return '-';
+                    }
                     switch (text) {
                         case 0:
                             return '支付宝';
