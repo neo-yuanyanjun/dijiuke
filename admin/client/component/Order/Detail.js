@@ -188,12 +188,12 @@ export default class extends Component {
                 key: 'state',
                 render(text, record, index) {
                     switch (text) {
-                        case 0:
-                            return '已支付';
-                        case 1:
-                            return '未支付';
                         case -1:
                             return '全部';
+                        case 0:
+                            return '未支付';
+                        case 1:
+                            return '已支付';
                         default:
                             return '未知';
                     }
