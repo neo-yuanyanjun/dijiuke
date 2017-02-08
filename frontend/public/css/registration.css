@@ -1,0 +1,113 @@
+.module-registration {
+    min-height: 200px;
+    background-color: #fff;
+    box-shadow: 0 -10px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: 0 65px;
+    font-size: 24px;
+}
+
+.module-registration .main-title {
+    font-size: 30px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.module-registration .sub-title {
+    margin-top: 46px;
+    font-size: 24px;
+}
+
+.module-registration .form-row {
+    margin-top: 12px;
+}
+
+.module-registration .form-row:after {
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    visibility: hidden;
+}
+
+.module-registration .form-row .form-label {
+    width:112px;
+    padding: 0 15px;
+    height: 72px;
+    float: left;
+    background-color: #e3e8ee;
+    line-height: 72px;
+    text-align: justify;
+    font-size: 24px;
+}
+
+.module-registration .form-row .form-label:after {
+    content: "";
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.module-registration .form-row .form-field {
+    float: right;
+    width: 462px;
+    height: 72px;
+    background-color: #e3e8ee;
+}
+
+.module-registration .warning {
+    font-size: 18px;
+    margin-top: 18px;
+}
+
+.module-registration hr {
+    margin-top: 18px;
+    border: none;
+    border-top: 1px solid #333;
+}
+
+.module-registration .special-info {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 38px;
+}
+
+.module-registration .summary {
+    line-height: 50px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.module-registration .wrapper-btn {
+    margin-top: 40px;
+    width: 100%;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.module-registration .wrapper-btn .btn-pay {
+    display: inline-block;
+    width: 584px;
+    height: 64px;
+    line-height: 64px;
+    border: none;
+    background-color: #11bcc4;
+    font-size: 30px;
+    color: #fff;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.module-registration .wrapper-btn .btn-pay:before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border: 2px solid #11bcc4;
+    top: -13px;
+    right: -15px;
+    bottom: -13px;
+    left: -15px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=0" />
+    <title>第九课堂</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+    <div class="header">
+        <div class="btn-show-menu"></div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/test-pic/test-pic-01.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/test-pic/test-pic-01.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/test-pic/test-pic-01.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="module-company-intro">
+        <img src="/test-pic/test-pic-02.jpg" alt="">
+    </div>
+    <div class="module-courses">
+        <div class="title">主打课程</div>
+        <ul class="course-list">
+            <li>
+                <img src="/test-pic/test-pic-04.jpg" alt="">
+                <a class="btn-view" href="#">查看详情</a>
+            </li>
+            <li>
+                <img src="/test-pic/test-pic-04.jpg" alt="">
+                <a class="btn-view" href="#">查看详情</a>
+            </li>
+            <li>
+                <img src="/test-pic/test-pic-04.jpg" alt="">
+                <a class="btn-view" href="#">查看详情</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <img src="/test-pic/test-pic-03.jpg" alt="">
+    </div>
+    <script src="./lib/swiper/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+.module-order {
+    background-color: #f2f2f2;
+    margin: 50px 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.1);
+    min-height: 100px;
+    font-size: 24px;
+    padding: 0 30px;
+    color: #333;
+}
+
+.module-order .main-title {
+    font-size: 30px;
+    text-align: center;
+    padding: 60px 0 0 0;
+}
+
+.module-order .sub-title {
+    font-size: 24px;
+    margin-top: 60px;
+}
+
+.module-order .msg {
+    line-height: 42px;
+    margin-top: 48px;
+}
+
+.module-order hr {
+    border: none;
+    border-top: 2px solid #3c3c3c;
+    margin-top: 20px;
+}
+
+.module-order table {
+    width: 100%;
+    line-height: 66px;
+    margin-top: 24px;
+}
+
+.module-order table .column-label {
+    text-align: left;
+    width: 340px;
+}
+
+.module-order table .column-value {
+    text-align: center;
+}
+
+.module-order .wrapper-btns {
+    margin-top: 70px;
+    padding-bottom: 30px;
+}
+
+.module-order .wrapper-btns .btn {
+    display: inline-block;
+    width: 264px;
+    background-color: #11bcc4;
+    height: 62px;
+    line-height: 62px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.module-order .wrapper-btns .btn:before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border: 1px solid #11bcc4;
+    top: -11px;
+    right: -11px;
+    bottom: -11px;
+    left: -11px;
+}
+
+.module-order .wrapper-btns .btn.btn-zixun {
+    float: left;
+    margin-left: 11px;
+}
+
+.module-order .wrapper-btns .btn.btn-call {
+    float: right;
+    margin-right: 11px;
+}

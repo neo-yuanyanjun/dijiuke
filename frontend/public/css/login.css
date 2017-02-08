@@ -1,0 +1,133 @@
+.module-logo {
+    text-align: center;
+    margin-top: 148px;
+}
+
+.module-logo img {
+    vertical-align: top;
+}
+
+.wrapper-hit {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.module-login {
+    margin: 160px 90px 0 90px;
+    background-color: #fff;
+    height: 480px;
+    box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 24px;
+}
+
+.module-login .icon-login {
+    position: absolute;
+    width: 154px;
+    height: 154px;
+    background: url(../img/bg-login.png) no-repeat center center transparent;
+    background-size: 100% 100%;
+    left: 50%;
+    top: 0;
+    margin-left: -77px;
+    top: -77px;
+}
+
+.module-login #form-login {
+    /*overflow: hidden;*/
+    padding-top: 130px;
+}
+
+.module-login .form-row {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.module-login .form-row-tel {
+    margin-top: 0;
+}
+
+.module-login .form-row-yanzhengma {
+    margin-top: 50px;
+}
+
+.module-login .form-row .form-lable {
+    background-color: #e3e8ee;
+    float: left;
+    width: 100px;
+    height: 70px;
+    text-align: justify;
+    padding: 0 13px;
+}
+
+.module-login .form-row .form-lable:after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.module-login .form-row .form-field {
+    background-color: #e3e8ee;
+    text-align: left;
+    height: 70px;
+}
+
+.module-login .form-row .form-field input {
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #333;
+    outline: none;
+}
+
+.module-login .form-row-tel .form-field {
+    float: right;
+    width: 330px;
+}
+
+.module-login .form-row-yanzhengma .form-field {
+    margin-left: 14px;
+    float: left;
+    width: 156px;
+}
+
+.module-login .form-row-yanzhengma .wrapper-btn {
+    width: 160px;
+    background-color: #e3e8ee;
+    float: right;
+    height: 70px;
+    text-align: center;
+}
+
+.module-login .form-row-yanzhengma .wrapper-btn .btn-normal {
+    padding: 0 8px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #333;
+    /*box-sizing: border-box;*/
+    margin-top: 9px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.module-login .btn-login {
+    background-color: #11bcc4;
+    display: block;
+    margin: 50px 0 0 50px;
+    width: 470px;
+    height: 70px;
+    font-size: 24px;
+    color: #fffefe;
+    line-height: 70px;
+    border: none;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.2);
+}
