@@ -36,3 +36,51 @@ body {
     margin-top: -19px;
     cursor: pointer;
 }
+
+.ui-number {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 72px;
+    position: relative;
+}
+
+.ui-number .btn-plus, .ui-number .btn-add {
+    position: absolute;
+    top: 0;
+    width: 78px;
+    height: 100%;
+    background-color: #e3e8ee;
+    line-height: 72px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+}
+
+.ui-number .btn-plus {
+    left: 0;
+}
+
+.ui-number .btn-add {
+    right: 0;
+}
+
+.ui-number .number-input {
+    margin: 0 90px;
+    height: 100%;
+    background-color: #e3e8ee;
+}
+
+.ui-number .number-input input {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 24px;
+    padding: 20px 10px;
+    line-height: 32px;
+}
