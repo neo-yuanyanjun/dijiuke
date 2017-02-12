@@ -1,0 +1,157 @@
+.module-user-profile {
+    background-color: #11bcc4;
+}
+
+.module-user-profile .page-title {
+    padding-top: 38px;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.module-user-profile  .user-portrait {
+    margin: 40px auto 0;
+    width: 162px;
+    height: 162px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.module-user-profile  .user-portrait img {
+    width: 100%;
+    height: 100%;
+}
+
+.module-user-profile .user-name {
+    margin-top: 40px;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.module-course-list {
+    padding: 0 16px 60px 10px;
+}
+
+.wrapper-course {
+    margin-top: 40px;
+    border-radius: 4px;
+    padding: 0 20px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1;
+    color: #666;
+    background-color: #eeeeee;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper-course:before {
+    content: " ";
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    top: -80px;
+    width: 140px;
+    height: 100px;
+    border-radius: 50%;
+    /*background: url(../img/bg-header.png);*/
+    /*box-shadow: 0 0 30px 18px rgba(0, 0, 0, 0.1) inset;*/
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+.wrapper-course:after {
+    content: " ";
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    bottom: -80px;
+    width: 140px;
+    height: 100px;
+    border-radius: 50%;
+    /*background: url(../img/bg-header.png);*/
+    /*box-shadow: 0 0 30px 18px rgba(0, 0, 0, 0.1) inset;*/
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+.wrapper-course .course-status {
+    padding-top: 64px;
+    font-size: 30px;
+}
+
+.wrapper-course .course-status .course-commit-time {
+    float: left;
+}
+
+.wrapper-course .course-status .course-order-status {
+    float: right;
+}
+
+.wrapper-course .course-title {
+    margin-top: 76px;
+    font-size: 48px;
+    /*font-weight: bold;*/
+}
+
+.wrapper-course .course-start-time {
+    margin-top: 64px;
+    font-size: 36px;
+    /*font-weight: bold;*/
+}
+
+.wrapper-course .course-person-num {
+    font-size: 36px;
+    margin-top: 76px;
+}
+
+.wrapper-course  .course-cost {
+    font-size: 36px;
+    margin-top: 80px;
+}
+
+.wrapper-course hr {
+    border: none;
+    margin-top: 48px;
+    border-top: 3px solid #999;
+}
+
+.wrapper-course .wrapper-btns {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.wrapper-course .wrapper-btns .btn {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 66px;
+    width: 264px;
+    background-color: #11bcc4;
+    line-height: 66px;
+    color: #fff;
+    font-size: 30px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-course .wrapper-btns .btn:before{
+    display: block;
+    content: " ";
+    overflow: hidden;
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    left: -10px;
+    right: -10px;
+    border: 1px solid #11bcc4;
+}
+
+.wrapper-course .wrapper-btns .btn.btn-service {
+    margin-right: 64px;
+}

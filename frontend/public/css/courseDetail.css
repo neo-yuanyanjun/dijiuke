@@ -1,0 +1,107 @@
+.module-schedule {
+    padding: 60px 16px;
+}
+
+.module-schedule .modult-title {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 76px;
+}
+
+.module-schedule .schedule-item {
+    margin-top: 30px;
+    border-radius: 4px;
+    background-color: #ffa100;
+    height: 212px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.module-schedule .schedule-item .wrapper-img {
+    float: left;
+    margin-top: 27px;
+    margin-left: 12px;
+    width: 240px;
+    height: 158px;
+    overflow: hidden;
+    border: 3px solid #ffa100;
+}
+.module-schedule .schedule-item .wrapper-img img {
+    width: 100%;
+    height: 100%;
+}
+.module-schedule .schedule-item .course-info {
+    margin-left: 266px;
+    margin-top: 30px;
+    font-size: 22px;
+    line-height: 36px;
+    color: #fff;
+}
+.module-schedule .schedule-item .btn {
+    display: block;
+    position: absolute;
+    bottom: 24px;
+    right: 34px;
+    height: 57px;
+    width: 185px;
+    background-color: #fff;
+    line-height: 57px;
+    color: #333;
+    font-size: 34px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.module-schedule .schedule-item .btn:before{
+    display: block;
+    content: " ";
+    overflow: hidden;
+    position: absolute;
+    top: -6px;
+    bottom: -6px;
+    left: -7px;
+    right: -7px;
+    border: 1px solid #fff;
+}
+
+.module-schedule .schedule-item:nth-child(2n) {
+    background-color: #fff;
+}
+
+.module-schedule .schedule-item:nth-child(2n) .wrapper-img {
+    border: 3px solid #f79e47;
+}
+
+.module-schedule .schedule-item:nth-child(2n) .course-info {
+    color: #333;
+}
+
+.module-schedule .schedule-item:nth-child(2n) .btn {
+    background-color: #ffa100;
+    color: #fff;
+}
+
+.module-schedule .schedule-item:nth-child(2n) .btn:before {
+    border-color: #ffa100;
+}
+
+.special-info {
+    margin: 0 0 20px 16px;
+}
+
+.special-info h3 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #333;
+    line-height: 1.5;
+}
+
+.special-info p {
+    margin-left: 40px;
+    color: #666;
+    font-size: 18px;
+    line-height: 30px;
+}
