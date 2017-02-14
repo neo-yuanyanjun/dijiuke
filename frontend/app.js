@@ -25,6 +25,51 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+app.get('/tab', function (req, res) {
+  var response = {
+    code: 0,
+    message: null,
+    data: {
+      menus: [
+        {
+          position: 1,
+          name: '首页',
+          link: '/',
+          icon: ''
+        },
+        {
+          position: 2,
+          name: '广告文案',
+          link: '/',
+          icon: ''
+        },
+        {
+          position: 3,
+          name: '品牌策划',
+          link: '/',
+          icon: ''
+        },
+        {
+          position: 4,
+          name: '我的课程',
+          link: '/myCourses',
+          icon: ''
+        },
+      ]
+    }
+  };
+  res.json(response);
+});
+
+app.post('/sms', function (req, res) {
+  res.json({
+    code: 0,
+    message: null,
+    data: null
+  });
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

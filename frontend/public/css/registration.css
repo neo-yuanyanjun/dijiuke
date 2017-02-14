@@ -18,6 +18,11 @@
     font-size: 24px;
 }
 
+.module-registration .sub-title .btn-view-courses {
+    float: right;
+    color: #11bcc4;
+}
+
 .module-registration .form-row {
     margin-top: 12px;
 }
