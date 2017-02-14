@@ -6,16 +6,9 @@
 
 ;(function (window) {
     $('#btn-get-verification-code').on('tap', function () {
-        $.ajax({
-            type: 'POST',
-            url: '/sms',
-            data: {
-                mobile: $('#telephone').val()
-            }
-        })
-        .then(function (response) {
-
-        }, function (error) {
+        $.post('/sms', {
+            mobile: $('#telephone').val()
+        }, function (response) {
 
         });
     });

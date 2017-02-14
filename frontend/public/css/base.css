@@ -84,3 +84,62 @@ body {
     padding: 20px 10px;
     line-height: 32px;
 }
+
+
+.module-global-tabs {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.module-global-tabs .wrapper-global-tabs-body {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 320px;
+    background-color: #fff;
+}
+
+.module-global-tabs .btn-show-menu {
+    height: 96px;
+    background: url(../img/bg-show-tab.png) no-repeat 40px center transparent;
+}
+
+.module-global-tabs .tab-list li {
+    line-height: 100px;
+    height: 100px;
+    margin-top: 50px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.module-global-tabs .tab-list li img {
+    position: absolute;
+    /*float: left;*/
+    width: 44px;
+    height: 44px;
+    top: 28px;
+    left: 36px;
+}
+
+.module-global-tabs .tab-list li span {
+    display: block;
+    height: 100%;
+    margin-left: 110px;
+    color: #11bcc4;
+    font-size: 30px;
+}
+
+.module-global-tabs .arrows {
+    position: absolute;
+    left: 360px;
+    top: 444px;
+    width: 233px;
+    height: 118px;
+    background: url(../img/arrow.png) no-repeat left top transparent;
+}

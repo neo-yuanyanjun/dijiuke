@@ -26,6 +26,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 app.get('/tab', function (req, res) {
+  var url = 'http://img6.bdstatic.com/img/image/smallpic/mingxing11.jpeg';
   var response = {
     code: 0,
     message: null,
@@ -34,35 +35,35 @@ app.get('/tab', function (req, res) {
         {
           position: 1,
           name: '首页',
-          link: '/',
-          icon: ''
+          link: '/link1',
+          icon: url
         },
         {
           position: 2,
           name: '广告文案',
-          link: '/',
-          icon: ''
+          link: '/link2',
+          icon: url
         },
         {
           position: 3,
           name: '品牌策划',
-          link: '/',
-          icon: ''
+          link: '/link3',
+          icon: url
         },
         {
           position: 4,
           name: '我的课程',
           link: '/myCourses',
-          icon: ''
+          icon: url
         },
       ]
     }
   };
-  res.json(response);
+  res.send(response);
 });
 
 app.post('/sms', function (req, res) {
-  res.json({
+  res.send({
     code: 0,
     message: null,
     data: null

@@ -7,59 +7,35 @@
 $(document).ready(function () {
     // 全局tab
     $('.header .btn-show-menu').on('tap', function () {
-        var xhr = $.ajax({
-            type: 'GET',
-            url: '/tab'
-        });
-        // debugger;
-        xhr.onload = function (response) {
-            debugger;
-            response = window.JSON.parse(response);
-
-            response = {
-                code: 0,
-                message: null,
-                data: {
-                    menus: [{
-                        position: 1,
-                        name: '首页',
-                        link: '/',
-                        icon: ''
-                    }, {
-                        position: 2,
-                        name: '广告文案',
-                        link: '/',
-                        icon: ''
-                    }, {
-                        position: 3,
-                        name: '品牌策划',
-                        link: '/',
-                        icon: ''
-                    }, {
-                        position: 4,
-                        name: '我的课程',
-                        link: '/myCourses',
-                        icon: ''
-                    }]
-                }
-            };
-
+        $.get('/tab', function (response) {
+            // response = JSON.parse(response);
             var templateStr = [
                 '<div class="module-global-tabs">',
-                '<div class="wrapper-global-tabs-body">',
-                '<ul class="tab-list">',
-                '<% for (var i = 0; i < menus.length; i++) { %>',
-                '<li>',
-                '<%= menus[i].name %>',
-                '</li>',
-                '<% } %>',
-                '</ul>',
-                '</div>',
-                '<div class="arrows"></div>',
+                    '<div class="wrapper-global-tabs-body">',
+                        '<div class="btn-show-menu"></div>',
+                        '<ul class="tab-list">',
+                            '<% for (var i = 0; i < menus.length; i++) { %>',
+                            '<li>',
+                                '<% console.log(menus[i]); %>',
+                                '<a href="<%= menus[i].link %>">',
+                                    '<img class="tab-icon" src="<%= menus[i].icon %>" />',
+                                    '<span class="tab-name"><%= menus[i].name %></span>',
+                                '</a>',
+                            '</li>',
+                            '<% } %>',
+                        '</ul>',
+                    '</div>',
+                    '<div class="arrows"></div>',
                 '</div>'
             ].join('');
             var htmlStr = window._.template(templateStr)(response.data);
-            $(htmlStr).appendTo('body');
-        };
+            var $moduleTabs = $(htmlStr);
+            $moduleTabs.appendTo('body').find('.btn-show-menu').on('tap', function (evt) {
+                $moduleTabs.remove();
+            });
+            $moduleTabs.on('swipeLeft', function () {
+                $moduleTabs.remove();
+            });
+        });
     });
 });
