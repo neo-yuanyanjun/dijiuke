@@ -7,11 +7,30 @@
 (function (window) {
     $(document).ready(function () {
         initUiNumber();
+
+        $('.form-row select[name="city"]').on('change', function (evt) {
+            var city = $(this).find('option:checked').text();
+            $('.summary .city').text(city);
+        });
+
+        $('.form-row select[name="time"]').on('change', function (evt) {
+            var time = $(this).find('option:checked').text();
+            $('.summary .time').text(time);
+        });
+
+        window.UI['registration-num'].onChange = function (evt) {
+            debugger;
+        };
     });
 
     function initUiNumber() {
+        window.UI = window.UI || {};
         $('.ui-number').each(function (idx, ele) {
             var $this = $(this);
+            var uiInstance = {};
+            window.UI[$this.data('ui-id')] = uiInstance;
+
+
             var min = parseInt($this.data('min'), 10) || 0;
             var max = parseInt($this.data('max'), 10) || 10000;
             var initialValue = parseInt($this.data('value'), 10) || min;
@@ -24,12 +43,22 @@
                 var value = parseInt($input.val(), 10) || 0;
                 value = Math.min(max, Math.max(min, value - 1));
                 $this.find('.number-input input').val(value);
+                uiInstance.onChange && uiInstance.onChange.call(uiInstance, {
+                    data: {
+                        value: value
+                    }
+                });
             });
 
             $this.find('.btn-add').on('tap', function (e) {
                 var value = parseInt($input.val(), 10) || 0;
                 value = Math.min(max, Math.max(min, value + 1));
                 $this.find('.number-input input').val(value);
+                uiInstance.onChange && uiInstance.onChange.call(uiInstance, {
+                    data: {
+                        value: value
+                    }
+                });
             });
 
             $input.on('input', function (e) {
@@ -41,6 +70,11 @@
 
                 value = Math.min(max, Math.max(min, value));
                 setValue(value);
+                uiInstance.onChange && uiInstance.onChange.call(uiInstance, {
+                    data: {
+                        value: value
+                    }
+                });
             });
 
             function setValue(val) {
