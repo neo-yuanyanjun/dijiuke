@@ -166,7 +166,8 @@ export default class extends Component {
     onSave() {
         let me = this;
         let editor = window.tinymce.EditorManager.get('my-tinymce-eidtor');
-        let content = editor.getContent();
+        // let content = editor.getContent();
+        let content = editor.getContent({format: 'raw'});
 
         service.updateHomeButton(content).then(function (res) {
             me.setState({

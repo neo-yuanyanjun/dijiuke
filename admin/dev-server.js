@@ -73,7 +73,8 @@ app.post('/file/upload', upload.single('user_file'), function (req, res, next) {
         message: null,
         data: {
             // file_path: req.file.path + extension
-            file_path: req.file.filename
+            // file_path: req.file.filename
+            file_path: 'http://localhost:3000/' + req.file.filename
         }
     }));
 });

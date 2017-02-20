@@ -339,7 +339,8 @@ export default class extends Component {
     getCourseDetail() {
         let course = Object.assign({}, this.state.course);
         let editor = window.tinymce.EditorManager.get('course-content-editor');
-        course.course_page_info = editor.getContent() || '';
+        // course.course_page_info = editor.getContent() || '';
+        course.course_page_info = editor.getContent({format: 'raw'}) || '';
 
         let subCourses = this.state.subCourses || [];
         subCourses = subCourses.map(subCourse => subCourse.id);
