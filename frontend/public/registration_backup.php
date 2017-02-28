@@ -1,11 +1,22 @@
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: zhucanxiang
+ * Date: 16/9/29
+ * Time: 下午8:27
+ */
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=0" />
     <title>第九课堂</title>
-    <link rel="stylesheet" type="text/css" href="/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/css/registration.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $res_url; ?>/css/base.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $res_url; ?>/css/registration.css">
 </head>
 <body>
     <div class="header">
@@ -15,19 +26,18 @@
         <div class="main-title">
             课程报名
         </div>
-        <form action="#" id="form-registration">
+        <form action="/enter" method="post" id="form-registration">
             <div class="sub-title">
                 报名课程信息
-                <div class="btn btn-view-courses">查看最新开课计划</div>
+                <!-- <div class="btn btn-view-courses">查看最新开课计划</div> -->
             </div>
             <div class="form-row">
                 <div class="form-label">报名课程</div>
+                <input type="hidden" name="sub_course_id" value="<?php echo $sub_course['id'];?>">
                 <div class="form-field">
                     <div class="wrapper-select">
-                        <select name="course" disabled>
-                            <option value="1">广告文案训练营1</option>
-                            <option value="2">广告文案训练营2</option>
-                            <option value="3">广告文案训练营3</option>
+                        <select name="course">
+                            <option value="1"><?php echo $sub_course['name'];?></option>
                         </select>
                     </div>
                 </div>
@@ -36,10 +46,8 @@
                 <div class="form-label">上课城市</div>
                 <div class="form-field">
                     <div class="wrapper-select">
-                        <select name="city" disabled>
-                            <option value="1">北京</option>
-                            <option value="2">上海</option>
-                            <option value="3">深圳</option>
+                        <select name="city">
+                            <option value="1"><?php echo $sub_course['city'];?></option>
                         </select>
                     </div>
                 </div>
@@ -48,10 +56,8 @@
                 <div class="form-label">开始时间</div>
                 <div class="form-field">
                     <div class="wrapper-select">
-                        <select name="time" disabled>
-                            <option value="1">10月10日-10月15日</option>
-                            <option value="2">11月10日-11月15日</option>
-                            <option value="3">12月10日-12月15日</option>
+                        <select name="time">
+                            <option value="1"><?php echo $sub_course['time'];?></option>
                         </select>
                     </div>
                 </div>
@@ -59,10 +65,10 @@
             <div class="form-row">
                 <div class="form-label">报名人数</div>
                 <div class="form-field form-field-num">
-                    <div class="ui-number" data-ui-id="registration-num" data-min="1" data-max="100" data-valid="int" data-value="1">
+                    <div class="ui-number" data-min="1" data-max="100" data-valid="int" data-value="1">
                         <div class="btn-plus">-</div>
                         <div class="number-input">
-                            <input type="text" name="num">
+                            <input type="text" name="enter_num">
                         </div>
                         <div class="btn-add">+</div>
                     </div>
@@ -73,11 +79,11 @@
                 <div class="form-field form-field-cost">
                     <label for="cost-pre">
                         <input id="cost-pre" type="radio" name="pay_type" value="0" checked="">
-                        ￥499(定金)
+                        ￥<?php echo $sub_course['deposit'];?>(定金)
                     </label>
                     <label for="cost-all">
                         <input id="cost-all" type="radio" name="pay_type" value="1">
-                        ￥1199(全款)
+                        ￥<?php echo $sub_course['price'];?>(全款)
                     </label>
                 </div>
             </div>
@@ -119,28 +125,28 @@
             <div class="pay-by">
                 <div class="alipay">
                     <label for="alipay">
-                        <img src="/img/alipay.png" alt=""><br>
+                        <img src="<?php echo $res_url; ?>/img/alipay.png" alt=""><br>
                         <input id="alipay" type="radio" name="pay_channel" value="0" checked>支付宝
                     </label>
                 </div>
                 <div class="weixin">
                     <label for="weixin">
-                        <img src="/img/weixin.png" alt=""><br>
+                        <img src="<?php echo $res_url; ?>/img/weixin.png" alt=""><br>
                         <input id="weixin" type="radio" name="pay_channel" value="1">微信
                     </label>
                 </div>
             </div>
             <div class="summary">
-                您即将预约<span class="time">8月1号-2号</span>的<span class="city">北京</span>站《<span class="course-name">广告文案课程</span>》<span class="num">1</span>个上课名额<br>
-                <span class="cost">预约费用金额为：￥499</span>
+                您即将预约<span class="time"><?php echo $sub_course['time'];?></span>的<span class="city"><?php echo $sub_course['city'];?></span>站《<span class="course-name"><?php echo $sub_course['name'];?></span>》<span class="num">1</span>个上课名额<br>
+                预约费用金额为：￥<span class="cost">499</span>
             </div>
             <div class="wrapper-btn">
                 <button type="submit" class="btn-pay">确认支付</button>
             </div>
         </form>
     </div>
-    <script src="/lib/zepto/zepto.min.js"></script>
-    <script src="/lib/zepto/zepto.touch.js"></script>
-    <script src="/js/registration.js"></script>
+    <script src="<?php echo $res_url; ?>/lib/zepto/zepto.min.js"></script>
+    <script src="<?php echo $res_url; ?>/lib/zepto/zepto.touch.js"></script>
+    <script src="<?php echo $res_url; ?>/js/registration.js"></script>
 </body>
 </html>

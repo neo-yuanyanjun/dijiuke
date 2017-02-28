@@ -26,7 +26,7 @@
         window.UI['registration-num'].onChange = function (evt) {
             var num = evt.data.value;
             $('.summary .num').text(evt.data.value);
-            var $radio = $('.form-row input[name="cost"]:checked');
+            var $radio = $('.form-row input[name="pay_type"]:checked');
             var reg = /[0-9\.]+/ig;
             var priceText = $radio.parent().text();
             var price = parseFloat(priceText.match(reg)[0]);
@@ -37,7 +37,7 @@
             );
         };
 
-        $('.form-row input[name="cost"][type="radio"]').on('change', function (evt) {
+        $('.form-row input[name="pay_type"][type="radio"]').on('change', function (evt) {
             var reg = /[0-9\.]+/ig;
             var priceText = $(this).parent().text();
             var price = parseFloat(priceText.match(reg)[0]);
@@ -45,7 +45,7 @@
             $('.summary .cost').text(
                 $(this).val() === 1
                 ? '全款费用金额为：' + num * price
-                : '预约费用金额伟：' + num * price
+                : '预约费用金额为：' + num * price
             );
         });
     });
