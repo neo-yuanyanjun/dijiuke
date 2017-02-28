@@ -130,12 +130,20 @@ export default class extends Component {
                         onChange={this.onDescribeChange.bind(this)}
                     />
                 </FormItem>
-                <FormItem {...formItemLayout} label="课程价格:">
+                <FormItem {...formItemLayout} label="全款价格:">
                     <Input
                         name='price'
-                        placeholder="课程价格"
+                        placeholder="课程全款价格"
                         value={this.state.subCourse.price}
                         onChange={this.onPriceChange.bind(this)}
+                    />
+                </FormItem>
+                <FormItem {...formItemLayout} label="定金价格:">
+                    <Input
+                        name='deposit'
+                        placeholder="课程定金价格"
+                        value={this.state.subCourse.deposit}
+                        onChange={this.onDepositChange.bind(this)}
                     />
                 </FormItem>
                 <FormItem {...formItemLayout} label="报名人数:">
@@ -215,6 +223,15 @@ export default class extends Component {
         let price = e.target.value;
         let subCourse = this.state.subCourse;
         subCourse.price = price;
+        this.setState({
+            subCourse
+        });
+    }
+
+    onDepositChange(e) {
+        let deposit = e.target.value;
+        let subCourse = this.state.subCourse;
+        subCourse.deposit = deposit;
         this.setState({
             subCourse
         });

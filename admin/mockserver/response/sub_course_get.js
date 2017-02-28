@@ -15,6 +15,7 @@ module.exports = function (req, res) {
                     teachers: '大成',
                     describe: '课程描述1',
                     price: 1000,
+                    deposit: 500,
                     max_enter_num: 10,
                     button_word: '去1看看'
                 },
@@ -28,6 +29,7 @@ module.exports = function (req, res) {
                     teachers: '大成',
                     describe: '课程描述2',
                     price: 2000,
+                    deposit: 1000,
                     max_enter_num: 20,
                     button_word: '去2看看'
                 },
@@ -41,6 +43,7 @@ module.exports = function (req, res) {
                     teachers: '大成',
                     describe: '课程描述3',
                     price: 3000,
+                    deposit: 1500,
                     max_enter_num: 30,
                     button_word: '去2看看'
                 }
