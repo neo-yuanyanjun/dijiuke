@@ -108,6 +108,18 @@ export default class extends Component {
             },
             {
                 width: 200,
+                title: '图标',
+                dataIndex: 'icon',
+                render(text, record, index) {
+                    return (
+                        <div>
+                            <img src={text} />
+                        </div>
+                    );
+                }
+            },
+            {
+                width: 200,
                 title: '选项名称',
                 dataIndex: 'name',
                 key: 'name'

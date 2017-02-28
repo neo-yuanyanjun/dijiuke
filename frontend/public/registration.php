@@ -137,8 +137,8 @@
                 </div>
             </div>
             <div class="summary">
-                您即将预约<span class="time">8月1号-2号</span>的<span class="city">北京</span>站《<span class="course-name">广告文案课程</span>》<span class="num">1</span>个上课名额<br>
-                <span class="cost">预约费用金额为：￥499</span>
+                您即将预约<span class="time"><?php echo $sub_course['time'];?></span>的<span class="city"><?php echo $sub_course['city'];?></span>站《<span class="course-name"><?php echo $sub_course['name'];?></span>》<span class="num">1</span>个上课名额<br>
+                预约费用金额为：￥<span class="cost"><?php echo $sub_course['deposit'];?></span>
             </div>
             <div class="wrapper-btn">
                 <button type="submit" class="btn-pay">确认支付</button>

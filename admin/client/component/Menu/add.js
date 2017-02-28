@@ -5,6 +5,8 @@
  */
 
 import React, {Component} from 'react';
+import Upload from '../Upload';
+import style from './style.css';
 
 const antd = require('antd');
 const {Input, InputNumber, Form} = antd;
@@ -34,10 +36,26 @@ export default class extends Component {
         };
     }
 
+    imgUploadCallback(response) {
+        response = JSON.parse(response);
+        let menuItem = this.state.menuItem;
+        menuItem.icon = response.data.file_path;
+        this.setState({
+            menuItem
+        });
+    }
+
     render() {
         const formItemLayout = {
             labelCol: {span: 4},
             wrapperCol: {span: 20}
+        };
+
+        const uploadProps = {
+            action: '/file/upload',
+            name: 'user_file',
+            method: 'post',
+            uploadCallback: this.imgUploadCallback.bind(this)
         };
 
         return (
@@ -51,6 +69,16 @@ export default class extends Component {
                         value={this.state.menuItem.position}
                         onChange={this.onPositionChange.bind(this)}
                     />
+                </FormItem>
+                <FormItem {...formItemLayout} label="图标:">
+                    <Upload {...uploadProps} ></Upload>
+                    {
+                        this.state.menuItem.icon
+                        ? <div className={style['image-preview-wrapper']}>
+                            <img src={this.state.menuItem.icon} />
+                        </div>
+                        : <div className={style['image-preview-placeholder']}></div>
+                    }
                 </FormItem>
                 <FormItem {...formItemLayout} label="选项名称:">
                     <Input
