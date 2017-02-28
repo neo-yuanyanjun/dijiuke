@@ -45,8 +45,8 @@
             <div class="form-row">
                 <div class="form-label">上课城市</div>
                 <div class="form-field">
-                    <div class="wrapper-select" disabled>
-                        <select name="city">
+                    <div class="wrapper-select">
+                        <select name="city" disabled>
                             <option value="1"><?php echo $sub_course['city'];?></option>
                         </select>
                     </div>
@@ -55,8 +55,8 @@
             <div class="form-row">
                 <div class="form-label">开始时间</div>
                 <div class="form-field">
-                    <div class="wrapper-select" disabled>
-                        <select name="time">
+                    <div class="wrapper-select">
+                        <select name="time" >
                             <option value="1"><?php echo $sub_course['time'];?></option>
                         </select>
                     </div>
