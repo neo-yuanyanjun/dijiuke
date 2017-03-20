@@ -1,0 +1,214 @@
+body {
+    min-width: 1532px;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.video {
+    width: 100%;
+    overflow: hidden;
+}
+
+.video video {
+    width: 1920px;
+    height: 800px;
+    object-fit: fill;
+}
+
+.greeting {
+    background-color: #fff;
+    text-align: center;
+    padding: 160px 0 260px 0;
+}
+
+
+.module-courses {
+    background-color: #333;
+}
+
+.module-courses h3 {
+    text-align: center;
+    font-size: 46px;
+    color: #fff;
+    padding: 92px 0 80px 0;
+}
+
+.module-courses .list-wrap {
+    width: 1330px;
+    margin: 0 auto;
+}
+
+.module-courses .list-wrap .list {
+    margin-right: -92px;
+}
+
+.module-courses .list-wrap .list .item-wrap {
+    width: 33.33%;
+    float: left;
+    margin-bottom: 110px;
+}
+
+.module-courses .list-wrap .list .item {
+    height: 750px;
+    margin-right: 92px;
+    border: 1px solid #999999;
+    background-color: #fff;
+    padding: 54px 14px 32px 14px;
+}
+
+.module-courses .list-wrap .list .item .course-intro {
+    margin-top: 22px;
+    color: #666666;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.module-courses .list-wrap .list .item .course-img {
+    position: relative;
+    margin: 55px 0 0 -44px;
+    box-shadow: 0 0 20px #333;
+}
+
+.module-courses .list-wrap .list .item .course-img img {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.module-courses .list-wrap .list .item .course-img:after {
+    z-index: 1;
+    content: " ";
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #638487;
+    border-bottom: 10px solid #333333;
+    border-right: 15px solid #638487;
+    border-left: 15px solid #333333;
+    bottom: -20px;
+    left: 0;
+}
+
+.module-courses .list-wrap .list .item .course-price {
+    line-height: 1;
+    color: #d31a1a;
+    font-size: 30px;
+    margin-top: 40px;
+    text-align: right;
+}
+
+.module-courses .list-wrap .list .item .btn-wrap {
+    margin-top: 35px;
+    text-align: right;
+}
+
+.module-zhuanzhu {
+    padding: 66px 0 140px 0;
+    text-align: center;
+    background-color: #333333;
+}
+
+.module-componies {
+    padding: 76px 0;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .greeting {
+        padding: 90px 0 75px 0;
+    }
+
+    .greeting img {
+        max-width: 100%;
+    }
+
+    .module-courses h3 {
+        font-size: 40px;
+        padding: 70px 0;
+    }
+
+    .module-courses .list-wrap {
+        width: auto;
+        margin: 0 20px;
+        overflow: hidden;
+    }
+
+    .module-courses .list-wrap .list {
+        margin-right: -46px;
+    }
+
+    .module-courses .list-wrap .list .item-wrap {
+        width: 50%;
+        margin-bottom: 80px;
+    }
+
+    .module-courses .list-wrap .list .item {
+        margin-right: 46px;
+        padding: 20px 10px;
+    }
+
+    .module-courses .list-wrap .list .item img {
+        max-width: 100%;
+    }
+
+    .module-courses .list-wrap .list .item .course-img {
+        margin: 36px 0 0 0;
+    }
+
+    .module-courses .list-wrap .list .item .course-img:after {
+        display: none;
+    }
+
+    .module-courses .list-wrap .list .item .course-price {
+        margin-top: 26px;
+        text-align: left;
+    }
+
+    .module-courses .list-wrap .list .item .btn-wrap {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .module-courses .list-wrap .list .item .btn-wrap .btn {
+        display: block;
+        margin: 0 24px;
+        font-size: 32px;
+        padding: 10px 0;
+        left: 0;
+    }
+
+    .module-angel img {
+        height: 400px;
+    }
+
+    .module-zhuanzhu {
+        padding: 70px 20px 90px 20px;
+        box-sizing: content-box;
+    }
+
+    .module-zhuanzhu img {
+        max-width: 100%;
+    }
+
+    .module-componies {
+        padding: 36px 20px 56px 20px;
+        box-sizing: content-box;
+    }
+
+    .module-componies .horizontal-center, .module-componies .horizontal-center-ele {
+        float: none;
+        left: 0;
+    }
+
+    .module-componies img {
+        max-width: 100%;
+    }
+}
