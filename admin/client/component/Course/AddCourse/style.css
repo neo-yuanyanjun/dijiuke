@@ -7,7 +7,7 @@
 }
 
 .wrapper-editor {
-
+    display: none;
 }
 .wrapper-add-sub-course {
     margin: 10px 0;
@@ -22,4 +22,17 @@
 .error {
     margin-left: 10px;
     color: red;
+}
+
+.image-preview-placeholder {
+    /*width: 400px;*/
+    min-height: 200px;
+    background-color: #eee;
+    margin-top: 24px;
+}
+.image-preview-wrapper {
+    margin-top: 24px;
+}
+.image-preview-wrapper img {
+    max-width: 100%;
 }

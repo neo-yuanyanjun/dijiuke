@@ -46,8 +46,8 @@ export default class extends Component {
         };
 
         let modalProps = {
-            // width: '100%',
-            width: 1024,
+            width: '100%',
+            // width: 1024,
             closable: true,
             maskClosable: false,
             title: (

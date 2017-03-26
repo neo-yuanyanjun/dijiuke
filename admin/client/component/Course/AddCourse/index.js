@@ -8,6 +8,7 @@ import React, {Component} from 'react';
 import style from './style.css';
 import service from '../../../service';
 import AddSubCourse from '../AddSubCourse';
+import Upload from '../../Upload';
 
 const antd = require('antd');
 const {Button, Input, Table, Form, Modal} = antd;
@@ -23,7 +24,8 @@ export default class extends Component {
             modifySubCourse: null,
             addSubCourseModalVisible: false,
             course: this.props.course || {},
-            subCourses: null
+            subCourses: null,
+            course_type_pic: null
         };
     }
 
@@ -93,10 +95,37 @@ export default class extends Component {
 
     componentDidUpdate() {}
 
+    courseTypePicUploadCallback(response) {
+        let res = JSON.parse(response);
+        let course = this.state.course;
+        course.course_type_pic = res.data.file_path;
+        this.setState({
+            course
+        });
+    }
+
+    courseDetailPicPcUploadCallback(response) {
+        let res = JSON.parse(response);
+        let course = this.state.course;
+        course.pc_course_detail_pic = res.data.file_path;
+        this.setState({
+            course
+        });
+    }
+
+    courseDetailPicMobileUploadCallback(response) {
+        let res = JSON.parse(response);
+        let course = this.state.course;
+        course.mobile_course_detail_pic = res.data.file_path;
+        this.setState({
+            course
+        });
+    }
+
     render() {
         const formItemLayout = {
             labelCol: {span: 2},
-            wrapperCol: {span: 13}
+            wrapperCol: {span: 22}
         };
 
         let subCourseTableProps = {
@@ -131,6 +160,28 @@ export default class extends Component {
         };
 
         let enableAddSubCourseBtn = this.props.course && this.props.course.id !== undefined;
+
+        const courseTypePicUploadProps = {
+            action: '/file/upload',
+            name: 'user_file',
+            method: 'post',
+            uploadCallback: this.courseTypePicUploadCallback.bind(this)
+        };
+
+        const courseDetailPicPcUploadProps = {
+            action: '/file/upload',
+            name: 'user_file',
+            method: 'post',
+            uploadCallback: this.courseDetailPicPcUploadCallback.bind(this)
+        };
+
+        const courseDetailPicMobileUploadProps = {
+            action: '/file/upload',
+            name: 'user_file',
+            method: 'post',
+            uploadCallback: this.courseDetailPicMobileUploadCallback.bind(this)
+        };
+
         return (
             <div>
                 <FormItem {...formItemLayout} label="课程名称:">
@@ -148,7 +199,42 @@ export default class extends Component {
                 <div className={style['wrapper-editor']}>
                     <textarea id='course-content-editor'></textarea>
                 </div>
-
+                <div className='wrapper-course-type-pic'>
+                    <FormItem {...formItemLayout} label="课程类型图片:">
+                        <Upload {...courseTypePicUploadProps} ></Upload>
+                        {
+                            this.state.course.course_type_pic
+                            ? <div className={style['image-preview-wrapper']}>
+                                <img src={this.state.course.course_type_pic} />
+                            </div>
+                            : <div className={style['image-preview-placeholder']}></div>
+                        }
+                    </FormItem>
+                </div>
+                <div className='wrapper-course-detail-pic-pc'>
+                    <FormItem {...formItemLayout} label="课程详情图片-pc:">
+                        <Upload {...courseDetailPicPcUploadProps} ></Upload>
+                        {
+                            this.state.course.pc_course_detail_pic
+                            ? <div className={style['image-preview-wrapper']}>
+                                <img src={this.state.course.pc_course_detail_pic} />
+                            </div>
+                            : <div className={style['image-preview-placeholder']}></div>
+                        }
+                    </FormItem>
+                </div>
+                <div className='wrapper-course-detail-pic-mobile'>
+                    <FormItem {...formItemLayout} label="课程详情图片-mobile:">
+                        <Upload {...courseDetailPicMobileUploadProps} ></Upload>
+                        {
+                            this.state.course.mobile_course_detail_pic
+                            ? <div className={style['image-preview-wrapper']}>
+                                <img src={this.state.course.mobile_course_detail_pic} />
+                            </div>
+                            : <div className={style['image-preview-placeholder']}></div>
+                        }
+                    </FormItem>
+                </div>
                 <div className={style['section-header']}>
                     课程开课排期配置
                 </div>
