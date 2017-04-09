@@ -2,13 +2,6 @@ body {
     min-width: 1512px;
 }
 
-.header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-}
-
 .module-cover .course-cover-mobile {
     display: none;
 }
@@ -21,8 +14,225 @@ body {
 }
 
 .module-course-detail-mobile {
-        display: none;
-    }
+    display: none;
+}
+
+.module-notice {
+    width: 100%;
+    background-color: #fff;
+}
+
+.module-notice .wrap-notice {
+    width: 1240px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+.module-notice .wrap-notice h2 {
+    font-size: 36px;
+    font-weight: normal;
+    margin: 80px 0 0 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.module-notice .wrap-notice .notice-item {
+    margin-top: 68px;
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-left {
+    float: left;
+    width: 120px;
+    height: 120px;
+    background: url(../img/icon-clock.png) no-repeat top center transparent;
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-right {
+    overflow: hidden;
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-right h3 {
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-right p {
+    font-size: 24px;
+    color: #666666;
+    margin-top: 30px;
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-left.address {
+    background-image: url(../img/icon-address.png);
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-left.money {
+    background-image: url(../img/icon-money.png);
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-left.register {
+    background-image: url(../img/icon-register.png);
+}
+
+.module-notice .wrap-notice .notice-item .notice-item-left.contact {
+    background-image: url(../img/icon-contact.png);
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-money .notice-item-right p span {
+    color: #dc3a3a;
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-register .notice-item-right p {
+    line-height: 50px;
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-contact .wrap-contact {
+    border: 1px solid #000000;
+    margin-top: 30px;
+    padding: 30px 60px 30px 30px;
+    width: 360px;
+    overflow: hidden;
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-contact .wrap-contact .QRcode {
+    float: right;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-contact .wrap-contact .contact-detail {
+    overflow: hidden;
+    margin-right: 30px;
+    color: #666666;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.module-notice .wrap-notice .notice-item.notice-item-contact .wrap-contact .contact-detail .name {
+    font-size: 24px;
+}
+
+.module-schedule {
+    background-color: #333333;
+    color: #fff;
+}
+
+.module-schedule .wrap-schedule {
+    width: 1220px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.module-schedule .wrap-schedule h2 {
+    font-size: 36px;
+    margin-top: 84px;
+    text-align: center;
+}
+
+.module-schedule .wrap-schedule .wrap-table-header {
+    margin-top: 120px;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.module-schedule .wrap-schedule .wrap-table-header .table-heder-item {
+    width: 25%;
+    float: left;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    text-align: center;
+    background: url(../img/icon-course-name.png) no-repeat top center transparent;
+    line-height: 1;
+}
+
+.module-schedule .wrap-schedule .wrap-table-header .table-heder-item.table-header-item-course-address {
+    background-image: url(../img/icon-address-2.png);
+}
+
+.module-schedule .wrap-schedule .wrap-table-header .table-heder-item.table-header-item-course-teacher {
+    background-image: url(../img/icon-teacher.png);
+}
+
+.module-schedule .wrap-schedule .wrap-table-header .table-heder-item.table-header-item-course-time {
+    background-image: url(../img/icon-clock-2.png);
+}
+
+.module-schedule .wrap-schedule table {
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 24px;
+    line-height: 80px;
+}
+
+.module-schedule .wrap-schedule table td {
+    border: 1px solid #c9c9c9;
+    width: 25%;
+}
+
+.module-schedule .wrap-schedule .wrap-max-person {
+    margin: 50px 0 40px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.module-schedule .wrap-schedule .wrap-register {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.module-schedule .wrap-schedule .wrap-register .btn {
+    height: 60px;
+    line-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 240px;
+    background-color: #fff;
+    color: #333;
+}
+
+.module-schedule .wrap-schedule .wrap-register .btn:after {
+    border-color: #fff;
+}
+
+.module-schedule .wrap-schedule .wrap-notice {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 50px;
+    color: #eeeeee;
+}
+
+.module-schedule .wrap-schedule .wrap-notice h4 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.module-schedule .wrap-schedule .wrap-notice .wrap-notice-left {
+    float: left;
+}
+
+.module-schedule .wrap-schedule .wrap-notice .wrap-notice-right {
+    float: left;
+    margin-left: 160px;
+}
+
+.module-schedule .wrap-warning {
+    width: 100%;
+    text-align: center;
+    background-color: #d34458;
+    font-size: 36px;
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+}
+
 
 @media screen and (max-width: 1000px) {
     body {
@@ -76,5 +286,37 @@ body {
 
     .module-course-detail-mobile img {
         width: 100%;
+    }
+
+    .module-notice .wrap-notice {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    .module-notice .wrap-notice .notice-item.notice-item-contact .wrap-contact {
+        width: auto;
+    }
+
+    .module-schedule .wrap-schedule {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    .module-schedule .wrap-schedule table {
+        line-height: 40px;
+    }
+
+    .module-schedule .wrap-schedule .wrap-notice .wrap-notice-left {
+        float: none;
+        margin-top: 50px;
+    }
+
+    .module-schedule .wrap-schedule .wrap-notice .wrap-notice-right {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .module-schedule .wrap-warning {
+        font-size: 24px;
     }
 }

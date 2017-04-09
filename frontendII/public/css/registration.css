@@ -1,3 +1,7 @@
+.header {
+    position: relative;
+}
+
 .module-register {
     border-bottom: 65px solid #909090;
     width: 100%;

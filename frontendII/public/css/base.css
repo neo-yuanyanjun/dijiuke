@@ -76,6 +76,10 @@ img {
     line-height: 100px;
     font-size: 24px;
     color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
 }
 
 .header .slogan {
@@ -181,13 +185,59 @@ img {
         min-width: initial!important;
     }
 
+    .header {
+        box-shadow: 0 0 20px #333;
+    }
+
     .header .slogan {
         margin-left: 35px;
     }
 
     .header .navs {
         display: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        margin: 0;
+        text-align: justify;
+        background-color: rgba(50, 50, 50, 0.6);
+        -moz-text-align-last:justify; /*ff*/
+        -webkit-text-align-last:justify; /*chrome 20+*/
+        box-sizing: border-box;
+        padding: 0 40px;
+        height: 100px;
+        overflow: hidden;
     }
+
+    .header .navs:after{
+        content:".";
+        display: inline-block;
+        width:100%;
+        overflow:hidden;
+        height:0;
+    }
+
+    .header .navs a {
+        float: left;
+        width: 25%;
+        text-align: center;
+        margin: 0;
+        position: relative;
+    }
+
+    .header .navs a:after {
+        position: absolute;
+        content: "\\";
+        display: block;
+        color: #fff;
+        font-size: 40px;
+        right: 0;
+        top: 0;
+    }
+
+    .header .navs a:last-child:after {
+        content: " ";
+    }  
 
     .header .btn-register {
         display: block;
