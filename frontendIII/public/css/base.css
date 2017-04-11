@@ -1,0 +1,173 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+button,article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark,
+audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+button{background: transparent;}
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+html{
+    line-height: initial;
+}
+body{
+    font-size: 0.32rem;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333;
+    background-color: #333;
+}
+
+/* 禁止选取文本 */
+html, body {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* 文本溢出处理 */
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ios回弹滚动 */
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 去除输入框阴影 */
+input, textarea {
+    border: 0;
+    -webkit-appearance: none;
+}
+
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    background-color: #333333;
+    position: relative;
+    top: 0.05rem;
+    left: 0.05rem;
+    text-align: center;
+
+    height: 0.46rem;
+    line-height: 0.46rem;
+    font-size: 0.24rem;
+    width: 1.08rem;
+}
+
+.btn:after {
+    display: block;
+    content: " ";
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid #333;
+
+    top: -0.05rem;
+    right: -0.05rem;
+    bottom: -0.05rem;
+    left: -0.05rem;
+}
+
+.header {
+    height: 1rem;
+    line-height: 1rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.header-main {
+    box-shadow: 0 0 20px #333;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.header .btn {
+    float: right;
+    margin-right: 0.34rem;
+    margin-top: 0.25rem;
+}
+
+.header .slogan {
+    float: left;
+    margin-left: 0.35rem;
+    font-size: 0.3rem;
+}
+
+.header .slogan img {
+    vertical-align: middle;
+    width: 1.5rem;
+    margin-right: 0.1rem;
+}
+
+.header .navs {
+    z-index: -1;
+    /*display: block;*/
+    display: none;
+    position: absolute;
+    /*width: 100%;*/
+    left: 0;
+    right: 0;
+    padding: 0 0.3rem;
+    top: 100%;
+    background-color: #fff;
+    height: 0.92rem;
+    line-height: 0.92rem;
+}
+
+.header .navs a {
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #666;
+    font-size: 0.24rem;
+    position: relative;
+}
+
+.header .navs a:after {
+    display: block;
+    content: "\\";
+    position: absolute;
+    top: 0;
+    /*right: -0.2rem;*/
+    right: 0;
+    font-size: 0.4rem;
+}
+
+.header .navs a:last-child:after {
+    display: none;
+}
