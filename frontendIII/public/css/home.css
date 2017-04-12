@@ -1,0 +1,130 @@
+.module-video .video-container {
+    width: 100%;
+    height: 9rem;
+}
+
+.module-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.module-video .wrap-register {
+    position: absolute;
+    right: 1.26rem;
+    top: 4.2rem;
+    font-size: 0.24rem;
+    color: #fefefe;
+    text-align: right;
+    line-height: 0.6rem;
+}
+
+.module-video .wrap-register .btn {
+    width: 2.28rem;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    background-color: #fff;
+    color: #333333;
+    left: -0.05rem;
+    margin: 0.4rem 0;
+}
+
+.module-video .wrap-register .btn:after {
+    border-color: #fff;
+}
+
+.module-declaration {
+    height: 1.84rem;
+    line-height: 1.84rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.module-declaration img {
+    vertical-align: middle;
+}
+
+.module-courses {
+    background-color: #333333;
+}
+
+.module-courses .title {
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+}
+
+.module-wrapper {
+    width: 9.8rem;
+    margin: 0 auto;
+}
+
+.module-courses .course {
+    margin-top: 1.5rem;
+    height: 2.68rem;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.module-courses .course:first-child {
+    margin-top: 0.26rem;
+}
+
+.module-courses .course .course-cover {
+    width: 4.56rem;
+    height: 3.16rem;
+    position: absolute;
+    left: 0;
+    top: -0.24rem;
+}
+
+.module-courses .course .course-info {
+    margin-left: 4.9rem;
+    padding-top: 0.2rem;
+    color: #666;
+}
+
+.module-courses .course .course-title {
+    font-size: 0.24rem;
+}
+
+.module-courses .course .course-title img {
+    vertical-align: text-bottom;
+}
+
+.module-courses .course .course-detail {
+    margin-top: 0.34rem;
+    font-size: 0.16rem;
+    line-height: 0.3rem;
+}
+
+.module-courses .course .course-entrance {
+    position: absolute;
+    width: 2.12rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    background-color: #36a59c;
+    color: #fff;
+    font-size: 0.24rem;
+    text-align: center;
+    right: 0.48rem;
+    bottom: -0.24rem;
+}
+
+.module-courses .course.even .course-cover {
+    left: auto;
+    right: 0;
+}
+
+.module-courses .course.even .course-info {
+    margin-left: 0;
+    margin-right: 5.26rem;
+    text-align: right;
+}
+
+.module-courses .course.even .course-entrance {
+    right: auto;
+    left: 0.48rem;
+}

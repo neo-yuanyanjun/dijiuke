@@ -103,11 +103,24 @@ a {
     left: -0.05rem;
 }
 
+.horizontal-center-container {
+    overflow: hidden;
+}
+
+.horizontal-center {
+    position: relative;
+    left: 50%;
+    top: 0;
+    float: left;
+    transform: translateX(-50%);
+}
+
 .header {
     height: 1rem;
     line-height: 1rem;
     background-color: #fff;
     position: relative;
+    z-index: 1000;
 }
 
 .header-main {
@@ -170,4 +183,60 @@ a {
 
 .header .navs a:last-child:after {
     display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .header {
+        height: 0.74rem;
+        line-height: 0.74rem;
+        box-shadow: 0 0 20px #333;
+    }
+
+    .header .header-main {
+        float: left;
+        margin-left: 1.1rem;
+        box-shadow: none;
+    }
+
+    .header .slogan {
+        font-size: 0.24rem;
+    }
+
+    .header .slogan img {
+        width: 1.4rem;
+    }
+
+    .header .btn {
+        display: none;
+    }
+
+    .header .navs {
+        display: block;
+        padding: 0;
+        width: 7rem;
+        position: static;
+        float: right;
+        margin-right: 1.1rem;
+        height: 0.74rem;
+        line-height: 0.74rem;
+        text-align: right;
+    }
+
+    .header .navs a {
+        padding: 0 0.16rem;
+        margin-left: 40px;
+        width: auto;
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .header .navs a.current {
+        background-color: #333333;
+        color: #fff;
+    }
+
+    .header .navs a:after {
+        display: none;
+    }
 }
