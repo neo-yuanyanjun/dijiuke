@@ -1,0 +1,75 @@
+.module-cover {
+    height: 7.95rem;
+    background: url(../img/course-1/cover.jpg) no-repeat center center transparent;
+    background-size: 19.2rem 7.95rem;
+    position: relative;
+}
+
+.module-cover .btn-register {
+    height: 0.54rem;
+    line-height: 0.54rem;
+    width: 2.36rem;
+    font-size: 0.3rem;
+    position: absolute;
+    top: 6.7rem;
+    left: 50%;
+    margin-left: -4.36rem;
+}
+
+.module-guide {
+    height: 9.9rem;
+    background: url(../img/course-1/guide.png) no-repeat center 1.4rem #fff;
+}
+
+.module-teachers {
+    height: 20.17rem;
+    background: url(../img/course-1/teachers.png) no-repeat center 0.7rem #333;
+}
+
+.module-schedule {
+    height: 10rem;
+    background: url(../img/course-1/schedule.png) no-repeat center 1rem #fff;
+}
+
+@media screen and (max-width: 1000px) {
+    .module-cover {
+        height: 9.81rem;
+        background: url(../img/course-1/cover-mobile.jpg) no-repeat center center transparent;
+        background-size: 100% 100%;
+    }
+
+    .module-cover .btn-register {
+        height: 0.54rem;
+        line-height: 0.54rem;
+        width: 2.36rem;
+        font-size: 0.24rem;
+        position: absolute;
+        top: 8.56rem;
+        left: 50%;
+        margin-left: -1.18rem;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .module-cover .btn-register:after {
+        border-color: #fff;
+    }
+
+    .module-guide {
+        height: 9.14rem;
+        background: url(../img/course-1/guide-mobile.png) no-repeat center 0.96rem #fff;
+        background-size: 6.09rem 6.77rem;
+    }
+
+    .module-teachers {
+        height: 33.70rem;
+        background: url(../img/course-1/teachers-mobile.png) no-repeat center 0.46rem #333;
+        background-size: 7.07rem 32.69rem;
+    }
+
+    .module-schedule {
+        height: 13.11rem;
+        background: url(../img/course-1/schedule-mobile.png) no-repeat 1.65rem 0.48rem #fff;
+        background-size: 4.62rem 12.41rem;
+    }
+}
