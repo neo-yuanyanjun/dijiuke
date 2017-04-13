@@ -9,6 +9,10 @@
     object-fit: fill;
 }
 
+.module-video .video-preview {
+    display: none;
+}
+
 .module-video .wrap-register {
     position: absolute;
     right: 1.26rem;
@@ -46,6 +50,7 @@
 
 .module-courses {
     background-color: #333333;
+    padding-bottom: 1.38rem;
 }
 
 .module-courses .title {
@@ -127,4 +132,292 @@
 .module-courses .course.even .course-entrance {
     right: auto;
     left: 0.48rem;
+}
+
+.module-investor {
+    background-color: #f0e9e6;
+}
+
+.module-investor img {
+    width: 100%;
+}
+
+.module-focus {
+    height: 6.6rem;
+    background-color: #333333;
+    text-align: center;
+    overflow: hidden;
+}
+
+.module-focus img {
+    margin-top: 0.93rem;
+}
+
+.module-clients {
+    height: 7.3rem;
+    background-color: #ffffff;
+    border-bottom: 0.65rem solid #36a59c;
+}
+
+.module-clients img {
+    width: 100%;
+    margin-top: 1.15rem;
+}
+
+.module-contact {
+    height: 6.06rem;
+    background-color: #333333;
+    color: #fff;
+}
+
+.module-contact .module-wrapper {
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+.module-contact .wrapper-contact {
+    width: 4rem;
+    padding-top: 1.16rem;
+    z-index: 1;
+}
+
+.module-contact .wrapper-contact .title {
+    font-size: 0.2rem;
+    line-height: 0.45rem;
+}
+
+.module-contact .wrapper-contact .title-contact {
+    margin-top: 0.52rem;
+}
+
+.module-contact .wrapper-contact p {
+    font-size: 0.16rem;
+    line-height: 0.3rem;
+}
+
+.module-contact .wrapper-map {
+    position: absolute;
+    top: 1.16rem;
+    right: 0;
+    width: 5.45rem;
+    z-index: 0;
+}
+
+.module-contact .wrapper-map img {
+    width: 100%;
+}
+
+.module-footer {
+    background-color: #666666;
+    height: 2.9rem;
+}
+
+.module-footer .title {
+    font-size: 0.18rem;
+    color: #fff;
+    line-height: 1;
+    padding-top: 0.24rem;
+    padding-bottom: 0.14rem;
+}
+
+.module-footer p {
+    line-height: 0.32rem;
+    font-size: 0.14rem;
+    color: #e0e0e0;
+}
+
+.module-footer p a {
+    color: #e0e0e0;
+    margin-right: 0.16rem;
+}
+
+.module-footer .copyright {
+    font-size: 0.16rem;
+    color: #999999;
+    line-height: 1;
+    margin-top: 0.8rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .module-video .video-container {
+        position: relative;
+        height: auto;
+    }
+
+    .module-video .video-preview {
+        display: block;
+        width: 100%;
+    }
+
+    .module-video video {
+        display: none;
+    }
+
+    .module-video .wrap-register {
+        position: absolute;
+        top: 1.96rem;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        line-height: 0.8rem;
+        font-size: 0.3rem;
+    }
+
+    .module-video .wrap-register .btn {
+        height: 0.6rem;
+        line-height: 0.6rem;
+        width: 2.66rem;
+        font-size: 0.32rem;
+    }
+
+    .module-declaration {
+        height: 2.35rem;
+        line-height: 2.35rem;
+    }
+
+    .module-declaration img {
+        /*width: 6.15rem;*/
+        height: 0.67rem;
+    }
+
+    .module-wrapper {
+        width: auto;
+    }
+
+    .module-courses {
+        padding-bottom: 1.83rem;
+    }
+
+    .module-courses .title {
+        height: 1.78rem;
+        line-height: 1.78rem;
+        font-size: 0.3rem;
+    }
+
+    .module-courses .course {
+        margin-top: 2.1rem;
+        width: 6.52rem;
+        margin-left: auto;
+        margin-right: auto;
+        height: 9.86rem;
+    }
+    .module-courses .course:first-child {
+        margin-top: 0;
+    }
+
+    .module-courses .course .course-cover {
+        position: relative;
+        width: 7.03rem;
+        max-width: none;
+        height: 4.88rem;
+        left: -0.26rem;
+        top: 0;
+    }
+
+    .module-courses .course .course-info {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.47rem;
+    }
+
+    .module-courses .course .course-title {
+        font-size: 0.36rem;
+    }
+
+    .module-courses .course .course-title img {
+        width: 2.29rem;
+        height: 0.64rem;
+    }
+
+    .module-courses .course .course-detail {
+        font-size: 0.24rem;
+        line-height: 0.6rem;
+        margin-top: 0.3rem;
+    }
+
+    .module-courses .course .course-entrance {
+        height: 0.85rem;
+        line-height: 0.85rem;
+        width: 2.91rem;
+        font-size: 0.24rem;
+        left: 50%;
+        margin-left: -1.46rem;
+        bottom: -0.32rem;
+    }
+
+    .module-courses .course.even .course-cover {
+        left: -0.26rem;
+        right: 0;
+    }
+
+    .module-courses .course.even .course-info {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .module-courses .course.even .course-entrance {
+        left: 50%;
+    }
+
+    .module-focus {
+        height: 5.36rem;
+    }
+
+    .module-focus img {
+        margin-top: 0.64rem;
+        height: 4.03rem;
+        width: auto;
+    }
+
+    .module-clients {
+        height: auto;
+        padding: 0.24rem 0.24rem 0.16rem 0.24rem;
+        border-bottom-width: 0.58rem;
+    }
+
+    .module-clients img {
+        margin-top: 0;
+    }
+
+    .module-contact {
+        height: auto;
+        padding: 0 0.5rem;
+    }
+
+    .module-contact .wrapper-contact {
+        width: auto;
+        padding-top: 0.28rem;
+    }
+
+    .module-contact .wrapper-contact .title {
+        font-size: 0.3rem;
+        line-height: 0.46rem;
+    }
+
+    .module-contact .wrapper-contact p {
+        font-size: 0.24rem;
+        line-height: 0.38rem;
+    }
+
+    .module-contact .wrapper-map {
+        position: static;
+        width: auto;
+        margin-top: 0.38rem;
+        padding-bottom: 0.28rem;
+    }
+
+    .module-footer {
+        height: auto;
+    }
+
+    .module-footer .title, .module-footer p {
+        display: none;
+    }
+
+    .module-footer .copyright {
+        line-height: 1rem;
+    }
 }
