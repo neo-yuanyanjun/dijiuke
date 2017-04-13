@@ -164,81 +164,6 @@
     margin-top: 1.15rem;
 }
 
-.module-contact {
-    height: 6.06rem;
-    background-color: #333333;
-    color: #fff;
-}
-
-.module-contact .module-wrapper {
-    position: relative;
-    /*overflow: hidden;*/
-}
-
-.module-contact .wrapper-contact {
-    width: 4rem;
-    padding-top: 1.16rem;
-    z-index: 1;
-}
-
-.module-contact .wrapper-contact .title {
-    font-size: 0.2rem;
-    line-height: 0.45rem;
-}
-
-.module-contact .wrapper-contact .title-contact {
-    margin-top: 0.52rem;
-}
-
-.module-contact .wrapper-contact p {
-    font-size: 0.16rem;
-    line-height: 0.3rem;
-}
-
-.module-contact .wrapper-map {
-    position: absolute;
-    top: 1.16rem;
-    right: 0;
-    width: 5.45rem;
-    z-index: 0;
-}
-
-.module-contact .wrapper-map img {
-    width: 100%;
-}
-
-.module-footer {
-    background-color: #666666;
-    height: 2.9rem;
-}
-
-.module-footer .title {
-    font-size: 0.18rem;
-    color: #fff;
-    line-height: 1;
-    padding-top: 0.24rem;
-    padding-bottom: 0.14rem;
-}
-
-.module-footer p {
-    line-height: 0.32rem;
-    font-size: 0.14rem;
-    color: #e0e0e0;
-}
-
-.module-footer p a {
-    color: #e0e0e0;
-    margin-right: 0.16rem;
-}
-
-.module-footer .copyright {
-    font-size: 0.16rem;
-    color: #999999;
-    line-height: 1;
-    margin-top: 0.8rem;
-    text-align: center;
-}
-
 @media screen and (max-width: 1000px) {
     .module-video .video-container {
         position: relative;
@@ -380,44 +305,5 @@
 
     .module-clients img {
         margin-top: 0;
-    }
-
-    .module-contact {
-        height: auto;
-        padding: 0 0.5rem;
-    }
-
-    .module-contact .wrapper-contact {
-        width: auto;
-        padding-top: 0.28rem;
-    }
-
-    .module-contact .wrapper-contact .title {
-        font-size: 0.3rem;
-        line-height: 0.46rem;
-    }
-
-    .module-contact .wrapper-contact p {
-        font-size: 0.24rem;
-        line-height: 0.38rem;
-    }
-
-    .module-contact .wrapper-map {
-        position: static;
-        width: auto;
-        margin-top: 0.38rem;
-        padding-bottom: 0.28rem;
-    }
-
-    .module-footer {
-        height: auto;
-    }
-
-    .module-footer .title, .module-footer p {
-        display: none;
-    }
-
-    .module-footer .copyright {
-        line-height: 1rem;
     }
 }
