@@ -31,6 +31,232 @@
     background: url(../img/course-1/schedule.png) no-repeat center 1rem #fff;
 }
 
+.module-feedback {
+    height: 8.62rem;
+    background: url(../img/course-1/feedback.png) no-repeat center 0.76rem #333;
+}
+
+.module-live {
+    height: 8.57rem;
+    background: url(../img/course-1/live.jpg) no-repeat center center #fff;
+}
+
+.module-privilege {
+    height: 6.75rem;
+    background: url(../img/course-1/privilege.png) no-repeat center center #333;
+}
+
+.module-information {
+    background-color: #fff;
+    padding-bottom: 0.34rem;
+}
+
+.module-information .title {
+    padding-top: 0.5rem;
+    font-size: 0.24rem;
+    text-align: center;
+}
+
+.module-information .wrapper-item {
+    margin-top: 0.4rem;
+}
+
+.module-information .wrapper-item .icon {
+    float: left;
+    width: 1rem;
+    height: 1rem;
+    background: url(../img/icon-clock.png) no-repeat left top transparent;
+}
+
+.module-information .wrapper-item .icon.icon-clock {
+    background-image: url(../img/icon-clock.png);
+}
+
+.module-information .wrapper-item .icon.icon-address {
+    background-image: url(../img/icon-address.png);
+}
+
+.module-information .wrapper-item .icon.icon-cost {
+    background-image: url(../img/icon-cost.png);
+}
+
+.module-information .wrapper-item .icon.icon-register {
+    background-image: url(../img/icon-register.png);
+}
+
+.module-information .wrapper-item .icon.icon-welfare {
+    background-image: url(../img/icon-welfare.png);
+}
+
+.module-information .wrapper-item .icon.icon-pay {
+    background-image: url(../img/icon-pay.png);
+}
+
+
+.module-information .wrapper-item .icon.icon-phone {
+    background-image: url(../img/icon-phone.png);
+}
+
+.module-information .wrapper-item .item-detail {
+    overflow: hidden;
+}
+
+.module-information .wrapper-item .item-detail .item-detail-title {
+    font-size: 0.2rem;
+    font-weight: bold;
+    padding: 0.28rem 0 0.1rem 0;
+}
+
+.module-information .wrapper-item .item-detail p {
+    line-height: 0.36rem;
+    font-size: 0.16rem;
+}
+
+.module-information .wrapper-item .course-cost span {
+    color: #dc3a3a;
+}
+
+.module-information .pay-target-alipay {
+    float: left;
+    width: 3.48rem;
+}
+
+.module-information .pay-target-bank {
+    overflow: hidden;
+}
+
+.module-information .business-card {
+    border: 1px solid #000;
+    width: 4.7rem;
+    height: 2.2rem;
+    text-align: center;
+}
+
+.module-information .business-card-left {
+    font-size: 0.16rem;
+    line-height: 0.52rem;
+    width: 2.6rem;
+    float: left;
+    margin-top: 0.3rem;
+    color: #666666;
+}
+
+.module-information .QR-code {
+    overflow: hidden;
+    width: 1.44rem;
+    height: 1.44rem;
+    line-height: 1.44rem;
+    margin-top: 0.3rem;
+    border: 1px solid #000;
+}
+
+.module-information .QR-code  img {
+    vertical-align: middle;
+}
+
+.module-consult {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+    background-color: #d34458;
+}
+
+.module-plan {
+    color: #fff;
+    font-size: 0.2rem;
+    padding-bottom: 0.36rem;
+}
+
+.module-plan .title {
+    padding: 0.94rem 0 1.22rem 0;
+    font-size: 0.24rem;
+    text-align: center;
+}
+
+.module-plan .wrap-table-header {
+    overflow: hidden;
+}
+
+.module-plan .wrap-table-header .table-header-item {
+    width: 25%;
+    float: left;
+    height: 1.48rem;
+    text-align: center;
+    padding-top: 1rem;
+    line-height: 1;
+    background: url(../img/icon-course.png) no-repeat center top transparent;
+}
+
+.module-plan .wrap-table-header .table-header-item-course-name {
+    background-image: url(../img/icon-course.png);
+}
+
+.module-plan .wrap-table-header .table-header-item-course-address {
+    background-image: url(../img/icon-address-white.png);
+}
+
+.module-plan .wrap-table-header .table-header-item-course-teacher {
+    background-image: url(../img/icon-mentor.png);
+}
+
+.module-plan .wrap-table-header .table-header-item-course-time {
+    background-image: url(../img/icon-clock-white.png);
+}
+
+.module-plan table {
+    width: 100%;
+    text-align: center;
+    line-height: 0.76rem;
+}
+
+.module-plan table td {
+    width: 25%;
+    border: 1px solid #ddd;
+}
+
+.module-plan .wrap-max-person {
+    padding: 0.5rem 0;
+    font-size: 0.16rem;
+    text-align: center;
+}
+
+.module-plan .wrap-register {
+    text-align: center;
+}
+
+.module-plan .wrap-register .btn {
+    width: 2.66rem;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    background-color: #fff;
+    color: #333;
+}
+
+.module-plan .wrap-register .btn:after {
+    border-color: #fff;
+}
+
+.module-plan .wrap-notice {
+    margin-top: 0.86rem;
+    font-size: 0.16rem;
+    line-height: 0.48rem;
+}
+
+.module-plan .wrap-notice h4 {
+    font-size: 0.2rem;
+}
+
+.module-plan .wrap-notice-left {
+    float: left;
+    width: 3.28rem;
+}
+
+.module-plan .wrap-notice-right {
+    overflow: hidden;
+}
+
 @media screen and (max-width: 1000px) {
     .module-cover {
         height: 9.81rem;
@@ -71,5 +297,122 @@
         height: 13.11rem;
         background: url(../img/course-1/schedule-mobile.png) no-repeat 1.65rem 0.48rem #fff;
         background-size: 4.62rem 12.41rem;
+    }
+
+    .module-feedback {
+        height: 8.16rem;
+        background: url(../img/course-1/feedback.png) no-repeat center 0.6rem #333;
+        background-size: 7.06rem 6.9rem;
+    }
+
+    .module-live {
+        height: 6.28rem;
+        background: url(../img/course-1/live.jpg) no-repeat center center #fff;
+        background-size: 7.06rem, 5.32rem;
+    }
+
+    .module-privilege {
+        height: 9.82rem;
+        background: url(../img/course-1/privilege-mobile.png) no-repeat center center #333;
+        background-size: 5.67rem 9.32rem;
+    }
+
+    .module-information .wrapper-item {
+        margin: 0.22rem 0.24rem 0 0.24rem;
+    }
+
+    .module-information .wrapper-item .icon {
+        width: 0.88rem;
+        height: 0.88rem;
+    }
+
+    .module-information .wrapper-item .item-detail p {
+        float: none;
+    }
+
+    .module-information .pay-target-bank {
+        margin-top: 0.36rem;
+    }
+
+    .module-information .wrapper-item .item-detail .item-detail-title {
+        font-size: 0.24rem;
+    }
+
+    .module-information .wrapper-item .item-detail p {
+        font-size: 0.24rem;
+        color: #666;
+    }
+
+    .module-information .business-card-left {
+        font-size: 0.24rem;
+    }
+
+    .module-consult {
+        height: 0.88rem;
+        line-height: 0.88rem;
+        font-size: 0.24rem;
+        color: #fff;
+        text-align: center;
+        background-color: #d34458;
+    }
+
+    .module-plan {
+        padding: 0 0.24rem 0.4rem;
+    }
+
+    .module-plan .title {
+        padding: 0.55rem 0 0.44rem 0;
+        font-size: 0.24rem;
+    }
+
+    .module-plan .wrap-table-header .table-header-item {
+        height: 1.22rem;
+        padding-top: 0.88rem;
+        font-size: 0.24rem;
+    }
+
+    .module-plan .wrap-table-header .table-header-item-course-name {
+        background-size: 0.64rem 0.56rem;
+    }
+
+    .module-plan .wrap-table-header .table-header-item-course-address {
+        background-size: 0.64rem 0.64rem;
+    }
+
+    .module-plan .wrap-table-header .table-header-item-course-teacher {
+        background-size: 0.67rem 0.67rem;
+    }
+
+    .module-plan .wrap-table-header .table-header-item-course-time {
+        background-size: 0.6rem 0.64rem;
+    }
+
+    .module-plan table {
+        line-height: 0.6rem;
+        font-size: 0.24rem;
+    }
+
+    .module-plan .wrap-max-person {
+        padding: 0.22rem 0 0.8rem 0;
+        font-size: 0.24rem;
+    }
+
+    .module-plan .wrap-register .btn {
+        width: 3.4rem;
+    }
+
+    .module-plan .wrap-notice {
+        margin-top: 0.76rem;
+        font-size: 0.24rem;
+        line-height: 0.48rem;
+    }
+
+    .module-plan .wrap-notice h4 {
+        font-size: 0.24rem;
+    }
+
+    .module-plan .wrap-notice-left {
+        float: none;
+        width: auto;
     }
 }
