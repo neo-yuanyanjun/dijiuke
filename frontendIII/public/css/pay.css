@@ -6,15 +6,6 @@ body {
     position: relative;
 }
 
-.header .navs {
-    background-color: #333;
-    color: #fff;
-}
-
-.header .navs a {
-    color: #fff;
-}
-
 .module-register {
     border-bottom: 65px solid #909090;
     width: 100%;

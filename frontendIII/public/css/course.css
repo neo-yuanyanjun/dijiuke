@@ -70,31 +70,38 @@
 
 .module-information .wrapper-item .icon.icon-clock {
     background-image: url(../img/icon-clock.png);
+    background-size: 0.6rem 0.64rem;
 }
 
 .module-information .wrapper-item .icon.icon-address {
     background-image: url(../img/icon-address.png);
+    background-size: 0.64rem 0.64rem;
 }
 
 .module-information .wrapper-item .icon.icon-cost {
     background-image: url(../img/icon-cost.png);
+    background-size: 0.6rem 0.64rem;
 }
 
 .module-information .wrapper-item .icon.icon-register {
     background-image: url(../img/icon-register.png);
+    background-size: 0.56rem 0.64rem;
 }
 
 .module-information .wrapper-item .icon.icon-welfare {
     background-image: url(../img/icon-welfare.png);
+    background-size: 0.45rem 0.62rem;
 }
 
 .module-information .wrapper-item .icon.icon-pay {
     background-image: url(../img/icon-pay.png);
+    background-size: 0.64rem 0.5rem;
 }
 
 
 .module-information .wrapper-item .icon.icon-phone {
     background-image: url(../img/icon-phone.png);
+    background-size: 0.68rem 0.57rem;
 }
 
 .module-information .wrapper-item .item-detail {
@@ -388,8 +395,13 @@
     }
 
     .module-plan table {
-        line-height: 0.6rem;
+        /*line-height: 0.6rem;*/
+        line-height: 0.36rem;
         font-size: 0.24rem;
+    }
+
+    .module-plan table td {
+        padding: 0 0.12rem;
     }
 
     .module-plan .wrap-max-person {
