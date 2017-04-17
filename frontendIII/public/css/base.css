@@ -61,8 +61,8 @@ html, body {
 
 /* 去除输入框阴影 */
 input, textarea {
-    border: 0;
-    -webkit-appearance: none;
+    /*border: 0;*/
+    /*-webkit-appearance: none;*/
 }
 
 a, img {
@@ -293,6 +293,7 @@ a {
 .module-footer {
     background-color: #666666;
     height: 2.9rem;
+    overflow: hidden;
 }
 
 .module-footer .title {

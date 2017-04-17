@@ -1,0 +1,260 @@
+body {
+    background-color: #fff;
+}
+
+.header {
+    position: relative;
+}
+
+.header .navs {
+    background-color: #333;
+    color: #fff;
+}
+
+.header .navs a {
+    color: #fff;
+}
+
+.module-register {
+    border-bottom: 65px solid #909090;
+    width: 100%;
+    background: #fff;
+}
+
+.module-register-main {
+    width: 13.4rem;
+    margin: 0 auto;
+    color: #333333;
+}
+
+.module-register .title {
+    font-size: 0.24rem;
+    color: #333333;
+    margin-top: 0.5rem;
+}
+
+.module-register .list-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.module-register .list {
+    margin-right: -1rem;
+}
+
+.module-register .list .item-wrap {
+    width: 25%;
+    float: left;
+}
+
+.module-register .list .item {
+    margin-right: 1rem;
+}
+
+.module-register .list .item .city {
+    font-size: 0.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.4rem 0 0.44rem 0;
+    line-height: 1;
+}
+
+.module-register .list .item .course {
+    text-align: center;
+    font-size: 0.2rem;
+    line-height: 0.46rem;
+}
+
+.module-register .list .item .course label {
+    display: block;
+}
+
+.module-register .list .item .course label input {
+    -webkit-appearance: checkbox;
+}
+
+.wrap-personal {
+    overflow: hidden;
+}
+
+.wrap-personal .field {
+    float: left;
+    width: 33.33%;
+    font-size: 0.16rem;
+    line-height: 0.34rem;
+}
+
+.wrap-personal .field .field-label {
+    float: left;
+    border: 1px solid transparent;
+}
+
+.wrap-personal .field .field-value {
+    overflow: hidden;
+    /*margin: 0 50px 0 110px;*/
+    padding: 0 20px 0 10px;
+}
+
+.wrap-personal .field .field-value input {
+    box-sizing: border-box;
+    color: #666666;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 0.16rem;
+}
+
+.wrap-personal .title {
+    margin-bottom: 0.4rem;
+}
+
+.wrap-pay {
+    overflow: hidden;
+}
+
+.wrap-pay .title {
+    margin-bottom: 0.3rem;
+}
+
+.wrap-pay .left {
+    float: left;
+    width: 6.60rem;
+}
+
+.wrap-pay .left .field-num {
+    line-height: 0.26rem;
+    font-size: 0.2rem;
+}
+
+.wrap-pay .left .field-num input {
+    margin-left: 0.30rem;
+    line-height: 0.24rem;
+    width: 2rem;
+    color: #333;
+}
+
+.wrap-pay .left .result, .wrap-pay .left .tips {
+    margin-top: 0.4rem;
+    font-size: 0.18rem;
+}
+
+.wrap-pay .left .tips {
+    float: left;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #999999;
+}
+
+.wrap-pay .left .sum {
+    font-size: 0.24rem;
+    margin-top: 0.6rem;
+}
+
+.wrap-pay .left .sum span {
+    color: #dd2d2d;
+}
+
+.wrap-pay .right {
+    float: none;
+    overflow: hidden;
+    width: 4.4rem;
+}
+
+.wrap-pay .right .pay-channels {
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.wrap-pay .right .pay-channels:after {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    content: ' ';
+    vertical-align: top;
+}
+
+.wrap-pay .right .pay-channels label {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.16rem;
+}
+
+.wrap-pay .right .pay-channels label img {
+    margin-bottom: 16px;
+    display: inline-block;
+    width: 0.62rem;
+    height: 0.62rem;
+}
+
+.wrap-pay .right .wrap-btn {
+    margin-top: 0.8rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.wrap-pay .right .wrap-btn .btn-pay {
+    background-color: #11bcc4;
+    outline: none;
+    border: none;
+    width: 3.4rem;
+}
+
+.wrap-pay .right .wrap-btn .btn-pay:after {
+    border-color: #11bcc4;
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        box-shadow: 0 0 20px #333;
+    }
+
+    .module-register {
+        width: auto;
+        margin: 0 40px;
+        border-bottom-color: #fff;
+    }
+
+    .module-register-main {
+        width: 100%;
+    }
+
+    .module-register .list .item-wrap {
+        width: 50%;
+    }
+
+    .wrap-personal .field {
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .wrap-pay .left {
+        float: none;
+    }
+
+    .wrap-pay .left .field-num input {
+        width: 4rem;
+    }
+
+    .wrap-pay .left .tips {
+        float: none;
+    }
+
+    .wrap-pay .right {
+        margin-top: 70px;
+        width: auto;
+    }
+
+    .wrap-pay .right .wrap-btn {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .wrap-pay .right .wrap-btn .btn-pay {
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+    }
+}
