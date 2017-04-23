@@ -46,7 +46,7 @@ $('body').on('ready', function () {
         var tel = $('input[type="tel"][name="tel"]').val();
         var email = $('input[type="email"][name="email"]').val();
         var num = $('input[type="number"][name="num"]').val();
-        var channel =  $('input[type="radio"][name="pay_channel"]').val();
+        var channel =  $('input[type="radio"][name="pay_channel"]:checked').val();
         $.ajax({
             type: 'POST',
             url: '/pay',
