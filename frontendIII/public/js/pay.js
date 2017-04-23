@@ -64,6 +64,10 @@ $('body').on('ready', function () {
         function paySucess(res) {
             res = JSON.parse(res);
             var charge = res.data.charge;
+            if (shouldShowPayQRcode()) {
+                showPayQRcode(charge.credential.wx_pub_qr);
+                return;
+            }
             window.pingpp.createPayment(charge, function (result, err) {
                 // console.log(result);
                 // console.log(err.msg);
@@ -79,5 +83,36 @@ $('body').on('ready', function () {
                 }
             });
         }
+    }
+
+    // 微信支付以二维码的方式支付
+    function shouldShowPayQRcode() {
+        var parChannel = $('input[type="radio"][name="pay_channel"]:checked').val();
+        return parChannel === '1';
+    }
+
+    // showPayQRcode('https://img6.bdstatic.com/img/image/smallpic/h2.jpg');
+    function showPayQRcode(url) {
+        var htmlStr = [
+            '<div class="wrapper-modal">',
+                '<div class="wrapper-modal-content">',
+                    '<div class="wrapper-QRcode" id="wrapper-QRcode"></div>',
+                    '<div class="wrapper-guide">',
+                        '操作流程如下：<br />',
+                        '1. 保存当前页面截图；<br />',
+                        '2. 打开微信app，扫一扫，选择相册里保存的截图。',
+                    '</div>',
+                '</div>',
+            '</div>'
+        ].join('');
+        $(htmlStr).appendTo('body');
+        new window.QRCode(document.getElementById('wrapper-QRcode'), {
+            text: url,
+            width: 128,
+            height: 128,
+            colorDark: '#000000',
+            colorLight: '#ffffff',
+            correctLevel: window.QRCode.CorrectLevel.H
+        });
     }
 });
