@@ -95,6 +95,16 @@ a {
     margin: auto;
 }
 
+.p-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
 .btn {
     display: inline-block;
     vertical-align: top;
@@ -384,3 +394,164 @@ a {
         line-height: 1rem;
     }
 }
+
+
+/* 咨询栏样式 */
+.module-consult-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333;
+    /*background-color: rgba(51, 51, 51, 0.8);*/
+    height: 1.26rem;
+    overflow: hidden;
+    box-shadow: 0 0 20px #333;
+}
+
+.module-consult-bar-main {
+    width: 9.8rem;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.module-consult-bar-item {
+    position: absolute;
+}
+
+.module-consult-bar-item-telephone {
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 100%;
+    line-height: 1.26rem;
+    font-size: 0.24rem;
+    color: #fff;
+}
+
+.module-consult-bar-item-telephone a {
+    display: block;
+    color: #fff;
+}
+
+.module-consult-bar-item-consult,
+.module-consult-bar-item-register {
+    width: 2.6rem;
+    height: 0.7rem;
+    border: 1px solid #fff;
+    top: 0.28rem;
+}
+
+.module-consult-bar-item-consult {
+    left: 3.6rem;
+}
+
+.module-consult-bar-item-register {
+    right: 0.66rem;
+}
+
+.module-consult-bar-item-consult a,
+.module-consult-bar-item-register a {
+    display: block;
+    position: absolute;
+    left: 0.1rem;
+    right: 0.1rem;
+    top: 0.1rem;
+    height: 0.52rem;
+    line-height: 0.52rem;
+    font-size: 0.24rem;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.module-consult-bar-close {
+    position: absolute;
+    height: 0.6rem;
+    width: 0.6rem;
+    right: 0;
+    top: 0;
+    background: url(../img/icon-cross.png) no-repeat center center transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .module-consult-bar {
+        height: 1.18rem;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 1);
+        /*background-color: rgba(255, 255, 255, 0.8);*/
+    }
+
+    .module-consult-bar-main {
+        width: 100%;
+    }
+
+    .module-consult-bar-item {
+        position: absolute;
+        top: 0.22rem;
+        width: 2.22rem;
+        height: 0.76rem;
+        border: 1px solid #000;
+    }
+
+    .module-consult-bar-item-telephone {
+        left: 0.08rem;
+    }
+
+    .module-consult-bar-item-consult {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .module-consult-bar-item-register {
+        left: auto;
+        right: 0.08rem;
+    }
+
+    .module-consult-bar-item a {
+        display: block;
+        background-color: #000;
+        color: #fff;
+        height: 0.56rem;
+        line-height: 0.56rem;
+        width: 2.06rem;
+        font-size: 0.28rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .module-consult-bar-close {
+        display: none;
+        background: none;
+    }
+
+    .module-consult-bar-item-telephone {
+        text-align: center;
+    }
+
+    .module-consult-bar-item-telephone .telephone {
+        display: none;
+    }
+
+    .module-consult-bar-item-telephone .icon-phone {
+        display: inline-block;
+        width: 0.29rem;
+        height: 0.28rem;
+        background: url(../img/icon-phone-2.png) no-repeat center center transparent;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        margin-left: 0.2rem;
+    }
+}
+/* 咨询栏样式 end */
