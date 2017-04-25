@@ -94,13 +94,21 @@ $('body').on('ready', function () {
     // showPayQRcode('https://img6.bdstatic.com/img/image/smallpic/h2.jpg');
     function showPayQRcode(url) {
         var htmlStr = [
-            '<div class="wrapper-modal">',
-                '<div class="wrapper-modal-content">',
-                    '<div class="wrapper-QRcode" id="wrapper-QRcode"></div>',
-                    '<div class="wrapper-guide">',
-                        '操作流程如下：<br />',
-                        '1. 保存当前页面截图；<br />',
-                        '2. 打开微信app，扫一扫，选择相册里保存的截图。',
+            '<div class="dialog-modal">',
+                '<div class="dialog-main">',
+                    '<div class="dialog-header">',
+                        '<div class="dialog-icon"></div>',
+                        '<div class="dialog-title">第九课堂课程费用</div>',
+                        '<div class="btn-close-dialog"></div>',
+                    '</div>',
+                    '<div class="dialog-content">',
+                        '<div class="wrapper-title">微信扫一扫付款</div>',
+                        '<div class="wrapper-QRcode" id="wrapper-QRcode"></div>',
+                        '<div class="wrapper-guide">',
+                            '打开微信扫一扫<br />',
+                            '扫一扫继续付款',
+                        '</div>',
+                        '<div class="wrapper-warning">付款请备注姓名/课程名称/城市</div>',
                     '</div>',
                 '</div>',
             '</div>'
@@ -108,11 +116,15 @@ $('body').on('ready', function () {
         $(htmlStr).appendTo('body');
         new window.QRCode(document.getElementById('wrapper-QRcode'), {
             text: url,
-            width: 128,
-            height: 128,
             colorDark: '#000000',
             colorLight: '#ffffff',
             correctLevel: window.QRCode.CorrectLevel.H
+        });
+        $('.btn-close-dialog').on('click', function (evt) {
+            $('.dialog-modal').remove();
+        });
+        $('.btn-close-dialog').on('touchend', function (evt) {
+            $('.dialog-modal').remove();
         });
     }
 });

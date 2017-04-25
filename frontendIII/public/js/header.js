@@ -10,7 +10,8 @@ $('body').on('ready', function () {
     $btn.on('touchend', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $navs.show();
+        // $navs.show();
+        $navs.toggle();
     });
 
     $('body').on('touchend', function () {

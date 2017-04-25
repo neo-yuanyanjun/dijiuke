@@ -155,10 +155,22 @@
     line-height: 1.44rem;
     margin-top: 0.3rem;
     border: 1px solid #000;
+    position: relative;
 }
 
 .module-information .QR-code  img {
-    vertical-align: middle;
+    /*vertical-align: middle;*/
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* 这个属性是必须的 */
+    margin: auto;
 }
 
 .module-consult {
@@ -352,6 +364,15 @@
 
     .module-information .business-card-left {
         font-size: 0.24rem;
+    }
+
+    .module-information .QR-code {
+        margin-top: 0.32rem;
+    }
+
+    .module-information .QR-code img {
+        width: 1.3rem;
+        height: 1.3rem;
     }
 
     .module-consult {
