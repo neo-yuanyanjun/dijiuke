@@ -38,6 +38,7 @@ body{
     font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     color: #333;
     background-color: #333;
+    padding-top: 1rem;
 }
 
 /* 禁止选取文本 */
@@ -153,6 +154,10 @@ a {
     background-color: #fff;
     position: relative;
     z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .header-main {
@@ -177,6 +182,8 @@ a {
     vertical-align: middle;
     width: 1.5rem;
     margin-right: 0.1rem;
+    position: relative;
+    top: -0.04rem;
 }
 
 .header .navs {
@@ -224,6 +231,10 @@ a {
         box-shadow: 0 0 20px #333;
     }
 
+    body {
+        padding-top: 0.74rem;
+    }
+
     .header .header-main {
         float: left;
         margin-left: 1.1rem;
@@ -236,6 +247,8 @@ a {
 
     .header .slogan img {
         width: 1.4rem;
+        position: relative;
+        top: -5px;
     }
 
     .header .btn {
@@ -455,15 +468,36 @@ a {
 .module-consult-bar-item-register a {
     display: block;
     position: absolute;
-    left: 0.1rem;
+    /*left: 0.1rem;
     right: 0.1rem;
-    top: 0.1rem;
-    height: 0.52rem;
-    line-height: 0.52rem;
+    top: 0.1rem;*/
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 2.5rem;
+    height: 0.58rem;
+    line-height: 0.58rem;
     font-size: 0.24rem;
     background-color: #fff;
     color: #333;
     text-align: center;
+}
+
+.show-consult-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 1rem;
+    height: 1.26rem;
+    z-index: 1111;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    background: url(../img/arrow-left.png) no-repeat center center #333;
+    background-size: 0.33rem 0.82rem;
+    display: none;
 }
 
 .module-consult-bar-close {
@@ -478,6 +512,7 @@ a {
 
 @media screen and (max-width: 1000px) {
     .module-consult-bar {
+        display: block!important;
         height: 1.18rem;
         width: 100%;
         overflow: hidden;
@@ -518,9 +553,9 @@ a {
         display: block;
         background-color: #000;
         color: #fff;
-        height: 0.56rem;
-        line-height: 0.56rem;
-        width: 2.06rem;
+        height: 0.66rem;
+        line-height: 0.66rem;
+        width: 2.12rem;
         font-size: 0.28rem;
         position: absolute;
         left: 50%;
@@ -552,6 +587,10 @@ a {
         background-size: 100% 100%;
         vertical-align: middle;
         margin-left: 0.2rem;
+    }
+
+    .show-consult-bar {
+        display: none!important;
     }
 }
 /* 咨询栏样式 end */

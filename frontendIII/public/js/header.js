@@ -28,23 +28,30 @@ $('body').on('ready', function () {
             '<div class="module-consult-bar">',
                 '<div class="module-consult-bar-main">',
                     '<div class="module-consult-bar-item module-consult-bar-item-telephone">',
-                        '<a href="#" class="">',
+                        '<a href="tel:400-850-8368" class="">',
                             '电话<span class="telephone">：400-850-8368</span><span class="icon-phone"></span>',
                         '</a>',
                     '</div>',
                     '<div class="module-consult-bar-item module-consult-bar-item-consult">',
-                        '<a href="#" class="">在线咨询</a>',
+                        '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1730717213&site=qq&menu=yes" class="">在线咨询</a>',
                     '</div>',
                     '<div class="module-consult-bar-item module-consult-bar-item-register">',
-                        '<a href="#" class="">冷静报名</a>',
+                        '<a href="/enter" class="">冷静报名</a>',
                     '</div>',
                     '<div class="module-consult-bar-close"></div>',
                 '</div>',
-            '</div>'
+            '</div>',
+            '<div class="show-consult-bar"></div>'
         ].join('');
         $('body').append(htmlStr);
         $('.module-consult-bar-close').on('click', function () {
-            $('.module-consult-bar').remove();
+            // $('.module-consult-bar').remove();
+            $('.module-consult-bar').hide();
+            $('.show-consult-bar').show();
+        });
+        $('.show-consult-bar').on('click', function () {
+            $('.module-consult-bar').show();
+            $('.show-consult-bar').hide();
         });
     })();
 });
