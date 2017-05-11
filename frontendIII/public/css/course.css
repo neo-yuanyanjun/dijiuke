@@ -23,12 +23,16 @@
 
 .module-teachers {
     height: 20.17rem;
-    background: url(../img/course-1/teachers.png) no-repeat center 0.7rem #333;
+    background: url(../img/course-1/teachers.jpg) no-repeat center 0.7rem #333;
 }
 
 .module-schedule {
-    height: 10rem;
-    background: url(../img/course-1/schedule.png) no-repeat center 1rem #fff;
+    /*height: 10rem;*/
+    /*background: url(../img/course-1/schedule.png) no-repeat center 1rem #fff;*/
+    height: 14.06rem;
+    background: url(../img/course-1/schedule.jpg) no-repeat center 0.66rem #fff;
+    min-width: 12rem;
+    margin: 0 auto;
 }
 
 .module-feedback {
@@ -308,14 +312,20 @@
 
     .module-teachers {
         height: 33.70rem;
-        background: url(../img/course-1/teachers-mobile.png) no-repeat center 0.46rem #333;
-        background-size: 7.07rem 32.69rem;
+        /*background: url(../img/course-1/teachers-mobile.png) no-repeat center 0.46rem #333;*/
+        background: url(../img/course-1/teachers-mobile.jpg) no-repeat center 0.78rem #333;
+        /*background-size: 7.07rem 32.69rem;*/
+        background-size: 7.1rem 32.22rem;
     }
 
     .module-schedule {
-        height: 13.11rem;
+        /* height: 13.11rem;
         background: url(../img/course-1/schedule-mobile.png) no-repeat 1.65rem 0.48rem #fff;
-        background-size: 4.62rem 12.41rem;
+        background-size: 4.62rem 12.41rem; */
+        min-width: auto;
+        height: 9.35rem;
+        background: url(../img/course-1/schedule-mobile.jpg) no-repeat center 0.45rem #fff;
+        background-size: 7.1rem 7.77rem;
     }
 
     .module-feedback {

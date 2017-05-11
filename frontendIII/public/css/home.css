@@ -119,6 +119,10 @@
     bottom: -0.24rem;
 }
 
+.module-courses .course:nth-child(3) .course-entrance {
+    background-color: #d34458;
+}
+
 .module-courses .course.even .course-cover {
     left: auto;
     right: 0;
