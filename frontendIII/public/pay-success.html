@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>支付成功</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/course.css">
+    <script src="./js/common.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .main {
+            width: 9.8rem;
+            margin: 0 auto;
+        }
+
+        .congratulation {
+            color: #666;
+            font-size: 0.3rem;
+            line-height: 1.2rem;
+            margin: 1.64rem 0 0 1.12rem;
+        }
+
+        .congratulation .title {
+            font-size: 0.36rem;
+            color: #333;
+        }
+
+        .btn-wrapper {
+            margin-top: 0.74rem;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        .btn-wrapper .btn {
+            background-color: #030000;
+            color: #fff;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            width: 2.66rem;
+            font-size: 0.24rem;
+        }
+
+        .btn-wrapper .btn:before {
+            border-color: #030000;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .main {
+                width: auto;
+            }
+
+            .congratulation {
+                font-size: 0.24rem;
+                margin: 1.64rem 0 0 1.3rem;
+            }
+
+            .btn-wrapper .btn {
+                width: 3.42rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-main">
+            <div class="slogan">
+                <img src="./img/logo-150-44.png" alt="第九课堂" class="logo">
+                专注互联网营销人才培养
+            </div>
+            <a href="javascript:void(0);" class="btn btn-show-navs">点我</a>
+        </div>
+        <div class="navs">
+            <a href="/home.html" class="current">首页</a>
+            <a href="/home.html#courses-anchor">课程</a>
+            <a href="/train.html">企业内训</a>
+            <a href="marry.html">嫁给我吧</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="congratulation">
+            <div class="title">
+                支付成功！
+            </div>
+            今年又做了一个正确决定<br>
+            报名确认详情已经以邮件和短信的方式发给你了
+        </div>
+        <div class="btn-wrapper">
+            <a class="btn btn-homepage" href="/home.html">返回首页</a>
+        </div>
+    </div>
+    <script src="./js/lib/zepto/zepto.min.js"></script>
+    <script src="./js/header.js"></script>
+</body>
+</html>

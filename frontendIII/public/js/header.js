@@ -24,6 +24,17 @@ $('body').on('ready', function () {
 
     // 咨询栏
     (function () {
+        var omit = ['train.html', 'pay-success.html', 'home.html', 'marry.html', 'pay.html'];
+        var ret = false;
+        for (var i = 0; i < omit.length; i++) {
+            if (window.location.pathname.indexOf(omit[i]) > -1) {
+                ret = true;
+                break;
+            }
+        }
+        if (ret) {
+            return;
+        }
         var htmlStr = [
             '<div class="module-consult-bar">',
                 '<div class="module-consult-bar-main">',

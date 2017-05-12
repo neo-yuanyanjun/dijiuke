@@ -310,6 +310,10 @@ body {
     margin: 0.6rem 0;
 }
 
+.dialog-content-mobile {
+    display: none;
+}
+
 @media screen and (max-width: 1000px) {
     .header {
         box-shadow: 0 0 20px #333;
@@ -450,5 +454,37 @@ body {
 
     .dialog-content .wrapper-title {
         margin-top: 100px;
+    }
+
+    .dialog-content {
+        display: none;
+    }
+
+    .dialog-content-mobile {
+        display: block;
+    }
+
+    .dialog-content-mobile .guide {
+        margin: 0.5rem 0 0 1.6rem;
+        line-height: 0.48rem;
+        font-size: 0.26rem;
+        color: #333333;
+    }
+
+    .dialog-content-mobile .icon-weixin-pay {
+        margin-top: 0.6rem;
+        height: 0.8rem;
+        background: url(../img/icon-scan.jpg) no-repeat center center transparent;
+        background-size: 2.86rem 0.8rem;
+    }
+
+    .dialog-content-mobile .wrapper-QRcode-mobile {
+        display: block;
+        margin: 0.4rem auto 0;
+        width: 4.36rem;
+    }
+
+    .dialog-content-mobile .wrapper-QRcode-mobile img {
+        width: 100%;
     }
 }

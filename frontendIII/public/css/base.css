@@ -74,6 +74,13 @@ img {
     vertical-align: top;
 }
 
+.fl {
+    float: left;
+}
+
+.ofh {
+    overflow: hidden;
+}
 
 a {
     text-decoration: none;

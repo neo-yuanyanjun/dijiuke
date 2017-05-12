@@ -110,11 +110,30 @@ $('body').on('ready', function () {
                         '</div>',
                         '<div class="wrapper-warning">付款请备注姓名/课程名称/城市</div>',
                     '</div>',
+                    '<div class="dialog-content-mobile">',
+                        '<div class="guide">',
+                            '移动浏览器不支持微信支付<br />',
+                            '推荐支付宝，PC浏览器微信支付<br /><br />',
+                            '或按照以下三步微信支付：<br />',
+                            '操作方法：<br />',
+                            '- 截图保存<br />',
+                            '- 打开微信，打开扫一扫<br />',
+                            '- 点右上角相册选取截图可以支付',
+                        '</div>',
+                        '<div class="icon-weixin-pay"></div>',
+                        '<div class="wrapper-QRcode-mobile" id="wrapper-QRcode-mobile"></div>',
+                    '</div>',
                 '</div>',
             '</div>'
         ].join('');
         $(htmlStr).appendTo('body');
         new window.QRCode(document.getElementById('wrapper-QRcode'), {
+            text: url,
+            colorDark: '#000000',
+            colorLight: '#ffffff',
+            correctLevel: window.QRCode.CorrectLevel.H
+        });
+        new window.QRCode(document.getElementById('wrapper-QRcode-mobile'), {
             text: url,
             colorDark: '#000000',
             colorLight: '#ffffff',
