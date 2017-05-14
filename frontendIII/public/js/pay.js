@@ -66,6 +66,9 @@ $('body').on('ready', function () {
             var charge = res.data.charge;
             if (shouldShowPayQRcode()) {
                 showPayQRcode(charge.credential.wx_pub_qr);
+                setInterval(function () {
+                    checkOrderStatus(charge.order_no);
+                }, 1000);
                 return;
             }
             window.pingpp.createPayment(charge, function (result, err) {
@@ -80,6 +83,22 @@ $('body').on('ready', function () {
                 }
                 else if (result === 'cancel') {
                     // 微信公众账号支付取消支付
+                }
+            });
+        }
+
+        function checkOrderStatus(orderId) {
+            $.ajax({
+                type: 'GET',
+                url: '/order/status',
+                data: {
+                    orderId: orderId
+                },
+                success: function (response) {
+                    response = JSON.parse(response);
+                    if (+response.data === 1) {
+                        window.location = '/pay-success.html';
+                    }
                 }
             });
         }
