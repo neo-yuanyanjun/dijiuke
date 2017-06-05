@@ -371,6 +371,10 @@ a {
     text-align: center;
 }
 
+.module-footer .copyright a {
+    color: #999;
+}
+
 @media screen and (max-width: 1000px) {
     .module-wrapper {
         width: auto;
