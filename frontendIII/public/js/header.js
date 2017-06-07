@@ -27,7 +27,11 @@ $('body').on('ready', function () {
         var omit = ['train.html', 'pay-success.html', 'home.html', 'marry.html', 'pay.html', '/enter'];
         var ret = false;
         for (var i = 0; i < omit.length; i++) {
-            if (window.location.pathname.indexOf(omit[i]) > -1) {
+            if (
+                window.location.pathname.indexOf(omit[i]) > -1
+                || window.location.pathname === '/'
+                || window.location.pathname === ''
+            ) {
                 ret = true;
                 break;
             }
