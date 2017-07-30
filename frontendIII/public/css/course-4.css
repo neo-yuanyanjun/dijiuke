@@ -1,0 +1,442 @@
+.module-cover {
+    height: 7.6rem;
+    background: url(../img/course-4/cover.jpg) no-repeat center center #dc432f;
+    background-size: cover;
+    position: relative;
+}
+
+.module-cover .link-register {
+    display: block;
+    position: absolute;
+    top: 5.7rem;
+    left: 50%;
+    margin-left: -1.35rem;
+    width: 2.7rem;
+    height: .74rem;
+}
+
+.module-guide {
+    background-color: #fff;
+}
+
+.module-guide-inner {
+    width: 7.74rem;
+    padding: 0.5rem 0 1rem;
+    margin: 0 auto;
+    color: #302424;
+    font-size: 0.24rem;
+    font-weight: bold;
+    line-height: 0.6rem;
+    font-family: "Microsoft JhengHei UI";
+}
+
+.module-teachers {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.module-teachers .module-title {
+    line-height: 1.54rem;
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+}
+
+.module-teachers .teacher {
+    background-color: #fff;
+    margin: 0 auto 1rem;
+    width: 9.8rem;
+    height: 4.76rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.module-teachers .teacher-profile {
+    position: absolute;
+    height: 0.74rem;
+    line-height: 0.74rem;
+    top: -0.4rem;
+    width: 3rem;
+    right: .44rem;
+    background-color: #dc432f;
+    color: #fff;
+}
+
+.module-teachers .teacher-profile .name {
+    font-size: 0.24rem;
+    font-weight: bold;
+    margin-left: 0.24rem;
+    margin-right: 0.2rem;
+}
+
+.module-teachers .teacher-profile .title {
+    font-size: 0.16rem;
+}
+
+.module-teachers .teacher-avatar {
+    margin-right: 0.5rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.module-teachers .teacher-avatar img {
+    border-radius: 50%;
+    width: 3.14rem;
+    height: 3.14rem;
+}
+
+.teacher-intro {
+    font-size: 0.16rem;
+    line-height: 0.4rem;
+    color: #302424;
+    width: 3.6rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.module-teachers .teacher:nth-child(2n+1) {
+    flex-direction: row-reverse;
+}
+
+.module-teachers .teacher:nth-child(2n+1) .teacher-profile {
+    right: auto;
+    left: .44rem;
+}
+
+.module-teachers .teacher:nth-child(2n+1) .teacher-avatar {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+.module-content {
+    background-color: #fff;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    font-size: 0.24rem;
+    color: #000;
+    line-height: 0.6rem;
+}
+
+.module-content h1 {
+    font-size: 0.36rem;
+    font-weight: bold;
+    margin-top: 0.6rem;
+}
+
+.module-content h3 {
+    font-size: 0.24rem;
+    font-weight: bold;
+    margin-top: 0.2rem;
+}
+
+.module-content hr {
+    border: none;
+    height :2px;
+    width: 5.9rem;
+    background-color: #db442f;
+    margin-top: 0.6rem;
+}
+
+.module-introduction {
+    background-color: #333;
+    padding: 1.5rem 0 0.86rem 0;
+    color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.6rem;
+}
+
+.module-introduction .hints-outer {
+    width: 9.3rem;
+    border: 1px solid #fff;
+    /*height: 6.66rem;*/
+    margin: 0 auto 0.6rem auto;
+}
+
+.module-introduction .hints {
+    width: 888px;
+    height: 100%;
+    margin: -0.2rem auto 0.2rem auto;
+    border: 1px solid #fff;
+    background-color: #333;
+    position: relative;
+}
+
+.module-introduction .title-wrap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 0.26rem;
+    background-color: #333;
+}
+
+.module-introduction .title {
+    padding: 0 0.3rem;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    background-color: #dc432f;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hints-content {
+    line-height: 0.6rem;
+    width: 7.6rem;
+    margin: 0.7rem auto 0;
+}
+
+.hints-content  p {
+    padding-bottom: 0.6rem;
+}
+
+.module-introduction .title-two {
+    width: 1.7rem;
+}
+
+
+.module-introduction hr {
+    width: 9.3rem;
+    display: block;
+    border: none;
+    height: 2px;
+    background-color: #fff;
+    margin: 0.26rem auto 0 auto;
+}
+
+.students {
+    margin: 0.1rem auto 0 auto;
+    width: 9.3rem;
+    text-align: center;
+}
+
+.module-schedule {
+    background-color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.6rem;
+    text-align: center;
+    padding: 1rem 0 1.2rem 0;
+}
+
+.module-schedule h1, .module-schedule h3 {
+    font-size: 0.24rem;
+}
+
+.module-schedule h1 {
+    margin-bottom: 0.6rem;
+}
+
+.module-schedule p:last-child {
+    margin-top: 0.6rem;
+}
+
+.module-important {
+    background-color: #e9442d;
+    height: 1.16rem;
+    line-height: 1.16rem;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #fff;
+}
+
+.module-consult {
+    padding: 1.2rem 0;
+    background-color: #fff;
+    font-size: 0.32rem;
+    line-height: 0.6rem;
+    text-align: center;
+}
+
+.module-consult img {
+    margin: 0.2rem 0;
+}
+
+.module-consult p {
+    margin-top: 0.6rem;
+    font-size: 0.21rem;
+    line-height: 0.36rem;
+}
+
+.module-welfare {
+    background-color: #e9442d;
+    padding: .6rem 0;
+}
+
+.module-welfare-inner {
+    width: 7.74rem;
+    margin: 0 auto;
+    font-size: 0.3rem;
+    line-height: 0.6rem;
+    color: #fff;
+    text-shadow:  -2px 2px 4px #333;
+}
+
+.module-welfare .title {
+    font-size: 0.36rem;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.module-welfare .discount-wrap {
+    color: #e9442d;
+    width: 4.74rem;
+    height: 4.74rem;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.module-welfare .discount {
+    font-size: 0.6rem;
+}
+
+.module-welfare .discount-price {
+    font-size: 1rem;
+}
+
+.module-welfare .discount-num {
+    font-size: 0.36rem;
+}
+
+.module-welfare .discount-ticket {
+    font-size: 0.32rem;
+}
+
+.module-welfare .hint {
+    font-size: 0.3rem;
+    margin-top: 1.1rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.module-welfare  .register-wrap {
+    margin-top: 0.7rem;
+    text-align: center;
+}
+
+.module-welfare  .register {
+    display: inline-block;
+    padding: 0 0.4rem;
+    background-color: #fff;
+    line-height: 0.6rem;
+    color: #e9442d;
+    text-shadow: none;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.module-welfare  .qrCode-wrap {
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .module-cover {
+        width: 100%;
+        height: 8.76rem;
+        background-image: url(../img/course-4/cover-mobile.jpg);
+        background-size: cover;
+    }
+
+    .module-guide-inner {
+        width: auto;
+        padding: 0.8rem 0.7rem;
+    }
+
+    .module-teachers .teacher {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .module-teachers .teacher-profile {
+        left: 50%;
+        right: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .module-teachers .teacher-avatar {
+        margin: 0.6rem 0 0 0;
+    }
+
+    .module-teachers .teacher-avatar img {
+        width: 2.06rem;
+        height: 2.06rem;
+    }
+
+    .teacher-intro {
+        height: auto;
+        width: auto;
+        margin: 0.2rem 0.7rem 0.5rem 0.7rem;
+        font-size: 0.24rem;
+        line-height: 0.4rem;
+    }
+    .module-teachers .teacher:nth-child(2n+1) .teacher-profile {
+        left: 50%;
+    }
+
+    .module-teachers .teacher:nth-child(2n+1) {
+        flex-direction: column;
+    }
+
+    .module-introduction {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
+    .module-introduction .hints-outer {
+        width: auto;
+        border: none;
+    }
+
+    .module-introduction .hints {
+        width: auto;
+        border: none;
+    }
+
+    .hints-content {
+        width: auto;
+    }
+
+    .module-introduction .title-wrap {
+        position: static;
+        transform: translate(0, 0);
+        text-align: center;
+    }
+
+    .module-introduction .title {
+        display: inline-block;
+    }
+
+    .module-introduction hr {
+        display: none;
+    }
+
+    .students {
+        width: auto;
+    }
+
+    .module-introduction .title-two {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .module-welfare-inner {
+        width: auto;
+        margin: 0 0.6rem;
+    }
+
+    .module-welfare .discount-wrap {
+        margin-top: 0.4rem;
+    }
+}
