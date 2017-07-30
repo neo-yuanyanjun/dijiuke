@@ -5,7 +5,6 @@ body {
 .main {
     width: 9.6rem;
     margin: 0 auto;
-    margin-top: 3rem;
     padding-bottom: 1.7rem;
 }
 
@@ -28,6 +27,18 @@ body {
     border-bottom: 0.66rem solid #36a59c;
     margin: 0;
 }
+
+.main-logo {
+    text-align: center;
+    margin: 0.68rem 0;
+}
+
+.main-logo img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+
 
 @media screen and (max-width: 1000px) {
     .main {

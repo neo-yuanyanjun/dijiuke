@@ -167,6 +167,10 @@ a {
     width: 100%;
 }
 
+.header .origin {
+    display: none;
+}
+
 .header-main {
     box-shadow: 0 0 20px #333;
     overflow: hidden;
@@ -238,6 +242,17 @@ a {
         box-shadow: 0 0 20px #333;
     }
 
+    .header .origin {
+        display: block;
+        line-height: 0.74rem;
+        float: right;
+    }
+
+    .header .origin img {
+        height: 0.3rem;
+        vertical-align: middle;
+    }
+
     body {
         padding-top: 0.74rem;
     }
@@ -254,7 +269,9 @@ a {
 
     .header .slogan img {
         /*width: 1.4rem;*/
-        width: 2.6rem;
+        /*width: 2.6rem;*/
+        height: 100%;
+        top: 0;
         position: relative;
         /*top: -5px;*/
     }
@@ -276,7 +293,8 @@ a {
     }
 
     .header .navs a {
-        padding: 0 0.16rem;
+        /*padding: 0 0.16rem;*/
+        padding: 0 0.1rem;
         margin-left: 40px;
         width: auto;
         float: none;
