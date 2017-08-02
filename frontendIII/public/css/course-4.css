@@ -25,9 +25,9 @@
     margin: 0 auto;
     color: #302424;
     font-size: 0.24rem;
-    font-weight: bold;
+    /*font-weight: bold;*/
     line-height: 0.6rem;
-    font-family: "Microsoft JhengHei UI";
+    /*font-family: "Microsoft JhengHei UI";*/
 }
 
 .module-teachers {
@@ -233,12 +233,12 @@
 }
 
 .module-important {
-    background-color: #e9442d;
+    background-color: #fff;
     height: 1.16rem;
     line-height: 1.16rem;
     text-align: center;
     font-size: 0.24rem;
-    color: #fff;
+    color: #e9442d;
 }
 
 .module-consult {
@@ -247,6 +247,7 @@
     font-size: 0.32rem;
     line-height: 0.6rem;
     text-align: center;
+    display: none;
 }
 
 .module-consult img {
@@ -262,6 +263,7 @@
 .module-welfare {
     background-color: #e9442d;
     padding: .6rem 0;
+    display: none;
 }
 
 .module-welfare-inner {
@@ -336,6 +338,82 @@
 .module-welfare  .qrCode-wrap {
     text-align: center;
     margin-top: 0.4rem;
+}
+
+.module-register {
+    background-color: #e9442d;
+    padding-top: 0.96rem;
+    color: #fff;
+    line-height: 1;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.module-register .title {
+    font-size: 0.2rem;
+}
+
+.module-register .price {
+    font-size: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.module-register .btn-register {
+    font-weight: bold;
+    margin-top: 0.8rem;
+    display: inline-block;
+    font-size: 0.2rem;
+    color: #e9442d;
+    line-height: 0.46rem;
+    width: 2.22rem;
+    border-radius: 0.23rem;
+    background-color: #fff;
+}
+
+.module-register .code-register {
+    margin-top: 0.4rem;
+}
+
+.module-register .code-register img {
+    width: 2.28rem;
+}
+
+.module-register .btn-consult {
+    font-weight: bold;
+    margin-top: 1.4rem;
+    display: inline-block;
+    font-size: 0.2rem;
+    color: #e9442d;
+    line-height: 0.56rem;
+    width: 2.66rem;
+    border-radius: 0.28rem;
+    background-color: #fff;
+}
+
+.module-register .hint-qrcode {
+    font-size: 0.16rem;
+    color: #fff;
+    margin-top: 0.24rem;
+}
+
+.module-register .code-consult {
+    margin-top: 0.16rem;
+}
+
+.module-register .code-consult img {
+    width: 2.27rem;
+}
+
+.module-register .phone {
+    font-size: 0.16rem;
+    margin-top: 0.2rem;
+}
+
+.module-register .hint-important {
+    font-size: 0.16rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    line-height: 0.36rem;
 }
 
 @media screen and (max-width: 1000px) {
